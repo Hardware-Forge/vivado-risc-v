@@ -398,3 +398,23 @@ class Rocket64z2m extends Config(
   new boom.common.WithNMegaBooms(2) ++
   new WithExtMemSize(0x3f80000000L) ++
   new RocketWideBusConfig)
+  
+ /*----------------- Custom BOOM ---------------*/
+ class Rocket64x1WithStridedPrefetching
+    extends Config(
+      new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(
+                core = tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetcher = "strided"
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+        new Rocket64x1
+    )
