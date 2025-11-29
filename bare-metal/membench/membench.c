@@ -13,7 +13,7 @@
 //#define ENABLE_VERIFY
 //#define BENCH_FORCE_HIER
 //#define BENCH_COALESCE_WRITE_SB
-#define BENCH_STRIDED_PREFETCH
+//#define BENCH_STRIDED_PREFETCH
 //#define ENABLE_VERIFY
 #include <stdint.h>
 #include <stdio.h>
@@ -510,36 +510,34 @@ void random_read(uint8_t *buf, size_t n) {
 // Description: write contiguous 16-byte blocks with sb to strongly stress the STQ
 void coalesce_write_sb(uint8_t *buf, size_t n) {
     uint64_t start = rdcycle();
-        asm volatile (
-            "mv t0, %0\n"   // buf
-            "mv t1, %1\n"   // count
-            "mv t3, %2\n"   // t3 = stride
-            "li t2, 0\n"
-            "1:\n"
-            "lw t4, 0(t0)\n"
-            "add t0, t0, t3\n"
-            "addi t2, t2, 1\n"
-            "blt t2, t1, 1b\n"
-        "sb t3, 2(t0)\n"
-        "sb t3, 3(t0)\n"
-            : "t0","t1","t2","t3","t4","memory"
-        "sb t3, 5(t0)\n"
-        "sb t3, 6(t0)\n"
-        "sb t3, 7(t0)\n"
-        "sb t3, 8(t0)\n"
-        "sb t3, 9(t0)\n"
-        "sb t3, 10(t0)\n"
-        "sb t3, 11(t0)\n"
-        "sb t3, 12(t0)\n"
-        "sb t3, 13(t0)\n"
-        "sb t3, 14(t0)\n"
-        "sb t3, 15(t0)\n"
+    asm volatile (
+        "mv t0, %0\n"       // t0 = buf
+        "mv t1, %1\n"       // t1 = n (bytes)
+        "li t2, 0\n"        // counter (bytes done)
+        "1:\n"
+        /* write 16 bytes with byte stores to stress coalescing */
+        "sb zero, 0(t0)\n"
+        "sb zero, 1(t0)\n"
+        "sb zero, 2(t0)\n"
+        "sb zero, 3(t0)\n"
+        "sb zero, 4(t0)\n"
+        "sb zero, 5(t0)\n"
+        "sb zero, 6(t0)\n"
+        "sb zero, 7(t0)\n"
+        "sb zero, 8(t0)\n"
+        "sb zero, 9(t0)\n"
+        "sb zero, 10(t0)\n"
+        "sb zero, 11(t0)\n"
+        "sb zero, 12(t0)\n"
+        "sb zero, 13(t0)\n"
+        "sb zero, 14(t0)\n"
+        "sb zero, 15(t0)\n"
         "addi t0, t0, 16\n"
         "addi t2, t2, 16\n"
         "blt t2, t1, 1b\n"
         :
         : "r"(buf), "r"(n)
-        : "t0","t1","t2","t3","memory"
+        : "t0","t1","t2","memory"
     );
     // Force the store queue to drain / commit the pending stores so we measure commit cost
     asm volatile ("fence rw, rw" ::: "memory");
