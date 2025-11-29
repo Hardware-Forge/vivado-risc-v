@@ -25,7 +25,7 @@ all: boot.elf
 
 boot.elf: $(SRCS) 
 	make -C ../.. workspace/gcc/riscv
-	$(CC) $(CCFLAGS) $(LFLAGS) -o $@ $(SRCS)
+	$(CC) $(CCFLAGS) -o $@ $(SRCS) $(LFLAGS)
 	$(OBJDUMP) -h -p $@
 
 clean:
