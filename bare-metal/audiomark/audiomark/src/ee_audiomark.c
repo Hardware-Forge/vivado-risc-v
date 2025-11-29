@@ -183,9 +183,13 @@ ee_audiomark_initialize(void)
         return 1;
     }
 
+    printf("Resetting BMF...\n");
     ee_abf_f32(NODE_RESET, (void **)&p_bmf_inst, 0, NULL);
+    printf("Resetting AEC...\n");
     ee_aec_f32(NODE_RESET, (void **)&p_aec_inst, 0, &param_idx);
+    printf("Resetting ANR...\n");
     ee_anr_f32(NODE_RESET, (void **)&p_anr_inst, 0, &param_idx);
+    printf("Resetting KWS...\n");
     ee_kws_f32(NODE_RESET, (void **)&p_kws_inst, 0, NULL);
 
     return 0;

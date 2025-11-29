@@ -385,23 +385,81 @@ th_nn_classify(const int8_t in_data[490], int8_t out_data[12])
     return EE_STATUS_OK;
 }
 
-// Math stubs
-double cos(double x) { return 0.0; }
-float cosf(float x) { return 0.0f; }
-double sin(double x) { return 0.0; }
-float sinf(float x) { return 0.0f; }
-double sqrt(double x) { return 0.0; }
-float sqrtf(float x) { return 0.0f; }
-double exp(double x) { return 0.0; }
-float expf(float x) { return 0.0f; }
-double floor(double x) { return (int)x; }
-float floorf(float x) { return (int)x; }
-double fabs(double x) { return x < 0 ? -x : x; }
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
 float fabsf(float x) { return x < 0 ? -x : x; }
-double log(double x) { return 0.0; }
-float logf(float x) { return 0.0f; }
-double pow(double x, double y) { return 0.0; }
-float powf(float x, float y) { return 0.0f; }
-double atan(double x) { return 0.0; }
-float atanf(float x) { return 0.0f; }
+double fabs(double x) { return x < 0 ? -x : x; }
+
+float floorf(float x) {
+    return (float)((int)x - (x < 0 && x != (int)x));
+}
+double floor(double x) {
+    return (double)((long)x - (x < 0 && x != (long)x));
+}
+
+float sqrtf(float x) {
+    if (x <= 0) return 0;
+    float g = x;
+    for (int i=0; i<10; i++) g = 0.5f * (g + x/g);
+    return g;
+}
+double sqrt(double x) {
+    if (x <= 0) return 0;
+    double g = x;
+    for (int i=0; i<10; i++) g = 0.5 * (g + x/g);
+    return g;
+}
+
+static float reduce_angle(float x) {
+    while (x > (float)M_PI) x -= 2.0f*(float)M_PI;
+    while (x < -(float)M_PI) x += 2.0f*(float)M_PI;
+    return x;
+}
+
+float sinf(float x) {
+    x = reduce_angle(x);
+    float x2 = x*x;
+    return x * (1.0f - x2/6.0f + (x2*x2)/120.0f - (x2*x2*x2)/5040.0f);
+}
+double sin(double x) { return sinf((float)x); }
+
+float cosf(float x) {
+    return sinf(x + (float)M_PI/2.0f);
+}
+double cos(double x) { return cosf((float)x); }
+
+float atanf(float x) {
+    // Simple approximation for [-1, 1]
+    // For |x| > 1, use atan(x) = PI/2 - atan(1/x)
+    float sign = 1.0f;
+    if (x < 0) { x = -x; sign = -1.0f; }
+    if (x > 1.0f) {
+        return sign * ((float)M_PI/2.0f - atanf(1.0f/x));
+    }
+    float x2 = x*x;
+    return sign * (x / (1.0f + 0.28f * x2));
+}
+double atan(double x) { return atanf((float)x); }
+
+float expf(float x) {
+    // Taylor: 1 + x + x^2/2 + x^3/6 + x^4/24
+    float x2 = x*x;
+    return 1.0f + x + x2/2.0f + x2*x/6.0f + x2*x2/24.0f;
+}
+double exp(double x) { return expf((float)x); }
+
+float logf(float x) {
+    // Very poor approximation
+    if (x <= 0) return -1000.0f;
+    return (x - 1.0f); 
+}
+double log(double x) { return logf((float)x); }
+
+float powf(float x, float y) {
+    if (x <= 0) return 0;
+    return expf(y * logf(x));
+}
+double pow(double x, double y) { return powf((float)x, (float)y); }
 
