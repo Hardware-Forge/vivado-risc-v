@@ -19,6 +19,7 @@
 [submodule "generators/riscv-boom"]
 	path = generators/riscv-boom
 	url = https://github.com/Hardware-Forge/riscv-boom.git
+	branch = prefetchers
 [submodule "generators/gemmini"]
 	path = generators/gemmini
 	url = https://github.com/ucb-bar/gemmini

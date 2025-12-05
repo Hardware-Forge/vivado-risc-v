@@ -13,7 +13,7 @@
 //#define ENABLE_VERIFY
 //#define BENCH_FORCE_HIER
 //#define BENCH_COALESCE_WRITE_SB
-//#define BENCH_STRIDED_PREFETCH
+#define BENCH_STRIDED_PREFETCH
 //#define ENABLE_VERIFY
 #include <stdint.h>
 #include <stdio.h>
@@ -46,7 +46,7 @@ static size_t append_u32_dec(char *buf, size_t buf_sz, size_t pos, size_t v) {
     return pos;
 }
 
-#define BUF_SIZE 128 * 1024
+#define BUF_SIZE 1024 * 1024
 #define PREFETCH_REPEAT 64
 #define STRIDE   16
 #define RAND_SEED 12345
@@ -675,131 +675,238 @@ void load_then_store(uint8_t *buf, size_t n) {
 // stride and measure cycles per access. This helps observe benefits of
 // strided prefetchers which can accelerate regular strided read patterns.
 #if defined(BENCH_ALL) || defined(BENCH_STRIDED_PREFETCH)
+/*
+ * Helper: flush cache by reading through a separate "flush buffer" that is
+ * large enough to evict all lines from the cache. This is a software-based
+ * approach since RISC-V base ISA lacks a cache flush instruction.
+ */
+static uint8_t flush_buf[256 * 1024] __attribute__((aligned(64)));
+
+static void flush_cache(void) {
+    volatile uint8_t sink = 0;
+    for (size_t i = 0; i < sizeof(flush_buf); i += 64) {
+        sink += flush_buf[i];
+    }
+    asm volatile ("fence rw, rw" ::: "memory");
+    (void)sink;
+}
+
+/*
+ * Strided prefetch experiment - designed to measure prefetcher effectiveness
+ *
+ * Key design principles for prefetch benchmarking:
+ * 1. Test multiple strides to characterize prefetcher stride detection
+ * 2. Measure COLD performance (cache flushed) vs WARM (prefetcher trained)
+ * 3. Track per-pass performance to observe prefetcher learning curve
+ * 4. Use sufficient delay between accesses to allow prefetch to complete
+ * 5. Compare against random access baseline (unpredictable pattern)
+ */
 void strided_prefetch_experiment(uint8_t *buf, size_t n) {
-    const size_t strides[] = {256/*, 512, 1024, 2048*/};  // Reduced to key strides only
+    /* Test various stride sizes - prefetchers often have stride limits */
+    const size_t strides[] = {64, 128, 256, 512, 1024, 2048, 4096};
     const size_t nstrides = sizeof(strides) / sizeof(strides[0]);
-    volatile uint8_t sink;
+    volatile uint32_t sink = 0;
 
-    const int WARMUP_REPEATS = 64; /* unmeasured iterations to let prefetcher learn */
+    const int TRAINING_PASSES = 4;   /* passes to let prefetcher learn */
+    const int MEASURED_PASSES = 8;   /* passes to measure after training */
+    const int DELAY_CYCLES = 16;     /* delay between accesses for prefetch opportunity */
 
-    for (size_t si = 0; si < nstrides; ++si) {
-        size_t stride = strides[si];
-        size_t count = (n / stride);
-        size_t total_count = count * PREFETCH_REPEAT;
+    printf("=== Strided Prefetch Experiment ===\n");
+    printf("Buffer size: %lu bytes, Delay between accesses: %d cycles\n",
+           (unsigned long)n, DELAY_CYCLES);
 
-        /* Warmup */
-        for (int w = 0; w < WARMUP_REPEATS; ++w) {
-            if (stride % 4 == 0) {
-                asm volatile (
-                    "mv t0, %0\n"
-                    "mv t1, %1\n"
-                    "mv t3, %2\n"
-                    "li t2, 0\n"
-                    "1:\n"
-                    "lw t4, 0(t0)\n"
-                    "add t0, t0, t3\n"
-                    /* tiny busy-wait to give prefetcher time to issue/arrive */
-                    "li t5, 4\n"
-                    "2:\n"
-                    "addi t5, t5, -1\n"
-                    "bnez t5, 2b\n"
-                    "addi t2, t2, 1\n"
-                    "blt t2, t1, 1b\n"
-                    :
-                    : "r"(buf), "r"(count), "r"(stride)
-                    : "t0","t1","t2","t3","t4","memory"
-                );
-            } else {
-                asm volatile (
-                    "mv t0, %0\n"
-                    "mv t1, %1\n"
-                    "mv t3, %2\n"
-                    "li t2, 0\n"
-                    "1:\n"
-                    "lb t4, 0(t0)\n"
-                    "add t0, t0, t3\n"
-                    /* tiny busy-wait to give prefetcher time to issue/arrive */
-                    "li t5, 4\n"
-                    "2:\n"
-                    "addi t5, t5, -1\n"
-                    "bnez t5, 2b\n"
-                    "addi t2, t2, 1\n"
-                    "blt t2, t1, 1b\n"
-                    :
-                    : "r"(buf), "r"(count), "r"(stride)
-                    : "t0","t1","t2","t3","t4","memory"
-                );
-            }
-        }
+    /* First: establish a random-access baseline (unprefetchable) */
+    {
+        size_t count = RAND_COUNT < (n / 64) ? RAND_COUNT : (n / 64);
+        flush_cache();
+        asm volatile ("fence rw, rw" ::: "memory");
 
-        /* Measured phase */
         uint64_t start = rdcycle();
-        for (size_t rep = 0; rep < PREFETCH_REPEAT; ++rep) {
-            if (stride % 4 == 0) {
-                asm volatile (
-                    "mv t0, %1\n"
-                    "mv t1, %2\n"
-                    "mv t3, %3\n"
-                    "li t2, 0\n"
-                    "1:\n"
-                    "lw t4, 0(t0)\n"
-                    "add t0, t0, t3\n"
-                    /* tiny busy-wait to give prefetcher time to issue/arrive */
-                    "li t5, 4\n"
-                    "2:\n"
-                    "addi t5, t5, -1\n"
-                    "bnez t5, 2b\n"
-                    "addi t2, t2, 1\n"
-                    "blt t2, t1, 1b\n"
-                    "mv %0, t4\n"
-                    : "=r"(sink)
-                    : "r"(buf), "r"(count), "r"(stride)
-                    : "t0","t1","t2","t3","t4","memory"
-                );
-            } else {
-                asm volatile (
-                    "mv t0, %1\n"
-                    "mv t1, %2\n"
-                    "mv t3, %3\n"
-                    "li t2, 0\n"
-                    "1:\n"
-                    "lb t4, 0(t0)\n"
-                    "add t0, t0, t3\n"
-                    /* tiny busy-wait to give prefetcher time to issue/arrive */
-                    "li t5, 4\n"
-                    "2:\n"
-                    "addi t5, t5, -1\n"
-                    "bnez t5, 2b\n"
-                    "addi t2, t2, 1\n"
-                    "blt t2, t1, 1b\n"
-                    "mv %0, t4\n"
-                    : "=r"(sink)
-                    : "r"(buf), "r"(count), "r"(stride)
-                    : "t0","t1","t2","t3","t4","memory"
-                );
-            }
+        for (int pass = 0; pass < MEASURED_PASSES; ++pass) {
+            asm volatile (
+                "mv t0, %1\n"       // buf base
+                "mv t1, %2\n"       // rand_idx base
+                "mv t2, %3\n"       // count
+                "li t3, 0\n"        // i = 0
+                "1:\n"
+                "slli t4, t3, 2\n"  // t4 = i * 4 (index into rand_idx)
+                "add t4, t1, t4\n"
+                "lw t5, 0(t4)\n"    // t5 = rand_idx[i]
+                "add t5, t0, t5\n"  // t5 = buf + rand_idx[i]
+                "lw t6, 0(t5)\n"    // load from random location
+                /* delay loop */
+                "mv a0, %4\n"
+                "2:\n"
+                "addi a0, a0, -1\n"
+                "bnez a0, 2b\n"
+                "addi t3, t3, 1\n"
+                "blt t3, t2, 1b\n"
+                "mv %0, t6\n"
+                : "=r"(sink)
+                : "r"(buf), "r"(rand_idx), "r"(count), "r"(DELAY_CYCLES)
+                : "t0","t1","t2","t3","t4","t5","t6","a0","memory"
+            );
         }
         uint64_t end = rdcycle();
 
-        char name[64];
-        /* build name without snprintf to avoid libc dependencies */
-        size_t pos = 0;
-        pos = append_str(name, sizeof(name), pos, "strided_prefetch_s");
-        pos = append_u32_dec(name, sizeof(name), pos, stride);
-        pos = append_str(name, sizeof(name), pos, "_cl");
-        if (total_count == 0) total_count = 1;
+        uint64_t total_accesses = count * MEASURED_PASSES;
         uint64_t cycles = end - start;
-        uint64_t c_per_cl = cycles / total_count;
-        printf("BENCH: %s cycles=%lu cachelines=%lu c/CL=%lu\n",
-               name, cycles, (unsigned long)total_count, (unsigned long)c_per_cl);
+        uint64_t c_per_access = cycles / total_accesses;
+        printf("BENCH: random_baseline accesses=%lu cycles=%lu c/access=%lu (unprefetchable)\n",
+               (unsigned long)total_accesses, (unsigned long)cycles, (unsigned long)c_per_access);
+    }
 
-        /* fence between stride runs (outside timed loops) */
+    /* Test each stride */
+    for (size_t si = 0; si < nstrides; ++si) {
+        size_t stride = strides[si];
+        size_t count = n / stride;
+        if (count < 8) continue;  /* skip if too few accesses */
+
+        char name[64];
+        size_t pos = 0;
+        pos = append_str(name, sizeof(name), pos, "stride_");
+        pos = append_u32_dec(name, sizeof(name), pos, stride);
+
+        /* === Phase 1: COLD measurement (cache flushed, prefetcher reset) === */
+        flush_cache();
+        asm volatile ("fence rw, rw" ::: "memory");
+
+        uint64_t cold_start = rdcycle();
+        asm volatile (
+            "mv t0, %1\n"       // buf
+            "mv t1, %2\n"       // count
+            "mv t3, %3\n"       // stride
+            "li t2, 0\n"        // i = 0
+            "1:\n"
+            "lw t4, 0(t0)\n"    // load
+            "add t0, t0, t3\n"  // ptr += stride
+            /* delay loop */
+            "mv t5, %4\n"
+            "2:\n"
+            "addi t5, t5, -1\n"
+            "bnez t5, 2b\n"
+            "addi t2, t2, 1\n"
+            "blt t2, t1, 1b\n"
+            "mv %0, t4\n"
+            : "=r"(sink)
+            : "r"(buf), "r"(count), "r"(stride), "r"(DELAY_CYCLES)
+            : "t0","t1","t2","t3","t4","t5","memory"
+        );
+        uint64_t cold_end = rdcycle();
+        uint64_t cold_cycles = cold_end - cold_start;
+        uint64_t cold_c_per_access = cold_cycles / count;
+
+        /* === Phase 2: Training passes (let prefetcher learn the stride) === */
+        for (int t = 0; t < TRAINING_PASSES; ++t) {
+            asm volatile (
+                "mv t0, %0\n"
+                "mv t1, %1\n"
+                "mv t3, %2\n"
+                "li t2, 0\n"
+                "1:\n"
+                "lw t4, 0(t0)\n"
+                "add t0, t0, t3\n"
+                "mv t5, %3\n"
+                "2:\n"
+                "addi t5, t5, -1\n"
+                "bnez t5, 2b\n"
+                "addi t2, t2, 1\n"
+                "blt t2, t1, 1b\n"
+                :
+                : "r"(buf), "r"(count), "r"(stride), "r"(DELAY_CYCLES)
+                : "t0","t1","t2","t3","t4","t5","memory"
+            );
+        }
+
+        /* === Phase 3: WARM measurement (prefetcher should be trained) === */
+        uint64_t warm_total = 0;
+        for (int m = 0; m < MEASURED_PASSES; ++m) {
+            uint64_t pass_start = rdcycle();
+            asm volatile (
+                "mv t0, %1\n"
+                "mv t1, %2\n"
+                "mv t3, %3\n"
+                "li t2, 0\n"
+                "1:\n"
+                "lw t4, 0(t0)\n"
+                "add t0, t0, t3\n"
+                "mv t5, %4\n"
+                "2:\n"
+                "addi t5, t5, -1\n"
+                "bnez t5, 2b\n"
+                "addi t2, t2, 1\n"
+                "blt t2, t1, 1b\n"
+                "mv %0, t4\n"
+                : "=r"(sink)
+                : "r"(buf), "r"(count), "r"(stride), "r"(DELAY_CYCLES)
+                : "t0","t1","t2","t3","t4","t5","memory"
+            );
+            uint64_t pass_end = rdcycle();
+            warm_total += (pass_end - pass_start);
+        }
+        uint64_t warm_avg = warm_total / MEASURED_PASSES;
+        uint64_t warm_c_per_access = warm_avg / count;
+
+        /* Calculate speedup from prefetching */
+        uint64_t speedup_pct = 0;
+        if (warm_c_per_access > 0 && cold_c_per_access > warm_c_per_access) {
+            speedup_pct = ((cold_c_per_access - warm_c_per_access) * 100) / cold_c_per_access;
+        }
+
+        printf("BENCH: %s_cold accesses=%lu cycles=%lu c/access=%lu\n",
+               name, (unsigned long)count, (unsigned long)cold_cycles, (unsigned long)cold_c_per_access);
+        printf("BENCH: %s_warm accesses=%lu cycles=%lu c/access=%lu speedup=%lu%%\n",
+               name, (unsigned long)count, (unsigned long)warm_avg, (unsigned long)warm_c_per_access,
+               (unsigned long)speedup_pct);
+
         asm volatile ("fence rw, rw" ::: "memory");
     }
 
-    // optional verify: ensure buffer not modified by the read-only benchmark
-    if (memcmp(buf, src, BUF_SIZE) == 0) printf("VERIFY: PASS - strided_prefetch left buffer intact\n");
-    else printf("VERIFY: FAIL - strided_prefetch modified buffer\n");
+    /* === Phase 4: Learning curve analysis for a representative stride === */
+    {
+        const size_t analysis_stride = 256;
+        size_t count = n / analysis_stride;
+        printf("\n=== Learning Curve (stride=%lu) ===\n", (unsigned long)analysis_stride);
+
+        flush_cache();
+        asm volatile ("fence rw, rw" ::: "memory");
+
+        for (int pass = 0; pass < TRAINING_PASSES + MEASURED_PASSES; ++pass) {
+            uint64_t start = rdcycle();
+            asm volatile (
+                "mv t0, %1\n"
+                "mv t1, %2\n"
+                "mv t3, %3\n"
+                "li t2, 0\n"
+                "1:\n"
+                "lw t4, 0(t0)\n"
+                "add t0, t0, t3\n"
+                "mv t5, %4\n"
+                "2:\n"
+                "addi t5, t5, -1\n"
+                "bnez t5, 2b\n"
+                "addi t2, t2, 1\n"
+                "blt t2, t1, 1b\n"
+                "mv %0, t4\n"
+                : "=r"(sink)
+                : "r"(buf), "r"(count), "r"(analysis_stride), "r"(DELAY_CYCLES)
+                : "t0","t1","t2","t3","t4","t5","memory"
+            );
+            uint64_t end = rdcycle();
+            uint64_t cycles = end - start;
+            uint64_t c_per_access = cycles / count;
+            printf("BENCH: learning_pass_%d cycles=%lu c/access=%lu\n",
+                   pass, (unsigned long)cycles, (unsigned long)c_per_access);
+        }
+    }
+
+    printf("=== End Strided Prefetch Experiment ===\n");
+
+    /* Verify buffer not modified by read-only benchmark */
+    if (memcmp(buf, src, n < BUF_SIZE ? n : BUF_SIZE) == 0)
+        printf("VERIFY: PASS - strided_prefetch left buffer intact\n");
+    else
+        printf("VERIFY: FAIL - strided_prefetch modified buffer\n");
 }
 #endif
 
