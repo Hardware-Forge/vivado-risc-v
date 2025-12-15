@@ -85,6 +85,7 @@ class SinkA(params: InclusiveCacheParameters) extends Module
 
   io.req.bits.prio   := VecInit(1.U(3.W).asBools)
   io.req.bits.control:= false.B
+  io.req.bits.prefetch := false.B
   io.req.bits.opcode := a.bits.opcode
   io.req.bits.param  := a.bits.param
   io.req.bits.size   := a.bits.size

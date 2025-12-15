@@ -234,16 +234,20 @@ class MSHR(params: InclusiveCacheParameters) extends Module
     final_meta_writeback.hit := false.B
   } .otherwise {
     final_meta_writeback.dirty := (meta.hit && meta.dirty) || !request.opcode(2)
+    // For prefetch: data is brought to L2 but no client owns it -> TIP or BRANCH
+    // For regular acquire: client gets ownership -> possibly TRUNK
+    val real_acquire = req_acquire && !request.prefetch  // Only real clients can cause TRUNK state
     final_meta_writeback.state := Mux(req_needT,
-                                    Mux(req_acquire, TRUNK, TIP),
-                                    Mux(!meta.hit, Mux(gotT, Mux(req_acquire, TRUNK, TIP), BRANCH),
+                                    Mux(real_acquire, TRUNK, TIP),
+                                    Mux(!meta.hit, Mux(gotT, Mux(real_acquire, TRUNK, TIP), BRANCH),
                                       MuxLookup(meta.state, 0.U(2.W), Seq(
                                         INVALID -> BRANCH,
                                         BRANCH  -> BRANCH,
                                         TRUNK   -> TIP,
-                                        TIP     -> Mux(meta_no_clients && req_acquire, TRUNK, TIP)))))
+                                        TIP     -> Mux(meta_no_clients && real_acquire, TRUNK, TIP)))))
+    // For prefetch: don't add any client bits (prefetch is on behalf of L2, not a specific L1)
     final_meta_writeback.clients := Mux(meta.hit, meta.clients & ~probes_toN, 0.U) |
-                                    Mux(req_acquire, req_clientBit, 0.U)
+                                    Mux(real_acquire, req_clientBit, 0.U)
     final_meta_writeback.tag := request.tag
     final_meta_writeback.hit := true.B
   }
@@ -491,6 +495,11 @@ class MSHR(params: InclusiveCacheParameters) extends Module
       params.ccover(io.sinkd.bits.opcode === GrantData && request.offset === 0.U, "MSHR_GRANT_WORMHOLE", "Wormhole routing of grant response data")
       params.ccover(io.sinkd.bits.opcode === GrantData && request.offset =/= 0.U, "MSHR_GRANT_SERIAL", "Sequential routing of grant response data")
       gotT := io.sinkd.bits.param === toT
+      // Debug: prefetch data arriving from memory
+      when (request.prefetch && io.sinkd.bits.opcode === GrantData && io.sinkd.bits.last) {
+        printf("[L2 PREFETCH DATA] Prefetch data arrived from RAM: set=0x%x tag=0x%x\n",
+               request.set, request.tag)
+      }
     }
     .elsewhen (io.sinkd.bits.opcode === ReleaseAck) {
       w_releaseack := true.B
@@ -599,9 +608,53 @@ class MSHR(params: InclusiveCacheParameters) extends Module
         }
       }
     }
+    // For prefetch requests - similar to A channel but no response needed
+    .elsewhen (new_request.prefetch) { // new_request.prio(0) && new_request.prefetch
+      // Always need to complete the MSHR, even for hits
+      s_writeback := false.B
+      // Debug: log prefetch allocation
+      when (!new_meta.hit) {
+        printf("[L2 PREFETCH MISS] Prefetch miss - will fetch from RAM: set=0x%x tag=0x%x\n",
+               new_request.set, new_request.tag)
+      } .otherwise {
+        printf("[L2 PREFETCH HIT] Prefetch already in L2 (no fetch needed): set=0x%x tag=0x%x state=%d\n",
+               new_request.set, new_request.tag, new_meta.state)
+      }
+      // If miss, we need to fetch from outer memory
+      when (!new_meta.hit) {
+        // Do we need an eviction?
+        when (new_meta.state =/= INVALID) {
+          s_release := false.B
+          w_releaseack := false.B
+          // Do we need to shoot-down inner caches?
+          when ((!params.firstLevel).B & (new_meta.clients =/= 0.U)) {
+            s_rprobe := false.B
+            w_rprobeackfirst := false.B
+            w_rprobeacklast := false.B
+          }
+        }
+        // Always need an acquire for prefetch miss
+        s_acquire := false.B
+        w_grantfirst := false.B
+        w_grantlast := false.B
+        w_grant := false.B
+        s_grantack := false.B
+        // NOTE: No s_execute - no response to inner requester
+        // NOTE: No w_grantack - no inner requester will send GrantAck
+      }
+      // If hit, prefetch just completes (MSHR releases after writeback scheduled)
+    }
     // For A channel requests
-    .otherwise { // new_request.prio(0) && !new_request.control
+    .otherwise { // new_request.prio(0) && !new_request.control && !new_request.prefetch
       s_execute := false.B
+      // Debug: log when a real request hits in L2 (could be prefetched data!)
+      when (new_meta.hit) {
+        printf("[L2 HIT] Request hit in L2 (may be prefetched): set=0x%x tag=0x%x state=%d clients=0x%x opcode=%d\n",
+               new_request.set, new_request.tag, new_meta.state, new_meta.clients, new_request.opcode)
+      } .otherwise {
+        printf("[L2 MISS] Request miss in L2: set=0x%x tag=0x%x opcode=%d\n",
+               new_request.set, new_request.tag, new_request.opcode)
+      }
       // Do we need an eviction?
       when (!new_meta.hit && new_meta.state =/= INVALID) {
         s_release := false.B

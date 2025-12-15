@@ -40,8 +40,8 @@ class SourceE(params: InclusiveCacheParameters) extends Module
   io.e <> params.micro.outerBuf.e(e)
 
   io.req.ready := e.ready
-  e.valid := io.req.valid
 
+  e.valid := io.req.valid
   e.bits.sink := io.req.bits.sink
 
   // we can't cover valid+!ready, because no backpressure on E is common

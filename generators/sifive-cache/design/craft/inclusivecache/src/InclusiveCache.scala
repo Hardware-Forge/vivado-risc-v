@@ -23,7 +23,7 @@ import chisel3.util._
 import org.chipsalliance.cde.config._
 import freechips.rocketchip.diplomacy._
 
-import freechips.rocketchip.subsystem.{SubsystemBankedCoherenceKey, InclusiveCacheKey}
+import freechips.rocketchip.subsystem.{SubsystemBankedCoherenceKey}
 import freechips.rocketchip.regmapper._
 import freechips.rocketchip.tilelink._
 
@@ -75,7 +75,7 @@ class InclusiveCache(
   val node: TLAdapterNode = TLAdapterNode(
     clientFn  = { _ => TLClientPortParameters(Seq(TLClientParameters(
       name          = s"L${cache.level} InclusiveCache",
-      sourceId      = IdRange(0, InclusiveCacheParameters.out_mshrs(cache, micro) + (if (p(InclusiveCacheKey).enablePrefetch) 1 else 0)),
+      sourceId      = IdRange(0, InclusiveCacheParameters.out_mshrs(cache, micro)),
       supportsProbe = xfer)))
     },
     managerFn = { m => TLManagerPortParameters(
@@ -140,54 +140,6 @@ class InclusiveCache(
       out <> scheduler.io.out
       scheduler.io.ways := DontCare
       scheduler.io.divs := DontCare
-
-      val enableL2Prefetch = p(freechips.rocketchip.subsystem.InclusiveCacheKey).enablePrefetch
-      if (enableL2Prefetch) {
-        // Instantiate a PrefetchEngine to accept prefetch requests and
-        // issue AcquireBlock requests into the outer memory. For now,
-        // connect a minimal next-line prefetcher that watches inner A
-        // requests to provide a functional path.
-        val l2PrefType = p(InclusiveCacheKey).prefetchType
-        // Instantiate only the selected prefetcher at Scala-elaboration and
-        // connect its outputs to the prefetch queue. This avoids creating
-        // inactive prefetch modules that can still produce prints or consume
-        // resources in simulation.
-        val l2pfType = l2PrefType // alias for clarity
-        val pfq = Module(new Queue(new SourceARequest(params), 8))
-
-        if (l2pfType == "nl") {
-          val l2pf_nl = Module(new L2NLPrefetcher(params))
-          l2pf_nl.io.in_valid := in.a.fire
-          l2pf_nl.io.in_addr := in.a.bits.address
-          pfq.io.enq <> l2pf_nl.io.out
-        } else if (l2pfType == "strided") {
-          val l2pf_strided = Module(new L2StridedPrefetcher(params))
-          l2pf_strided.io.in_valid := in.a.fire
-          l2pf_strided.io.in_addr := in.a.bits.address
-          pfq.io.enq <> l2pf_strided.io.out
-        } else if (l2pfType == "stream") {
-          val l2pf_stream = Module(new L2StreamPrefetcher(params))
-          l2pf_stream.io.in_valid := in.a.fire
-          l2pf_stream.io.in_addr := in.a.bits.address
-          pfq.io.enq <> l2pf_stream.io.out
-        } else {
-          // Unknown type: disable enq so nothing is produced
-          pfq.io.enq.valid := false.B
-          pfq.io.enq.bits := DontCare
-        }
-
-        val prefetchEngine = Module(new PrefetchEngine(params))
-        prefetchEngine.io.req_in <> pfq.io.deq
-        scheduler.io.prefetch_req <> prefetchEngine.io.req_out
-        // Connect the scheduler's prefetch-grant output (filtered grants meant for prefetches) to the engine so it can decrement counters.
-        prefetchEngine.io.mem_grant <> scheduler.io.prefetch_grant
-        // Wire directory query path so the PrefetchEngine can consult the L2 Directory
-        scheduler.io.prefetch_dir_read <> prefetchEngine.io.dir_read
-        prefetchEngine.io.dir_result <> scheduler.io.prefetch_dir_result
-      } else {
-        scheduler.io.prefetch_req.valid := false.B
-        scheduler.io.prefetch_req.bits := DontCare
-      }
 
       // Tie down default values in case there is no controller
       scheduler.io.req.valid := false.B

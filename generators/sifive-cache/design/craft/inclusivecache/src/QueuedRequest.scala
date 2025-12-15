@@ -23,6 +23,7 @@ class QueuedRequest(params: InclusiveCacheParameters) extends InclusiveCacheBund
 {
   val prio   = Vec(3, Bool()) // A=001, B=010, C=100
   val control= Bool() // control command
+  val prefetch = Bool() // prefetch command - no response needed
   val opcode = UInt(3.W)
   val param  = UInt(3.W)
   val size   = UInt(params.inner.bundle.sizeBits.W)

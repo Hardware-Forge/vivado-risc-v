@@ -43,13 +43,12 @@ case class InclusiveCacheParams(
   bufInnerExterior: InclusiveCachePortParameters = InclusiveCachePortParameters.flowAD,
   bufOuterInterior: InclusiveCachePortParameters = InclusiveCachePortParameters.full,
   bufOuterExterior: InclusiveCachePortParameters = InclusiveCachePortParameters.none,
-  // Enable a small L2-side prefetch engine which can issue AcquireBlock
-  // requests into the outer memory. False by default.
-  enablePrefetch: Boolean = false,
-  // Prefetch tuning: shape
-  prefetchType: String = "nl",
-  prefetchDegree: Int = 4,
-  prefetchDistance: Int = 1)
+  // L2-to-RAM prefetching configuration
+  enablePrefetch: Boolean = true,           // Enable L2-to-RAM prefetching
+  prefetchType: String = "strided",          // Prefetcher type: "nl" (next-line), "strided", "stream"
+  prefetchDegree: Int = 32,                   // Max outstanding prefetches
+  prefetchDistance: Int = 8                  // How many strides ahead to start prefetching
+)
 
 case object InclusiveCacheKey extends Field[InclusiveCacheParams]
 
@@ -61,10 +60,10 @@ class WithInclusiveCache(
   hintsSkipProbe: Boolean = false,
   bankedControl: Boolean = false,
   ctrlAddr: Option[Int] = Some(InclusiveCacheParameters.L2ControlAddress),
-  enablePrefetch: Boolean = false,
-  prefetchType: String = "nl",
-  prefetchDegree: Int = 4,
-  prefetchDistance: Int = 1
+  enablePrefetch: Boolean = true,
+  prefetchType: String = "strided",
+  prefetchDegree: Int = 32,
+  prefetchDistance: Int = 8
 ) extends Config((site, here, up) => {
   case InclusiveCacheKey => InclusiveCacheParams(
       sets = (capacityKB * 1024)/(site(CacheBlockBytes) * nWays * up(SubsystemBankedCoherenceKey, site).nBanks),
@@ -83,45 +82,28 @@ class WithInclusiveCache(
     implicit val p = context.p
     val sbus = context.tlBusWrapperLocationMap(SBUS)
     val cbus = context.tlBusWrapperLocationMap.lift(CBUS).getOrElse(sbus)
-    val InclusiveCacheParams(
-      ways,
-      sets,
-      writeBytes,
-      portFactor,
-      memCycles,
-      physicalFilter,
-      hintsSkipProbe,
-      bankedControl,
-      ctrlAddr,
-      bufInnerInterior,
-      bufInnerExterior,
-      bufOuterInterior,
-      bufOuterExterior,
-      enablePrefetch,
-      prefetchType,
-      prefetchDegree,
-      prefetchDistance) = p(InclusiveCacheKey)
+    val cacheParams = p(InclusiveCacheKey)
 
-    val l2Ctrl = ctrlAddr.map { addr =>
+    val l2Ctrl = cacheParams.ctrlAddr.map { addr =>
       InclusiveCacheControlParameters(
         address = addr,
         beatBytes = cbus.beatBytes,
-        bankedControl = bankedControl)
+        bankedControl = cacheParams.bankedControl)
     }
     val l2 = LazyModule(new InclusiveCache(
       CacheParameters(
         level = 2,
-        ways = ways,
-        sets = sets,
+        ways = cacheParams.ways,
+        sets = cacheParams.sets,
         blockBytes = sbus.blockBytes,
         beatBytes = sbus.beatBytes,
-        hintsSkipProbe = hintsSkipProbe),
+        hintsSkipProbe = cacheParams.hintsSkipProbe),
       InclusiveCacheMicroParameters(
-        writeBytes = writeBytes,
-        portFactor = portFactor,
-        memCycles = memCycles,
-        innerBuf = bufInnerInterior,
-        outerBuf = bufOuterInterior),
+        writeBytes = cacheParams.writeBytes,
+        portFactor = cacheParams.portFactor,
+        memCycles = cacheParams.memCycles,
+        innerBuf = cacheParams.bufInnerInterior,
+        outerBuf = cacheParams.bufOuterInterior),
       l2Ctrl))
 
     def skipMMIO(x: TLClientParameters) = {
@@ -133,8 +115,8 @@ class WithInclusiveCache(
     }
 
     val filter = LazyModule(new TLFilter(cfilter = skipMMIO))
-    val l2_inner_buffer = bufInnerExterior()
-    val l2_outer_buffer = bufOuterExterior()
+    val l2_inner_buffer = cacheParams.bufInnerExterior()
+    val l2_outer_buffer = cacheParams.bufOuterExterior()
     val cork = LazyModule(new TLCacheCork)
     val lastLevelNode = cork.node
 
@@ -146,7 +128,7 @@ class WithInclusiveCache(
     l2_outer_buffer.node :*= l2.node
 
     /* PhysicalFilters need to be on the TL-C side of a CacheCork to prevent Acquire.NtoB -> Grant.toT */
-    physicalFilter match {
+    cacheParams.physicalFilter match {
       case None => lastLevelNode :*= l2_outer_buffer.node
       case Some(fp) => {
         val physicalFilter = LazyModule(new PhysicalFilter(fp.copy(controlBeatBytes = cbus.beatBytes)))

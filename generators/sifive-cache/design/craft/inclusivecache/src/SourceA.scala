@@ -19,7 +19,9 @@ package sifive.blocks.inclusivecache
 
 import chisel3._
 import chisel3.util._
+import org.chipsalliance.cde.config._
 import freechips.rocketchip.tilelink._
+import freechips.rocketchip.subsystem.InclusiveCacheKey
 
 class SourceARequest(params: InclusiveCacheParameters) extends InclusiveCacheBundle(params)
 {
@@ -30,11 +32,15 @@ class SourceARequest(params: InclusiveCacheParameters) extends InclusiveCacheBun
   val block  = Bool()
 }
 
-class SourceA(params: InclusiveCacheParameters) extends Module
+class SourceA(params: InclusiveCacheParameters)(implicit p: Parameters) extends Module
 {
   val io = IO(new Bundle {
     val req = Flipped(Decoupled(new SourceARequest(params)))
     val a = Decoupled(new TLBundleA(params.outer.bundle))
+    // Signal to snoop issued Acquire requests (for prefetcher to observe)
+    val snoop_valid = Output(Bool())
+    val snoop_address = Output(UInt(params.outer.bundle.addressBits.W))
+    val snoop_opcode = Output(UInt(3.W))
   })
 
   // ready must be a register, because we derive valid from ready
@@ -43,10 +49,13 @@ class SourceA(params: InclusiveCacheParameters) extends Module
   val a = Wire(chiselTypeOf(io.a))
   io.a <> params.micro.outerBuf.a(a)
 
+  // MSHR requests always get A channel access
   io.req.ready := a.ready
+
   a.valid := io.req.valid
   params.ccover(a.valid && !a.ready, "SOURCEA_STALL", "Backpressured when issuing an Acquire")
 
+  // Normal MSHR Acquire request (includes prefetch requests that went through MSHR)
   a.bits.opcode  := Mux(io.req.bits.block, TLMessages.AcquireBlock, TLMessages.AcquirePerm)
   a.bits.param   := io.req.bits.param
   a.bits.size    := params.offsetBits.U
@@ -55,4 +64,9 @@ class SourceA(params: InclusiveCacheParameters) extends Module
   a.bits.mask    := ~0.U(params.outer.manager.beatBytes.W)
   a.bits.data    := 0.U
   a.bits.corrupt := false.B
+
+  // Snoop: expose fired Acquire requests for prefetcher to observe
+  io.snoop_valid := a.fire
+  io.snoop_address := a.bits.address
+  io.snoop_opcode := a.bits.opcode
 }

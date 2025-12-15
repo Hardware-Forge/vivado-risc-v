@@ -60,8 +60,12 @@ class SinkD(params: InclusiveCacheParameters) extends Module
 
   // Also send Grant(NoData) to BS to ensure correct data ordering
   io.resp.valid := (first || last) && d.fire
+
+  // All grants (including prefetch) go through normal MSHR path and write to SRAM
   d.ready := io.bs_adr.ready && (!first || io.grant_safe)
+
   io.bs_adr.valid := !first || (d.valid && io.grant_safe)
+
   params.ccover(d.valid && first && !io.grant_safe, "SINKD_HAZARD", "Prevented Grant data hazard with backpressure")
   params.ccover(io.bs_adr.valid && !io.bs_adr.ready, "SINKD_SRAM_STALL", "Data SRAM busy")
 

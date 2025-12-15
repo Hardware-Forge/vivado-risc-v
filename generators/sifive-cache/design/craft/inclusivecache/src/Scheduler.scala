@@ -20,34 +20,25 @@ package sifive.blocks.inclusivecache
 import chisel3._
 import chisel3.experimental.dataview.BundleUpcastable
 import chisel3.util._
+import org.chipsalliance.cde.config._
 import freechips.rocketchip.diplomacy.AddressSet
 import freechips.rocketchip.tilelink._
 import freechips.rocketchip.util._
+import freechips.rocketchip.subsystem.InclusiveCacheKey
 
 class InclusiveCacheBankScheduler(params: InclusiveCacheParameters) extends Module
 {
+  implicit val p: Parameters = params.p
+
   val io = IO(new Bundle {
     val in = Flipped(TLBundle(params.inner.bundle))
     val out = TLBundle(params.outer.bundle)
-    // Optional external prefetch requests which should be arbitrated
-    // against regular MSHR-scheduled Acquire requests targeting the
-    // outer memory (channel A). Prefetch requests use the same
-    // request representation as SourceA uses.
-    val prefetch_req = Flipped(Decoupled(new SourceARequest(params)))
     // Way permissions
     val ways = Flipped(Vec(params.allClients, UInt(params.cache.ways.W)))
     val divs = Flipped(Vec(params.allClients, UInt((InclusiveCacheParameters.lfsrBits + 1).W)))
     // Control port
     val req = Flipped(Decoupled(new SinkXRequest(params)))
     val resp = Decoupled(new SourceXRequest(params))
-    // out.d grants targeted at prefetch source should be exposed to the prefetch engine
-    // Expose them as the internal `SinkDResponse` (Valid) which includes `last` and `source`.
-    val prefetch_grant = Valid(new SinkDResponse(params))
-    // Allow an external module (prefetch engine) to issue directory reads
-    // and receive the directory result. The scheduler will merge these
-    // with its own directory reads so the Directory may service both.
-    val prefetch_dir_read = Flipped(Valid(new DirectoryRead(params)))
-    val prefetch_dir_result = Valid(new DirectoryResult(params))
   })
 
   val sourceA = Module(new SourceA(params))
@@ -56,6 +47,9 @@ class InclusiveCacheBankScheduler(params: InclusiveCacheParameters) extends Modu
   val sourceD = Module(new SourceD(params))
   val sourceE = Module(new SourceE(params))
   val sourceX = Module(new SourceX(params))
+
+  // Instantiate L2-to-RAM prefetcher
+  val prefetcher = L2RamPrefetcher(params)
 
   io.out.a <> sourceA.io.a
   io.out.c <> sourceC.io.c
@@ -69,20 +63,12 @@ class InclusiveCacheBankScheduler(params: InclusiveCacheParameters) extends Modu
   val sinkD = Module(new SinkD(params))
   val sinkE = Module(new SinkE(params))
   val sinkX = Module(new SinkX(params))
+  val sinkPrefetch = Module(new SinkPrefetch(params))
 
   sinkA.io.a <> io.in.a
   sinkC.io.c <> io.in.c
   sinkE.io.e <> io.in.e
-  // Route all out.d through the single SinkD which produces `resp` that includes
-  // `last` and `source`. We then forward `resp` to the prefetch engine when the
-  // `source` indicates a prefetch request.
-  val out_d = io.out.d
-  sinkD.io.d <> out_d
-
-  // Forward sinkD's response to the prefetch engine when it targets the prefetch source
-  val prefetchSource = InclusiveCacheParameters.out_mshrs(params.cache, params.micro).U
-  io.prefetch_grant.valid := sinkD.io.resp.valid && (sinkD.io.resp.bits.source === prefetchSource)
-  io.prefetch_grant.bits := sinkD.io.resp.bits
+  sinkD.io.d <> io.out.d
   sinkX.io.x <> io.req
 
   io.out.b.ready := true.B // disconnected
@@ -154,20 +140,7 @@ class InclusiveCacheBankScheduler(params: InclusiveCacheParameters) extends Modu
   schedule.c.bits.source := Mux(schedule.c.bits.opcode(1), mshr_select, 0.U) // only set for Release[Data] not ProbeAck[Data]
   schedule.d.bits.sink   := mshr_select
 
-  // Arbitrated SourceA request: schedule-generated Acquire requests
-  // and optionally external prefetch requests contend here. Prefetch
-  // requests are optional and default to idle in InclusiveCache if not
-  // connected. The schedule.a signals are converted into a Decoupled
-  // wire so they may be arbitrated with the external input.
-  val schedA = Wire(Decoupled(new SourceARequest(params)))
-  schedA.valid := schedule.a.valid
-  schedA.bits  := schedule.a.bits
-
-  val aArb = Module(new Arbiter(new SourceARequest(params), 2))
-  aArb.io.in(0) <> schedA
-  aArb.io.in(1) <> io.prefetch_req
-  sourceA.io.req <> aArb.io.out
-
+  sourceA.io.req.valid := schedule.a.valid
   sourceB.io.req.valid := schedule.b.valid
   sourceC.io.req.valid := schedule.c.valid
   sourceD.io.req.valid := schedule.d.valid
@@ -195,13 +168,16 @@ class InclusiveCacheBankScheduler(params: InclusiveCacheParameters) extends Modu
   nestedwb.c_set_dirty := select_c  &&  c_mshr.io.schedule.bits.dir.valid && c_mshr.io.schedule.bits.dir.bits.data.dirty
 
   // Pick highest priority request
+  // Priority: sinkC > sinkX > sinkA > sinkPrefetch
   val request = Wire(Decoupled(new FullRequest(params)))
-  request.valid := directory.io.ready && (sinkA.io.req.valid || sinkX.io.req.valid || sinkC.io.req.valid)
+  request.valid := directory.io.ready && (sinkA.io.req.valid || sinkX.io.req.valid || sinkC.io.req.valid || sinkPrefetch.io.req.valid)
   request.bits := Mux(sinkC.io.req.valid, sinkC.io.req.bits,
-                  Mux(sinkX.io.req.valid, sinkX.io.req.bits, sinkA.io.req.bits))
+                  Mux(sinkX.io.req.valid, sinkX.io.req.bits,
+                  Mux(sinkA.io.req.valid, sinkA.io.req.bits, sinkPrefetch.io.req.bits)))
   sinkC.io.req.ready := directory.io.ready && request.ready
   sinkX.io.req.ready := directory.io.ready && request.ready && !sinkC.io.req.valid
   sinkA.io.req.ready := directory.io.ready && request.ready && !sinkC.io.req.valid && !sinkX.io.req.valid
+  sinkPrefetch.io.req.ready := directory.io.ready && request.ready && !sinkC.io.req.valid && !sinkX.io.req.valid && !sinkA.io.req.valid
 
   // If no MSHR has been assigned to this set, we need to allocate one
   val setMatches = Cat(mshrs.map { m => m.io.status.valid && m.io.status.bits.set === request.bits.set }.reverse)
@@ -297,17 +273,9 @@ class InclusiveCacheBankScheduler(params: InclusiveCacheParameters) extends Modu
   val alloc_uses_directory = request.valid && request_alloc_cases
 
   // When a request goes through, it will need to hit the Directory
-  directory.io.read.valid := mshr_uses_directory || alloc_uses_directory || io.prefetch_dir_read.valid
-  // Prefer servicing an external prefetch directory read when present
-  when (io.prefetch_dir_read.valid) {
-    directory.io.read.bits.set := io.prefetch_dir_read.bits.set
-    directory.io.read.bits.tag := io.prefetch_dir_read.bits.tag
-  } .otherwise {
-    directory.io.read.bits.set := Mux(mshr_uses_directory_for_lb, scheduleSet, request.bits.set)
-    directory.io.read.bits.tag := Mux(mshr_uses_directory_for_lb, requests.io.data.tag, request.bits.tag)
-  }
-  // NOTE: above we carefully select which bits to present to the Directory.
-  // If `io.prefetch_dir_read.valid` is true it takes priority.
+  directory.io.read.valid := mshr_uses_directory || alloc_uses_directory
+  directory.io.read.bits.set := Mux(mshr_uses_directory_for_lb, scheduleSet,          request.bits.set)
+  directory.io.read.bits.tag := Mux(mshr_uses_directory_for_lb, requests.io.data.tag, request.bits.tag)
 
   // Enqueue the request if not bypassed directly into an MSHR
   requests.io.push.valid := request.valid && queue && !bypassQueue
@@ -353,9 +321,6 @@ class InclusiveCacheBankScheduler(params: InclusiveCacheParameters) extends Modu
     m.io.directory.bits := directory.io.result.bits
   }
 
-  // Forward the Directory result to the prefetch engine when requested
-  io.prefetch_dir_result := directory.io.result
-
   // MSHR response meta-data fetch
   sinkC.io.way :=
     Mux(bc_mshr.io.status.valid && bc_mshr.io.status.bits.set === sinkC.io.set,
@@ -388,6 +353,40 @@ class InclusiveCacheBankScheduler(params: InclusiveCacheParameters) extends Modu
   sourceD.io.grant_req := sinkD  .io.grant_req
   sourceC.io.evict_safe := sourceD.io.evict_safe
   sinkD  .io.grant_safe := sourceD.io.grant_safe
+
+  // ========================================================================
+  // L2-to-RAM Prefetcher Connections
+  // ========================================================================
+  // PRIMARY: Connect prefetcher to observe L1->L2 requests (sinkA) for stride detection
+  // This is the KEY improvement - detect patterns from actual CPU accesses!
+  // Reconstruct address from tag, set, offset components
+  val l1_req_address = params.expandAddress(
+    sinkA.io.req.bits.tag,
+    sinkA.io.req.bits.set,
+    sinkA.io.req.bits.offset
+  )
+  prefetcher.io.l1_req_valid := sinkA.io.req.valid
+  prefetcher.io.l1_req_address := l1_req_address
+  prefetcher.io.l1_req_opcode := sinkA.io.req.bits.opcode
+
+  // SECONDARY: Connect prefetcher to observe L2 misses (sourceA) to trigger prefetches
+  prefetcher.io.snoop_valid := sourceA.io.snoop_valid
+  prefetcher.io.snoop_address := sourceA.io.snoop_address
+  prefetcher.io.snoop_opcode := sourceA.io.snoop_opcode
+
+  // Connect prefetcher to observe incoming Grant responses (for stride detection)
+  prefetcher.io.grant_valid := sinkD.io.resp.valid
+  prefetcher.io.grant_source := sinkD.io.resp.bits.source
+
+  // Prefetcher can issue requests when there are no higher priority requests pending
+  // and we have MSHR capacity (approximated by checking if sinkPrefetch is ready)
+  val prefetch_can_issue = !sinkA.io.req.valid && !sinkX.io.req.valid && !sinkC.io.req.valid
+  prefetcher.io.can_prefetch := prefetch_can_issue
+
+  // Connect prefetcher output to SinkPrefetch (goes through MSHR allocation)
+  sinkPrefetch.io.prefetch.valid := prefetcher.io.prefetch.valid
+  sinkPrefetch.io.prefetch.bits := prefetcher.io.prefetch.bits.address
+  prefetcher.io.prefetch.ready := sinkPrefetch.io.prefetch.ready
 
   private def afmt(x: AddressSet) = s"""{"base":${x.base},"mask":${x.mask}}"""
   private def addresses = params.inner.manager.managers.flatMap(_.address).map(afmt _).mkString(",")

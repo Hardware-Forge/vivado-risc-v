@@ -129,7 +129,8 @@ case class InclusiveCacheMicroParameters(
 
 case class InclusiveCacheControlParameters(
   address:   BigInt,
-  beatBytes: Int)
+  beatBytes: Int,
+  bankedControl: Boolean)
 
 case class InclusiveCacheParameters(
   cache:  CacheParameters,
@@ -188,8 +189,8 @@ case class InclusiveCacheParameters(
   require (tagBits > 0)
   require (offsetBits > 0)
 
-  val innerBeatBits = offsetBits - log2Ceil(inner.manager.beatBytes)
-  val outerBeatBits = offsetBits - log2Ceil(outer.manager.beatBytes)
+  val innerBeatBits = (offsetBits - log2Ceil(inner.manager.beatBytes)) max 1
+  val outerBeatBits = (offsetBits - log2Ceil(outer.manager.beatBytes)) max 1
   val innerMaskBits = inner.manager.beatBytes / micro.writeBytes
   val outerMaskBits = outer.manager.beatBytes / micro.writeBytes
 
@@ -247,6 +248,13 @@ case class InclusiveCacheParameters(
     expanded | Mux1H(mux)
   }
 
+  /** Check if an address is within the valid address range for this cache.
+    * Used by prefetchers to avoid issuing requests to invalid addresses.
+    */
+  def inValidAddressRange(addr: UInt): Bool = {
+    flatAddresses.map(_.contains(addr)).reduce(_ || _)
+  }
+
   def dirReg[T <: Data](x: T, en: Bool = true.B): T = {
     if (micro.dirReg) RegEnable(x, en) else x
   }
@@ -289,6 +297,7 @@ object InclusiveCacheParameters
 {
   val lfsrBits = 10
   val L2ControlAddress = 0x2010000
+  val L2ControlSize = 0x1000
   def out_mshrs(cache: CacheParameters, micro: InclusiveCacheMicroParameters): Int = {
     // We need 2-3 normal MSHRs to cover the Directory latency
     // To fully exploit memory bandwidth-delay-product, we need memCyles/blockBeats MSHRs
