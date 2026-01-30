@@ -29,6 +29,7 @@ class SinkDResponse(params: InclusiveCacheParameters) extends InclusiveCacheBund
   val source = UInt(params.outer.bundle.sourceBits.W)
   val sink   = UInt(params.outer.bundle.sinkBits.W)
   val denied = Bool()
+  val from_stream_buffer = Bool() // True if this response came from Stream Buffer replay
 }
 
 class SinkD(params: InclusiveCacheParameters) extends Module
@@ -46,6 +47,8 @@ class SinkD(params: InclusiveCacheParameters) extends Module
     // WaR hazard
     val grant_req = new SourceDHazard(params)
     val grant_safe = Flipped(Bool())
+    // Flag indicating response came from Stream Buffer
+    val from_stream_buffer = Flipped(Bool())
   })
 
   // No restrictions on buffer
@@ -75,6 +78,7 @@ class SinkD(params: InclusiveCacheParameters) extends Module
   io.resp.bits.source := d.bits.source
   io.resp.bits.sink   := d.bits.sink
   io.resp.bits.denied := d.bits.denied
+  io.resp.bits.from_stream_buffer := io.from_stream_buffer
 
   io.bs_adr.bits.noop := !d.valid || !hasData
   io.bs_adr.bits.way  := io.way

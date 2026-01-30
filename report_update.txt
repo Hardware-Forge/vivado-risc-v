@@ -1,0 +1,45 @@
+# Comparative Analysis Report
+**Baseline Configuration**: `rocket64x1_backup`
+
+| Configuration | Slice LUTs | Slice Registers | Total Power (W) |
+| :--- | :--- | :--- | :--- |
+| `gcc` | FAILED | FAILED | FAILED |
+| `rocket64x1` | 169362 (+0.00%) | 91422 (+0.00%) | 2.549 (+0.00%) |
+| `rocket64x1WithAMPMDirectPrefetching` | 178091 (+5.15%) | 102179 (+11.77%) | 2.297 (-9.89%) |
+| `rocket64x1WithBOPDirectPrefetching` | 177502 (+4.81%) | 100648 (+10.09%) | 2.307 (-9.49%) |
+| `rocket64x1WithHighAMPMDirectPrefetching` | 184188 (+8.75%) | 110876 (+21.28%) | 2.320 (-8.98%) |
+| `rocket64x1WithHighBOPDirectPrefetching` | 184259 (+8.80%) | 109325 (+19.58%) | 2.317 (-9.10%) |
+| `rocket64x1WithHighNLDirectPrefetching` | 183325 (+8.24%) | 109432 (+19.70%) | 2.306 (-9.53%) |
+| `rocket64x1WithHighSPPDirectPrefetching` | 191496 (+13.07%) | 116157 (+27.06%) | 2.362 (-7.34%) |
+| `rocket64x1WithHighStridedDirectPrefetching` | 187897 (+10.94%) | 111445 (+21.90%) | 2.345 (-8.00%) |
+| `rocket64x1WithL2AMPMDirectPrefetching` | 183086 (+8.10%) | 101955 (+11.52%) | 2.356 (-7.57%) |
+| `rocket64x1WithL2BOPDirectPrefetching` | 182457 (+7.73%) | 100526 (+9.96%) | 2.350 (-7.81%) |
+| `rocket64x1WithL2HighAMPMDirectPrefetching` | 196855 (+16.23%) | 110874 (+21.28%) | 2.464 (-3.33%) |
+| `rocket64x1WithL2HighBOPDirectPrefetching` | 195246 (+15.28%) | 109359 (+19.62%) | 2.402 (-5.77%) |
+| `rocket64x1WithL2HighNLDirectPrefetching` | 195431 (+15.39%) | 109400 (+19.66%) | 2.412 (-5.37%) |
+| `rocket64x1WithL2HighSPPDirectPrefetching` | 219190 (+29.42%)* | 124576 (+36.26%)* | N/A |
+| `rocket64x1WithL2HighStridedDirectPrefetching` | 208455 (+23.08%)* | 112466 (+23.02%)* | N/A |
+| `rocket64x1WithL2LowAMPMDirectPrefetching` | 178793 (+5.57%) | 97533 (+6.68%) | 2.299 (-9.81%) |
+| `rocket64x1WithL2LowBOPDirectPrefetching` | 177606 (+4.87%) | 96069 (+5.08%) | 2.303 (-9.65%) |
+| `rocket64x1WithL2LowNLDirectPrefetching` | 177162 (+4.61%) | 96088 (+5.10%) | 2.295 (-9.96%) |
+| `rocket64x1WithL2LowSPPDirectPrefetching` | 189046 (+11.62%) | 111496 (+21.96%) | 2.355 (-7.61%) |
+| `rocket64x1WithL2LowStridedDirectPrefetching` | 181307 (+7.05%) | 99306 (+8.62%) | 2.290 (-10.16%) |
+| `rocket64x1WithL2NLDirectPrefetching` | 182466 (+7.74%) | 100541 (+9.97%) | 2.349 (-7.85%) |
+| `rocket64x1WithL2SPPDirectPrefetching` | 194139 (+14.63%) | 115967 (+26.85%) | 2.349 (-7.85%) |
+| `rocket64x1WithL2StridedBOPDirectPrefetching` | 186363 (+10.04%) | 103776 (+13.51%) | 2.360 (-7.41%) |
+| `rocket64x1WithL2StridedDirectPrefetching` | 186112 (+9.89%) | 103778 (+13.52%) | 2.222 (-12.83%) |
+| `rocket64x1WithLowAMPMDirectPrefetching` | 174565 (+3.07%) | 97775 (+6.95%) | 2.287 (-10.28%) |
+| `rocket64x1WithLowBOPDirectPrefetching` | 173910 (+2.69%) | 96222 (+5.25%) | 2.307 (-9.49%) |
+| `rocket64x1WithLowNLDirectPrefetching` | 174179 (+2.84%) | 96361 (+5.40%) | 2.307 (-9.49%) |
+| `rocket64x1WithLowSPPDirectPrefetching` | 182716 (+7.88%) | 103083 (+12.76%) | 2.305 (-9.57%) |
+| `rocket64x1WithLowStridedDirectPrefetching` | 178631 (+5.47%) | 98324 (+7.55%) | 2.288 (-10.24%) |
+| `rocket64x1WithNLDirectPrefetching` | 177440 (+4.77%) | 100744 (+10.20%) | 2.292 (-10.08%) |
+| `rocket64x1WithNLL2SPPDirectPrefetching` | 213337 (+25.97%)* | 119441 (+30.65%)* | N/A |
+| `rocket64x1WithSPPDirectPrefetching` | 185535 (+9.55%) | 107449 (+17.53%) | 2.318 (-9.06%) |
+| `rocket64x1WithStridedAMPMBOPDirectPrefetching` | 190122 (+12.26%) | 113014 (+23.62%) | 2.378 (-6.71%) |
+| `rocket64x1WithStridedAMPMDirectPrefetching` | 189256 (+11.75%) | 113010 (+23.61%) | 2.360 (-7.41%) |
+| `rocket64x1WithStridedDirectPrefetching` | 182734 (+7.90%) | 102742 (+12.38%) | 2.314 (-9.22%) |
+| `rocket64x1WithStridedL2BOPDirectPrefetching` | 213911 (+26.30%)* | 119441 (+30.65%)* | N/A |
+| `rocket64x1_backup` | 169362 (+0.00%) | 91422 (+0.00%) | 2.549 (+0.00%) |
+
+*\*Values estimated from failure logs due to congestion.*

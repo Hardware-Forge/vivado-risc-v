@@ -92,7 +92,14 @@ class MSHR(params: InclusiveCacheParameters) extends Module
     val sinkd     = Flipped(Valid(new SinkDResponse(params)))
     val sinke     = Flipped(Valid(new SinkEResponse(params)))
     val nestedwb  = Flipped(new NestedWriteback(params))
+    val counters  = new Bundle {
+      val l2_hit  = Output(Bool())
+      val l2_miss = Output(Bool())
+    }
   })
+
+  io.counters.l2_hit  := false.B
+  io.counters.l2_miss := false.B
 
   val request_valid = RegInit(false.B)
   val request = Reg(new FullRequest(params))
@@ -287,6 +294,7 @@ class MSHR(params: InclusiveCacheParameters) extends Module
   io.schedule.bits.a.bits.block   := request.size =/= log2Ceil(params.cache.blockBytes).U ||
                                      !(request.opcode === PutFullData || request.opcode === AcquirePerm)
   io.schedule.bits.a.bits.source  := 0.U
+  io.schedule.bits.a.bits.prefetch := request.prefetch
   io.schedule.bits.b.bits.param   := Mux(!s_rprobe, toN, Mux(request.prio(1), request.param, Mux(req_needT, toN, toB)))
   io.schedule.bits.b.bits.tag     := Mux(!s_rprobe, meta.tag, request.tag)
   io.schedule.bits.b.bits.set     := request.set
@@ -495,6 +503,15 @@ class MSHR(params: InclusiveCacheParameters) extends Module
       params.ccover(io.sinkd.bits.opcode === GrantData && request.offset === 0.U, "MSHR_GRANT_WORMHOLE", "Wormhole routing of grant response data")
       params.ccover(io.sinkd.bits.opcode === GrantData && request.offset =/= 0.U, "MSHR_GRANT_SERIAL", "Sequential routing of grant response data")
       gotT := io.sinkd.bits.param === toT
+      
+      // FIX: If this response came from Stream Buffer, skip GrantAck (ID was never taken)
+      // AND mark acquire as done (since it was suppressed, not actually issued)
+      when (io.sinkd.bits.from_stream_buffer) {
+        s_grantack := true.B // Mark as done - no ack needed
+        s_acquire := true.B  // Mark acquire as done - it was suppressed
+        printf("[MSHR] Skipping GrantAck AND marking acquire done for Stream Buffer response\n")
+      }
+      
       // Debug: prefetch data arriving from memory
       when (request.prefetch && io.sinkd.bits.opcode === GrantData && io.sinkd.bits.last) {
         printf("[L2 PREFETCH DATA] Prefetch data arrived from RAM: set=0x%x tag=0x%x\n",
@@ -647,14 +664,22 @@ class MSHR(params: InclusiveCacheParameters) extends Module
     // For A channel requests
     .otherwise { // new_request.prio(0) && !new_request.control && !new_request.prefetch
       s_execute := false.B
+      
+      params.ccover(new_meta.hit,  "L2_HIT",  "L2 Request Hit")
+      params.ccover(!new_meta.hit, "L2_MISS", "L2 Request Miss")
+
+      io.counters.l2_hit  := new_meta.hit
+      io.counters.l2_miss := !new_meta.hit
+
       // Debug: log when a real request hits in L2 (could be prefetched data!)
-      when (new_meta.hit) {
-        printf("[L2 HIT] Request hit in L2 (may be prefetched): set=0x%x tag=0x%x state=%d clients=0x%x opcode=%d\n",
-               new_request.set, new_request.tag, new_meta.state, new_meta.clients, new_request.opcode)
-      } .otherwise {
-        printf("[L2 MISS] Request miss in L2: set=0x%x tag=0x%x opcode=%d\n",
-               new_request.set, new_request.tag, new_request.opcode)
-      }
+      // Debug: log when a real request hits in L2 (could be prefetched data!)
+      // when (new_meta.hit) {
+         // printf("[L2 HIT] Request hit in L2 (may be prefetched): set=0x%x tag=0x%x state=%d clients=0x%x opcode=%d\n",
+         //       new_request.set, new_request.tag, new_meta.state, new_meta.clients, new_request.opcode)
+      // } .otherwise {
+      //   printf("[L2 MISS] Request miss in L2: set=0x%x tag=0x%x opcode=%d\n",
+      //          new_request.set, new_request.tag, new_request.opcode)
+      // }
       // Do we need an eviction?
       when (!new_meta.hit && new_meta.state =/= INVALID) {
         s_release := false.B

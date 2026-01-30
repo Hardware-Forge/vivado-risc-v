@@ -1,0 +1,92 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sat Jan 17 01:04:15 2026
+# Process ID: 1198625
+# Current directory: /home/user/vivado-risc-v
+# Command line: vivado -mode batch -source /home/user/program_device_direct_nl.tcl
+# Log file: /home/user/vivado-risc-v/vivado.log
+# Journal file: /home/user/vivado-risc-v/vivado.jou
+# Running On        :hps
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 22.04.5 LTS
+# Processor Detail  :AMD Ryzen 9 7900X 12-Core Processor
+# CPU Frequency     :545.000 MHz
+# CPU Physical cores:12
+# CPU Logical cores :24
+# Host memory       :66434 MB
+# Swap memory       :2147 MB
+# Total Virtual     :68582 MB
+# Available Virtual :64796 MB
+#-----------------------------------------------------------
+Sourcing tcl script '/home/user/.Xilinx/Vivado/Vivado_init.tcl'
+source /home/user/program_device_direct_nl.tcl
+# set bitstream_path "/home/user/vivado-risc-v/workspace/rocket64x1WithNLDirectPrefetching/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/riscv_wrapper.bit"
+# open_hw_manager
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2024.1.0
+  ****** Build date   : Apr 27 2024-03:40:49
+    **** Build number : 2024.1.1714182049
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+# set hw_targets [get_hw_targets]
+# if {[llength $hw_targets] > 0} {
+#     current_hw_target [lindex $hw_targets 0]
+# } else {
+#     puts "Error: No hardware targets found."
+#     exit
+# }
+# disconnect_hw_server
+# connect_hw_server -url localhost:3121
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2024.1.0
+  ****** Build date   : Apr 27 2024-03:40:49
+    **** Build number : 2024.1.1714182049
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+# set hw_targets [get_hw_targets]
+# if {[llength $hw_targets] > 0} {
+#     current_hw_target [lindex $hw_targets 0]
+#     open_hw_target
+# } else {
+#     puts "Error: No hardware targets found."
+#     exit
+# }
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/200300BB2DF7B
+# set Device [lindex [get_hw_devices] 0]
+# current_hw_device $Device
+# refresh_hw_device -update_hw_probes false $Device
+INFO: [Labtools 27-1434] Device xc7k325t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+# set_property PROGRAM.FILE $bitstream_path $Device
+# program_hw_devices $Device
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1581.445 ; gain = 0.000 ; free physical = 36189 ; free virtual = 61153
+# refresh_hw_device $Device
+INFO: [Labtools 27-1434] Device xc7k325t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+# puts "Programming completed successfully."
+Programming completed successfully.
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/200300BB2DF7B
+# disconnect_hw_server
+# puts "Hardware programming process completed."
+Hardware programming process completed.
+INFO: [Common 17-206] Exiting Vivado at Sat Jan 17 01:04:29 2026...

@@ -120,7 +120,8 @@ case class InclusiveCacheMicroParameters(
   portFactor: Int = 4,  // numSubBanks = (widest TL port * portFactor) / writeBytes
   dirReg:     Boolean = false,
   innerBuf:   InclusiveCachePortParameters = InclusiveCachePortParameters.fullC, // or none
-  outerBuf:   InclusiveCachePortParameters = InclusiveCachePortParameters.full)   // or flowAE
+  outerBuf:   InclusiveCachePortParameters = InclusiveCachePortParameters.full,   // or flowAE
+  streamBufferEntries: Int = 16)
 {
   require (writeBytes > 0 && isPow2(writeBytes))
   require (memCycles > 0)
@@ -306,6 +307,10 @@ object InclusiveCacheParameters
   def all_mshrs(cache: CacheParameters, micro: InclusiveCacheMicroParameters): Int =
     // We need a dedicated MSHR for B+C each
     2 + out_mshrs(cache, micro)
+    
+  // Stream Buffer depth: 16 entries for better prefetch coverage
+  // Requires 7 MSHRs + 16 SB = 23 source IDs (5 bits)
+  val streamBufferDepth = 16
 }
 
 class InclusiveCacheBundle(params: InclusiveCacheParameters) extends Bundle

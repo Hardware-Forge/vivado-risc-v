@@ -45,9 +45,10 @@ case class InclusiveCacheParams(
   bufOuterExterior: InclusiveCachePortParameters = InclusiveCachePortParameters.none,
   // L2-to-RAM prefetching configuration
   enablePrefetch: Boolean = true,           // Enable L2-to-RAM prefetching
-  prefetchType: String = "strided",          // Prefetcher type: "nl" (next-line), "strided", "stream"
-  prefetchDegree: Int = 32,                   // Max outstanding prefetches
-  prefetchDistance: Int = 8                  // How many strides ahead to start prefetching
+  prefetchTypes: Seq[String] = Seq("nl"),   // List of prefetchers to enable
+  prefetchDegree: Int = 1,                   // Max outstanding prefetches
+  prefetchDistance: Int = 1,                  // How many strides ahead to start prefetching
+  streamBufferEntries: Int = 16                 // Number of stream buffer entries
 )
 
 case object InclusiveCacheKey extends Field[InclusiveCacheParams]
@@ -60,10 +61,11 @@ class WithInclusiveCache(
   hintsSkipProbe: Boolean = false,
   bankedControl: Boolean = false,
   ctrlAddr: Option[Int] = Some(InclusiveCacheParameters.L2ControlAddress),
-  enablePrefetch: Boolean = true,
-  prefetchType: String = "strided",
-  prefetchDegree: Int = 32,
-  prefetchDistance: Int = 8
+  enablePrefetch: Boolean = false,
+  prefetchTypes: Seq[String] = Seq("nl"), // Changed from prefetchType (String)
+  prefetchDegree: Int = 1,
+  prefetchDistance: Int = 1,
+  streamBufferEntries: Int = 16
 ) extends Config((site, here, up) => {
   case InclusiveCacheKey => InclusiveCacheParams(
       sets = (capacityKB * 1024)/(site(CacheBlockBytes) * nWays * up(SubsystemBankedCoherenceKey, site).nBanks),
@@ -75,9 +77,11 @@ class WithInclusiveCache(
       bankedControl = bankedControl,
       ctrlAddr = ctrlAddr,
       enablePrefetch = enablePrefetch,
-      prefetchType = prefetchType,
+      prefetchTypes = prefetchTypes,
       prefetchDegree = prefetchDegree,
-      prefetchDistance = prefetchDistance)
+      prefetchDistance = prefetchDistance,
+      streamBufferEntries = streamBufferEntries)
+  case BankedL2Key => site(SubsystemBankedCoherenceKey)
   case SubsystemBankedCoherenceKey => up(SubsystemBankedCoherenceKey, site).copy(coherenceManager = { context =>
     implicit val p = context.p
     val sbus = context.tlBusWrapperLocationMap(SBUS)
@@ -103,7 +107,8 @@ class WithInclusiveCache(
         portFactor = cacheParams.portFactor,
         memCycles = cacheParams.memCycles,
         innerBuf = cacheParams.bufInnerInterior,
-        outerBuf = cacheParams.bufOuterInterior),
+        outerBuf = cacheParams.bufOuterInterior,
+        streamBufferEntries = cacheParams.streamBufferEntries),
       l2Ctrl))
 
     def skipMMIO(x: TLClientParameters) = {

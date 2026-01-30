@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Thu Jan  8 19:44:55 2026
+# Process ID: 921659
+# Current directory: /home/user/vivado-risc-v
+# Command line: vivado -mode batch -source ./program_device_direct_strided.tcl
+# Log file: /home/user/vivado-risc-v/vivado.log
+# Journal file: /home/user/vivado-risc-v/vivado.jou
+# Running On        :hps
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 22.04.5 LTS
+# Processor Detail  :AMD Ryzen 9 7900X 12-Core Processor
+# CPU Frequency     :545.000 MHz
+# CPU Physical cores:12
+# CPU Logical cores :24
+# Host memory       :66435 MB
+# Swap memory       :2147 MB
+# Total Virtual     :68582 MB
+# Available Virtual :49362 MB
+#-----------------------------------------------------------
+Sourcing tcl script '/home/user/.Xilinx/Vivado/Vivado_init.tcl'
+source ./program_device_direct_strided.tcl
+couldn't read file "./program_device_direct_strided.tcl": no such file or directory
+INFO: [Common 17-206] Exiting Vivado at Thu Jan  8 19:44:57 2026...

@@ -1,0 +1,2661 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-abs.o)
+                              mith/src/th_lib.o (abs)
+/home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-atoi.o)
+                              mith/src/th_lib.o (atoi)
+/home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-memcmp.o)
+                              mith/src/th_lib.o (memcmp)
+/home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-memmove.o)
+                              mith/src/th_lib.o (memmove)
+/home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcat.o)
+                              mith/src/th_lib.o (strcat)
+/home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strchr.o)
+                              mith/src/th_lib.o (strchr)
+/home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcmp.o)
+                              mith/src/th_lib.o (strcmp)
+/home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcpy.o)
+                              mith/src/th_lib.o (strcpy)
+/home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcspn.o)
+                              mith/src/th_lib.o (strcspn)
+/home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strlen.o)
+                              mith/src/th_lib.o (strlen)
+/home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strncmp.o)
+                              mith/src/th_lib.o (strncmp)
+/home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strncpy.o)
+                              mith/src/th_lib.o (strncpy)
+/home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strpbrk.o)
+                              mith/src/th_lib.o (strpbrk)
+/home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strrchr.o)
+                              mith/src/th_lib.o (strrchr)
+/home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strspn.o)
+                              mith/src/th_lib.o (strspn)
+/home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strstr.o)
+                              mith/src/th_lib.o (strstr)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+memory_mem       0x0000000080000000 0x0000000020000000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /tmp/cc8mAx6Y.o
+LOAD mith/src/md5.o
+LOAD mith/src/mith_lib.o
+LOAD mith/src/mith_workload.o
+LOAD mith/src/th_bignum.o
+LOAD mith/src/th_encode.o
+LOAD mith/src/th_getopt.o
+LOAD mith/src/th_lib.o
+LOAD mith/src/th_math.o
+LOAD mith/src/th_rand.o
+LOAD mith/al/src/al_file.o
+LOAD mith/al/src/al_single.o
+LOAD mith/al/src/al_smp.o
+LOAD mith/al/src/th_al.o
+LOAD benchmarks/core/core_list_join.o
+LOAD benchmarks/core/core_matrix.o
+LOAD benchmarks/core/core_mith.o
+LOAD benchmarks/core/core_portme.o
+LOAD benchmarks/core/core_state.o
+LOAD benchmarks/core/core_util.o
+LOAD workloads/core/core.o
+LOAD benchmarks/consumer_v2/cjpeg/bm_lib.o
+LOAD benchmarks/consumer_v2/cjpeg/bmark_lite.o
+LOAD benchmarks/consumer_v2/cjpeg/cdjpeg.o
+LOAD benchmarks/consumer_v2/cjpeg/cjpeg.o
+LOAD benchmarks/consumer_v2/cjpeg/filedata.o
+LOAD benchmarks/consumer_v2/cjpeg/jcapimin.o
+LOAD benchmarks/consumer_v2/cjpeg/jcapistd.o
+LOAD benchmarks/consumer_v2/cjpeg/jccoefct.o
+LOAD benchmarks/consumer_v2/cjpeg/jccolor.o
+LOAD benchmarks/consumer_v2/cjpeg/jcdctmgr.o
+LOAD benchmarks/consumer_v2/cjpeg/jchuff.o
+LOAD benchmarks/consumer_v2/cjpeg/jcinit.o
+LOAD benchmarks/consumer_v2/cjpeg/jcmainct.o
+LOAD benchmarks/consumer_v2/cjpeg/jcmarker.o
+LOAD benchmarks/consumer_v2/cjpeg/jcmaster.o
+LOAD benchmarks/consumer_v2/cjpeg/jcomapi.o
+LOAD benchmarks/consumer_v2/cjpeg/jcparam.o
+LOAD benchmarks/consumer_v2/cjpeg/jcprepct.o
+LOAD benchmarks/consumer_v2/cjpeg/jcsample.o
+LOAD benchmarks/consumer_v2/cjpeg/jdatadst.o
+LOAD benchmarks/consumer_v2/cjpeg/jerror.o
+LOAD benchmarks/consumer_v2/cjpeg/jfdctint.o
+LOAD benchmarks/consumer_v2/cjpeg/jmemansi.o
+LOAD benchmarks/consumer_v2/cjpeg/jmemmgr.o
+LOAD benchmarks/consumer_v2/cjpeg/jutils.o
+LOAD benchmarks/consumer_v2/cjpeg/rdbmp.o
+LOAD workloads/cjpeg-rose7-preset/cjpeg-rose7-preset.o
+LOAD benchmarks/consumer_v2/cjpeg/data/Rose256_bmp.o
+LOAD benchmarks/fp/linpack/linpack.o
+LOAD workloads/linear_alg-mid-100x100-sp/linear_alg-mid-100x100-sp.o
+LOAD benchmarks/fp/linpack/ref/inputs_f32.o
+LOAD benchmarks/fp/loops/loops.o
+LOAD workloads/loops-all-mid-10k-sp/loops-all-mid-10k-sp.o
+LOAD benchmarks/fp/loops/ref-sp/100.o
+LOAD benchmarks/fp/loops/ref-sp/100k.o
+LOAD benchmarks/fp/loops/ref-sp/100kdot.o
+LOAD benchmarks/fp/loops/ref-sp/10k.o
+LOAD benchmarks/fp/loops/ref-sp/10kdot.o
+LOAD benchmarks/fp/loops/ref-sp/1k.o
+LOAD benchmarks/fp/loops/ref-sp/1kdot.o
+LOAD benchmarks/fp/loops/ref-sp/32.o
+LOAD benchmarks/fp/nnet/nnet.o
+LOAD workloads/nnet_test/nnet_test.o
+LOAD benchmarks/fp/nnet/ref/1letter.o
+LOAD benchmarks/fp/nnet/ref/letters.o
+LOAD benchmarks/darkmark/parser/ezxml.o
+LOAD benchmarks/darkmark/parser/parser.o
+LOAD workloads/parser-125k/parser-125k.o
+LOAD benchmarks/fp/fft_radix2/fft_radix2.o
+LOAD workloads/radix2-big-64k/radix2-big-64k.o
+LOAD benchmarks/fp/fft_radix2/ref/2K.o
+LOAD benchmarks/fp/fft_radix2/ref/32K.o
+LOAD benchmarks/fp/fft_radix2/ref/4K.o
+LOAD benchmarks/fp/fft_radix2/ref/data3_big.o
+LOAD benchmarks/fp/fft_radix2/ref/data4_mid.o
+LOAD benchmarks/fp/fft_radix2/ref/data5_small.o
+LOAD benchmarks/darkmark/sha/sha256.o
+LOAD benchmarks/darkmark/sha/shabench.o
+LOAD workloads/sha-test/sha-test.o
+LOAD benchmarks/darkmark/zip/zip_darkmark.o
+LOAD benchmarks/darkmark/zip/zlib-1.2.8/adler32.o
+LOAD benchmarks/darkmark/zip/zlib-1.2.8/compress.o
+LOAD benchmarks/darkmark/zip/zlib-1.2.8/crc32.o
+LOAD benchmarks/darkmark/zip/zlib-1.2.8/deflate.o
+LOAD benchmarks/darkmark/zip/zlib-1.2.8/gzclose.o
+LOAD benchmarks/darkmark/zip/zlib-1.2.8/gzlib.o
+LOAD benchmarks/darkmark/zip/zlib-1.2.8/infback.o
+LOAD benchmarks/darkmark/zip/zlib-1.2.8/inffast.o
+LOAD benchmarks/darkmark/zip/zlib-1.2.8/inflate.o
+LOAD benchmarks/darkmark/zip/zlib-1.2.8/inftrees.o
+LOAD benchmarks/darkmark/zip/zlib-1.2.8/trees.o
+LOAD benchmarks/darkmark/zip/zlib-1.2.8/uncompr.o
+LOAD benchmarks/darkmark/zip/zlib-1.2.8/zutil.o
+LOAD workloads/zip-test/zip-test.o
+LOAD workloads/all/all.o
+LOAD stubs.o
+LOAD ../common/src/fpu.o
+LOAD ../common/src/heap.o
+LOAD ../common/src/kprintf.o
+LOAD ../common/src/perf_counters.o
+LOAD /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/libgcc.a
+START GROUP
+LOAD /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a
+LOAD /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libgloss.a
+END GROUP
+LOAD /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/libgcc.a
+                [!provide]                        PROVIDE (_ram, ORIGIN (memory_mem))
+                [!provide]                        PROVIDE (_ram_end, (_ram + LENGTH (memory_mem)))
+
+.text           0x0000000080000000   0x192c80
+                0x0000000080000008                . = (. + 0x8)
+ *fill*         0x0000000080000000        0x8 
+                [!provide]                        PROVIDE (_ftext, .)
+ *(.text.unlikely .text.unlikely.*)
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text          0x0000000080000008        0x0 /tmp/cc8mAx6Y.o
+ .text.start    0x0000000080000008       0x1c /tmp/cc8mAx6Y.o
+                0x0000000080000008                _start
+ .text          0x0000000080000024      0xfb4 mith/src/md5.o
+                0x0000000080000024                MD5Init
+                0x0000000080000060                MD5Transform
+                0x0000000080000d04                MD5Update
+                0x0000000080000e48                MD5Final
+                0x0000000080000f2c                MD5CRC
+                0x0000000080000f90                DigestToBase16
+ .text          0x0000000080000fd8     0x107c mith/src/mith_lib.o
+                0x0000000080000fd8                mith_wl_get_chain_mutex
+                0x0000000080001008                mith_wl_get_connections
+                0x00000000800010ac                bench_thread
+                0x00000000800013cc                mith_main_loop
+                0x0000000080001574                mith_log_dbl
+                0x000000008000158c                mith_log_sci
+                0x00000000800015a4                mith_log
+                0x00000000800015bc                mith_log_u
+                0x00000000800015d4                mith_log_iu
+                0x00000000800015f0                mith_log_tcdef
+                0x000000008000179c                mith_report_results
+                0x0000000080001c68                mith_main
+                0x0000000080001cb4                chain_init_ctrl
+                0x0000000080001d38                chain_signal_in_ready
+                0x0000000080001db0                chain_signal_in
+                0x0000000080001e1c                chain_ready_in
+                0x0000000080001e80                chain_signal_out
+                0x0000000080001ea8                chain_wait_prev_ready
+                0x0000000080001ecc                chain_wait_prev_start
+                0x0000000080001f30                chain_get_next
+                0x0000000080001f50                chain_set_out
+                0x0000000080001f74                chain_signal_out_ready
+                0x0000000080001fe0                chain_lock_in
+                0x0000000080002008                chain_lock_out
+                0x0000000080002030                chain_wait_next_ready
+ .text          0x0000000080002054      0x7a0 mith/src/mith_workload.o
+                0x0000000080002054                mith_wl_init
+                0x00000000800020c4                mith_item_init
+                0x0000000080002168                mith_init_chains
+                0x00000000800021bc                mith_wl_destroy
+                0x000000008000239c                mith_wl_add
+                0x00000000800023d4                mith_connect
+                0x00000000800024ec                mith_wl_reset
+                0x0000000080002784                mith_wl_get_next
+ .text          0x00000000800027f4      0xf40 mith/src/th_bignum.o
+                0x0000000080002838                count_setbits
+                0x00000000800028a0                count_msb
+                0x00000000800028d4                bignum_setbits
+                0x000000008000295c                bignum_msb
+                0x00000000800029b4                bignum_zero
+                0x00000000800029d8                bignum_copy
+                0x00000000800029f4                bignum_add
+                0x0000000080002a08                bignum_shl
+                0x0000000080002ac4                bignum_shl_with_carry
+                0x0000000080002bc4                bignum_shr_with_carry
+                0x0000000080002cbc                bignum_neg
+                0x0000000080002d14                bignum_sub
+                0x0000000080002d64                bignum_abs
+                0x0000000080002db8                bignum_print
+                0x0000000080002e08                bignum_convert
+                0x0000000080002e78                bignum_diff
+                0x0000000080002f1c                bignum_diff_dp
+                0x0000000080003104                bignum_diff_sp
+                0x00000000800032d4                bignum_cmp
+                0x0000000080003318                svals
+                0x0000000080003354                acc_summary_info
+                0x0000000080003494                fp_accurate_bits_dp
+                0x00000000800034f8                fp_accurate_bits_sp
+                0x000000008000355c                fp_iaccurate_bits_dp
+                0x00000000800035bc                fp_iaccurate_bits_sp
+                0x000000008000361c                canonnical_form_dp
+ .text          0x0000000080003734      0x324 mith/src/th_encode.o
+                0x0000000080003734                encode
+                0x0000000080003a00                uu_send_buf
+ .text          0x0000000080003a58      0xca4 mith/src/th_getopt.o
+                0x0000000080003b5c                th_getopt_long
+ .text          0x00000000800046fc     0x1c54 mith/src/th_lib.o
+                0x00000000800046fc                th_timer_available
+                0x0000000080004704                th_timer_is_intrusive
+                0x000000008000470c                th_ticks_per_sec
+                0x0000000080004710                th_tick_granularity
+                0x0000000080004714                th_signal_now
+                0x0000000080004718                th_getenv
+                0x0000000080004720                getenv
+                0x0000000080004728                redirect_std_files
+                0x0000000080004744                th_fclose
+                0x0000000080004748                th_ferror
+                0x000000008000474c                th_feof
+                0x0000000080004750                th_clearerr
+                0x0000000080004754                th_fileno
+                0x0000000080004758                th_fflush
+                0x000000008000475c                th_fprintf
+                0x0000000080004798                th_vfprintf
+                0x000000008000479c                th_fseek
+                0x00000000800047a0                th_ftell
+                0x00000000800047a4                th_stat
+                0x00000000800047a8                th_lstat
+                0x00000000800047ac                th_fstat
+                0x00000000800047b0                th_unlink
+                0x00000000800047b4                th_rename
+                0x00000000800047b8                th_putc
+                0x00000000800047bc                th_getc
+                0x00000000800047c0                th_ungetc
+                0x00000000800047c4                th_fputs
+                0x00000000800047c8                th_fgets
+                0x00000000800047cc                th_fread
+                0x00000000800047d0                th_fwrite
+                0x00000000800047d4                th_fopen
+                0x00000000800047d8                th_fdopen
+                0x00000000800047dc                th_freopen
+                0x00000000800047e0                th_tmpfile
+                0x00000000800047e4                th_mktemp
+                0x00000000800047e8                th_sscanf
+                0x0000000080004810                th_vfscanf
+                0x0000000080004814                th_fscanf
+                0x0000000080004850                th_filecmp
+                0x0000000080004854                th_fcreate
+                0x0000000080004858                th_fsize
+                0x000000008000485c                th_harness_poll
+                0x0000000080004864                th_send_buf_as_file
+                0x0000000080004868                th_vsprintf
+                0x000000008000486c                th_snprintf
+                0x00000000800048a4                th_printf
+                0x00000000800048e4                th_exit
+                0x0000000080004960                th_sprintf
+                0x000000008000499c                th_malloc_x
+                0x0000000080004a08                th_aligned_malloc_x
+                0x0000000080004a80                th_calloc_x
+                0x0000000080004a84                th_realloc_x
+                0x0000000080004a88                th_strdup_x
+                0x0000000080004a8c                th_free_x
+                0x0000000080004a90                th_aligned_free_x
+                0x0000000080004a94                th_heap_reset
+                0x0000000080004a98                th_strcpy
+                0x0000000080004a9c                th_strncpy
+                0x0000000080004aa0                th_strchr
+                0x0000000080004aa4                th_strrchr
+                0x0000000080004aa8                th_strstr
+                0x0000000080004aac                th_strcmp
+                0x0000000080004ab0                th_strncmp
+                0x0000000080004ab4                th_strpbrk
+                0x0000000080004ab8                th_strcspn
+                0x0000000080004abc                th_strcat
+                0x0000000080004ac0                th_memcpy
+                0x0000000080004ac4                th_memmove
+                0x0000000080004ac8                th_memset
+                0x0000000080004acc                th_memcmp
+                0x0000000080004ad0                th_strlen
+                0x0000000080004ad4                th_strspn
+                0x0000000080004ad8                th_isdigit
+                0x0000000080004ae4                th_isspace
+                0x0000000080004af0                th_strtol
+                0x0000000080004af4                th_atoi
+                0x0000000080004af8                th_abs
+                0x0000000080004afc                strtod
+                0x0000000080004cfc                _strtod_r
+                0x0000000080004d08                th_atof
+                0x0000000080004d10                th_parse_val_type
+                0x0000000080004e80                th_parse_val
+                0x0000000080004ea8                th_parse_val_unsigned
+                0x0000000080004ed0                th_parse_flag
+                0x0000000080004fb0                th_parse_flag_unsigned
+                0x0000000080005090                th_get_flag
+                0x000000008000515c                th_parse_buf_flag
+                0x00000000800051d4                th_parse_buf_flag_unsigned
+                0x000000008000524c                th_parse_buf_f64flag
+                0x00000000800052a0                th_parse_buf_f32flag
+                0x00000000800052a4                th_get_buf_flag
+                0x0000000080005308                th_dup_buf_flag
+                0x00000000800053e8                th_parse_buf_flag_word
+                0x000000008000543c                Calc_crc8
+                0x000000008000547c                Calc_crc16
+                0x00000000800054fc                Calc_crc32
+                0x0000000080005600                th_crcbuffer
+                0x0000000080005690                ee_snr_buffer_spdp
+                0x00000000800057e8                ee_accurate_bits_helper
+                0x000000008000590c                ee_iaccurate_bits_helper
+                0x0000000080005a20                ee_fpbits_buffer_dp
+                0x0000000080005a38                ee_fpbits_buffer_sp
+                0x0000000080005a54                ee_ifpbits_buffer_dp
+                0x0000000080005a68                ee_ifpbits_buffer_sp
+                0x0000000080005a80                ee_snr_buffer
+                0x0000000080005a98                ee_snr_buffer_sp
+                0x0000000080005acc                th_print_dp
+                0x0000000080005b18                th_sprint_dp
+                0x0000000080005b88                th_print_sp
+                0x0000000080005bdc                th_sprint_sp
+                0x0000000080005c54                th_fpprintf
+                0x0000000080005d90                th_log
+                0x0000000080005dd0                th_rand
+                0x0000000080005e10                th_srand
+                0x0000000080005ea4                th_randseed
+                0x0000000080005eac                th_frand
+                0x0000000080005eb8                ee_list_add
+                0x0000000080005f14                ee_list_remove
+                0x0000000080005f30                ee_list_isearch
+                0x0000000080005f6c                ee_list_dsearch
+                0x0000000080005fa8                get_auto_data
+                0x0000000080006318                get_auto_data_int
+                0x0000000080006328                get_auto_data_byte
+                0x000000008000633c                get_auto_data_dbl
+ .text          0x0000000080006350      0xc80 mith/src/th_math.o
+                0x0000000080006770                th_fabs_f64
+                0x0000000080006788                th_floor_f64
+                0x0000000080006794                th_sqrt_f64
+                0x0000000080006804                th_exp_f64
+                0x00000000800068bc                th_ln_f64
+                0x00000000800068dc                th_pow_f64
+                0x0000000080006980                th_log10_f64
+                0x00000000800069cc                th_sin_f64
+                0x00000000800069f8                th_cos_f64
+                0x0000000080006a24                th_tan_f64
+                0x0000000080006ac4                th_tanh_f64
+                0x0000000080006b08                th_atan_f64
+                0x0000000080006b90                th_cosh_f64
+                0x0000000080006b98                th_sinh_f64
+                0x0000000080006ba0                th_fabs_f32
+                0x0000000080006bb8                th_floor_f32
+                0x0000000080006bc4                th_sqrt_f32
+                0x0000000080006c34                th_exp_f32
+                0x0000000080006cec                th_ln_f32
+                0x0000000080006d0c                th_pow_f32
+                0x0000000080006db0                th_log10_f32
+                0x0000000080006dfc                th_sin_f32
+                0x0000000080006e28                th_cos_f32
+                0x0000000080006e54                th_tan_f32
+                0x0000000080006ef4                th_tanh_f32
+                0x0000000080006f38                th_atan_f32
+                0x0000000080006fc0                th_cosh_f32
+                0x0000000080006fc8                th_sinh_f32
+ .text          0x0000000080006fd0     0x1d38 mith/src/th_rand.o
+                0x00000000800070e8                rand_fini
+                0x00000000800070f8                rand_init
+                0x000000008000734c                rand_intparts_init
+                0x00000000800073c4                random_u32
+                0x0000000080007444                random_u32_inrange
+                0x00000000800074a0                random_u8
+                0x00000000800074bc                random_u16
+                0x00000000800074dc                random_u32x256
+                0x0000000080007504                random_u32_vector
+                0x00000000800075c4                random_u8_vector
+                0x0000000080007680                random_f32_01
+                0x00000000800076a8                random_f64_01
+                0x00000000800076d0                random_f64
+                0x000000008000771c                precise_random_f64
+                0x0000000080007810                random_f32
+                0x0000000080007864                precise_random_f32
+                0x0000000080007940                fromint_f64_vector
+                0x0000000080007c1c                fromint_f32_vector
+                0x0000000080007eec                fromint_f64_01_vector
+                0x00000000800081b0                fromint_f32_01_vector
+                0x0000000080008470                fromint_random_f64_vector
+                0x00000000800084f8                fromint_random_f32_vector
+                0x0000000080008580                random_f64_vector
+                0x0000000080008644                mixed_f64_vector
+                0x0000000080008874                range_random
+                0x00000000800088b4                th_exp2
+                0x00000000800088bc                th_exp2_64
+                0x00000000800088cc                complex_rand_fp
+                0x0000000080008a30                random_f64_01_uniform
+                0x0000000080008abc                fromint_f64_01_vector_uniform
+                0x0000000080008ba8                random_f32_01_uniform
+                0x0000000080008c1c                fromint_f32_01_vector_uniform
+ .text          0x0000000080008d08       0xe4 mith/al/src/al_file.o
+                0x0000000080008d08                al_fclose
+                0x0000000080008d10                al_ferror
+                0x0000000080008d18                al_feof
+                0x0000000080008d20                al_clearerr
+                0x0000000080008d24                al_fileno
+                0x0000000080008d2c                al_fflush
+                0x0000000080008d34                al_vfprintf
+                0x0000000080008d3c                al_fseek
+                0x0000000080008d44                al_ftell
+                0x0000000080008d4c                al_getcwd
+                0x0000000080008d54                al_getwd
+                0x0000000080008d5c                al_chdir
+                0x0000000080008d64                al_stat
+                0x0000000080008d6c                al_lstat
+                0x0000000080008d74                al_fstat
+                0x0000000080008d7c                al_rename
+                0x0000000080008d84                al_putc
+                0x0000000080008d8c                al_getc
+                0x0000000080008d94                al_fputs
+                0x0000000080008d9c                al_ungetc
+                0x0000000080008da4                al_fgets
+                0x0000000080008dac                al_fread
+                0x0000000080008db4                al_fwrite
+                0x0000000080008dbc                al_fopen
+                0x0000000080008dc4                al_fdopen
+                0x0000000080008dcc                al_freopen
+                0x0000000080008dd4                al_tmpfile
+                0x0000000080008ddc                al_mktemp
+                0x0000000080008de4                al_unlink
+ .text          0x0000000080008dec       0x8c mith/al/src/al_single.o
+                0x0000000080008dec                al_mutex_init
+                0x0000000080008df4                al_mutex_lock
+                0x0000000080008dfc                al_mutex_trylock
+                0x0000000080008e04                al_mutex_unlock
+                0x0000000080008e0c                al_mutex_destroy
+                0x0000000080008e14                al_cond_init
+                0x0000000080008e1c                al_cond_signal
+                0x0000000080008e24                al_cond_broadcast
+                0x0000000080008e2c                al_cond_wait
+                0x0000000080008e34                al_cond_destroy
+                0x0000000080008e3c                al_thread_create
+                0x0000000080008e6c                al_thread_join
+ .text          0x0000000080008e78       0x58 mith/al/src/al_smp.o
+                0x0000000080008e78                al_set_hardware_info
+                0x0000000080008ebc                al_thread_create_ex
+                0x0000000080008ec0                al_item_setaffinity
+ .text          0x0000000080008ed0      0x370 mith/al/src/th_al.o
+                0x0000000080008ed0                al_signal_start
+                0x0000000080008ee0                al_signal_finished
+                0x0000000080008ef8                al_signal_now
+                0x0000000080008efc                al_ticks_per_sec
+                0x0000000080008f08                al_tick_granularity
+                0x0000000080008f10                al_exit
+                0x0000000080008f1c                al_printf
+                0x0000000080008f20                al_sprintf
+                0x0000000080008f24                al_report_results
+                0x0000000080008f28                al_vsscanf
+                0x0000000080008f30                al_vfscanf
+                0x0000000080008f38                al_filecmp
+                0x0000000080008f44                al_fcreate
+                0x0000000080008fe0                al_fsize
+                0x0000000080008fe8                al_getenv
+                0x0000000080008fec                al_main
+                0x0000000080008ff0                al_hardware_reset
+                0x0000000080008ff4                store_dp
+                0x00000000800090a8                load_dp
+                0x0000000080009120                store_sp
+                0x00000000800091b8                load_sp
+                0x0000000080009230                al_isfinite_dp
+                0x0000000080009238                al_isfinite_sp
+ .text          0x0000000080009240      0x808 benchmarks/core/core_list_join.o
+                0x0000000080009240                cmp_idx
+                0x0000000080009284                calc_func
+                0x0000000080009394                cmp_complex
+                0x00000000800093e4                copy_info
+                0x00000000800093f8                core_list_insert_new
+                0x0000000080009458                core_list_remove
+                0x0000000080009484                core_list_undo_remove
+                0x00000000800094a4                core_list_find
+                0x0000000080009514                core_list_reverse
+                0x0000000080009538                core_list_mergesort
+                0x0000000080009680                core_bench_list
+                0x00000000800098e8                core_list_init
+ .text          0x0000000080009a48      0x8d0 benchmarks/core/core_matrix.o
+                0x0000000080009a48                core_init_matrix
+                0x0000000080009bac                matrix_sum
+                0x0000000080009c4c                matrix_mul_const
+                0x0000000080009c9c                matrix_add_const
+                0x0000000080009ce4                matrix_mul_vect
+                0x0000000080009d48                matrix_mul_matrix
+                0x0000000080009dec                matrix_mul_matrix_bitextract
+                0x0000000080009ea4                matrix_test
+                0x000000008000a2dc                core_bench_matrix
+ .text          0x000000008000a318      0x858 benchmarks/core/core_mith.o
+                0x000000008000a318                define_params_core
+                0x000000008000a5c4                bmark_clean_core
+                0x000000008000a634                bmark_init_core
+                0x000000008000a7f8                bmark_fini_core
+                0x000000008000a888                bmark_verify_core
+                0x000000008000aa94                iterate
+                0x000000008000ab1c                t_run_test_core
+ .text          0x000000008000ab70       0x80 benchmarks/core/core_portme.o
+                0x000000008000ab70                portable_malloc
+                0x000000008000ab84                portable_free
+                0x000000008000ab94                portable_init
+                0x000000008000aba0                portable_fini
+                0x000000008000aba8                core_start_parallel
+                0x000000008000abcc                core_stop_parallel
+ .text          0x000000008000abf0      0x850 benchmarks/core/core_state.o
+                0x000000008000abf0                core_state_transition
+                0x000000008000af7c                core_bench_state
+                0x000000008000b15c                fill_state_table
+                0x000000008000b218                core_init_state
+                0x000000008000b38c                core_state_transition_table
+ .text          0x000000008000b440      0x1e0 benchmarks/core/core_util.o
+                0x000000008000b440                get_seed_32
+                0x000000008000b4e8                crcu8_bytable
+                0x000000008000b510                crcu8
+                0x000000008000b550                crcu16
+                0x000000008000b5d0                crcu32
+                0x000000008000b60c                crc16
+                0x000000008000b618                check_data_types
+ .text          0x000000008000b620      0x418 workloads/core/core.o
+                0x000000008000b620                helper_core
+                0x000000008000b734                run_core
+ .text          0x000000008000ba38        0x0 benchmarks/consumer_v2/cjpeg/bm_lib.o
+ .text          0x000000008000ba38      0x4dc benchmarks/consumer_v2/cjpeg/bmark_lite.o
+                0x000000008000ba38                define_params_cjpeg
+                0x000000008000bb88                bmark_init_cjpeg
+                0x000000008000bc24                bmark_fini_cjpeg
+                0x000000008000bc80                t_run_test_cjpeg
+                0x000000008000bdc8                bmark_verify_cjpeg
+                0x000000008000be98                bmark_clean_cjpeg
+ .text          0x000000008000bf14       0xec benchmarks/consumer_v2/cjpeg/cdjpeg.o
+                0x000000008000bf14                keymatch
+ .text          0x000000008000c000      0x144 benchmarks/consumer_v2/cjpeg/cjpeg.o
+                0x000000008000c000                cjpeg_main
+ .text          0x000000008000c144      0x454 benchmarks/consumer_v2/cjpeg/filedata.o
+                0x000000008000c144                loadBMPFile
+                0x000000008000c238                init_files_cjpeg
+                0x000000008000c4a8                cjpeg_fread
+                0x000000008000c50c                cjpeg_fwrite
+ .text          0x000000008000c598      0x4a0 benchmarks/consumer_v2/cjpeg/jcapimin.o
+                0x000000008000c598                jpeg_CreateCompress
+                0x000000008000c6a4                jpeg_destroy_compress
+                0x000000008000c6a8                jpeg_abort_compress
+                0x000000008000c6ac                jpeg_suppress_tables
+                0x000000008000c6f0                jpeg_finish_compress
+                0x000000008000c850                jpeg_write_marker
+                0x000000008000c920                jpeg_write_m_header
+                0x000000008000c9a4                jpeg_write_m_byte
+                0x000000008000c9b0                jpeg_write_tables
+ .text          0x000000008000ca38      0x2f0 benchmarks/consumer_v2/cjpeg/jcapistd.o
+                0x000000008000ca38                jpeg_start_compress
+                0x000000008000cae8                jpeg_write_scanlines
+                0x000000008000cbf0                jpeg_write_raw_data
+ .text          0x000000008000cd28      0x4e0 benchmarks/consumer_v2/cjpeg/jccoefct.o
+                0x000000008000d148                jinit_c_coef_controller
+ .text          0x000000008000d208      0x84c benchmarks/consumer_v2/cjpeg/jccolor.o
+                0x000000008000d774                jinit_color_converter
+ .text          0x000000008000da54      0x398 benchmarks/consumer_v2/cjpeg/jcdctmgr.o
+                0x000000008000dd50                jinit_forward_dct
+ .text          0x000000008000ddec      0xeec benchmarks/consumer_v2/cjpeg/jchuff.o
+                0x000000008000e888                jpeg_make_c_derived_tbl
+                0x000000008000ec74                jinit_huff_encoder
+ .text          0x000000008000ecd8       0xac benchmarks/consumer_v2/cjpeg/jcinit.o
+                0x000000008000ecd8                jinit_compress_master
+ .text          0x000000008000ed84      0x244 benchmarks/consumer_v2/cjpeg/jcmainct.o
+                0x000000008000eedc                jinit_c_main_controller
+ .text          0x000000008000efc8      0xbd8 benchmarks/consumer_v2/cjpeg/jcmarker.o
+                0x000000008000fb10                jinit_marker_writer
+ .text          0x000000008000fba0      0x8ec benchmarks/consumer_v2/cjpeg/jcmaster.o
+                0x00000000800100e8                jinit_c_master_control
+ .text          0x000000008001048c       0xe8 benchmarks/consumer_v2/cjpeg/jcomapi.o
+                0x000000008001048c                cjpeg_abort
+                0x00000000800104e4                cjpeg_destroy
+                0x000000008001051c                cjpeg_alloc_quant_table
+                0x0000000080010548                cjpeg_alloc_huff_table
+ .text          0x0000000080010574      0x82c benchmarks/consumer_v2/cjpeg/jcparam.o
+                0x0000000080010644                jpeg_add_quant_table
+                0x0000000080010780                jpeg_set_linear_quality
+                0x00000000800107e8                jpeg_quality_scaling
+                0x0000000080010830                jpeg_set_quality
+                0x000000008001087c                jpeg_set_colorspace
+                0x0000000080010bd0                jpeg_default_colorspace
+                0x0000000080010c38                jpeg_set_defaults
+ .text          0x0000000080010da0      0x3e4 benchmarks/consumer_v2/cjpeg/jcprepct.o
+                0x0000000080011064                jinit_c_prep_controller
+ .text          0x0000000080011184      0x6ec benchmarks/consumer_v2/cjpeg/jcsample.o
+                0x00000000800116d8                jinit_downsampler
+ .text          0x0000000080011870      0x1a4 benchmarks/consumer_v2/cjpeg/jdatadst.o
+                0x000000008001199c                jpeg_stdio_dest
+ .text          0x0000000080011a14      0x23c benchmarks/consumer_v2/cjpeg/jerror.o
+                0x0000000080011be8                cjpeg_std_error
+ .text          0x0000000080011c50      0x3c4 benchmarks/consumer_v2/cjpeg/jfdctint.o
+                0x0000000080011c50                jpeg_fdct_islow
+ .text          0x0000000080012014      0x264 benchmarks/consumer_v2/cjpeg/jmemansi.o
+                0x0000000080012154                cjpeg_get_small
+                0x0000000080012168                cjpeg_free_small
+                0x000000008001217c                cjpeg_get_large
+                0x0000000080012190                cjpeg_free_large
+                0x00000000800121a4                cjpeg_mem_available
+                0x00000000800121b4                cjpeg_open_backing_store
+                0x0000000080012268                cjpeg_mem_init
+                0x0000000080012274                cjpeg_mem_term
+ .text          0x0000000080012278     0x1388 benchmarks/consumer_v2/cjpeg/jmemmgr.o
+                0x00000000800134d4                cjinit_memory_mgr
+ .text          0x0000000080013600      0x23c benchmarks/consumer_v2/cjpeg/jutils.o
+                0x0000000080013600                pathfind_file_cjpeg
+                0x0000000080013720                getFilesize_cjpeg
+                0x000000008001376c                cjdiv_round_up
+                0x000000008001377c                cjround_up
+                0x0000000080013790                cjcopy_sample_rows
+                0x0000000080013814                cjcopy_block_row
+                0x0000000080013830                cjzero_far
+ .text          0x000000008001383c      0xcb8 benchmarks/consumer_v2/cjpeg/rdbmp.o
+                0x0000000080014498                jinit_read_bmp
+                0x00000000800144e8                fread_bmp_line
+ .text          0x00000000800144f4      0xa34 workloads/cjpeg-rose7-preset/cjpeg-rose7-preset.o
+                0x00000000800144f4                helper_cjpegrose7preset
+                0x0000000080014608                run_cjpeg
+ .text          0x0000000080014f28        0xc benchmarks/consumer_v2/cjpeg/data/Rose256_bmp.o
+                0x0000000080014f28                get_Rose256_bmp
+ .text          0x0000000080014f34     0x1918 benchmarks/fp/linpack/linpack.o
+                0x0000000080015728                define_params_linpack
+                0x00000000800161ec                bmark_clean_linpack
+                0x0000000080016248                bmark_init_linpack
+                0x000000008001636c                bmark_fini_linpack
+                0x0000000080016410                snr_set
+                0x0000000080016438                t_run_test_linpack
+                0x0000000080016594                bmark_verify_linpack
+ .text          0x000000008001684c      0x418 workloads/linear_alg-mid-100x100-sp/linear_alg-mid-100x100-sp.o
+                0x000000008001684c                helper_linearalgmid100x100sp
+                0x0000000080016960                run_linear
+ .text          0x0000000080016c64       0x64 benchmarks/fp/linpack/ref/inputs_f32.o
+                0x0000000080016c64                init_presets_linpack
+ .text          0x0000000080016cc8     0x497c benchmarks/fp/loops/loops.o
+                0x0000000080016d00                reinit_vec_limited
+                0x0000000080016d84                inner_product
+                0x0000000080016e84                matmul
+                0x000000008001703c                reinit_vec
+                0x00000000800170c0                MonteCarlo_integrate
+                0x00000000800171e4                hydro_fragment
+                0x0000000080017338                cholesky
+                0x000000008001749c                banded_linear
+                0x00000000800175f8                tri_diagonal
+                0x00000000800177b4                linear_recurrence
+                0x00000000800179b8                state_fragment
+                0x0000000080017b60                adi_integration
+                0x0000000080017ee8                integrate_predictors
+                0x000000008001807c                difference_predictors
+                0x00000000800181d8                first_sum
+                0x000000008001830c                first_dif
+                0x0000000080018430                casual
+                0x00000000800187ec                implicit
+                0x0000000080018ac8                lin_recurrence
+                0x0000000080018c4c                planckian
+                0x0000000080018e28                firstmin
+                0x0000000080018f2c                hydro_2d
+                0x0000000080019540                hydro_2d_implicit
+                0x00000000800197a0                reinit_vec_sparse
+                0x0000000080019834                reinit_ordinate_cvec
+                0x00000000800198cc                ordinate_transport
+                0x0000000080019b74                reinit_ivec
+                0x0000000080019c04                monte_carlo
+                0x0000000080019cdc                pic_2d
+                0x000000008001a060                reinit_ivec_pos
+                0x000000008001a0f4                pic_1d
+                0x000000008001a44c                reinit_ivec_sparse
+                0x000000008001a4ec                reinit_vec_const
+                0x000000008001a514                zero_vec
+                0x000000008001a53c                define_params_loops
+                0x000000008001aa14                bmark_clean_loops
+                0x000000008001aa94                reset_all_data
+                0x000000008001ab98                dump_sparse_data
+                0x000000008001ad6c                bmark_init_loops
+                0x000000008001b0d4                bmark_fini_loops
+                0x000000008001b2a0                t_run_test_loops
+                0x000000008001b42c                bmark_verify_loops
+                0x000000008001b630                is_2px
+ .text          0x000000008001b644      0x418 workloads/loops-all-mid-10k-sp/loops-all-mid-10k-sp.o
+                0x000000008001b644                helper_loopsallmid10ksp
+                0x000000008001b758                run_loops
+ .text          0x000000008001ba5c       0x50 benchmarks/fp/loops/ref-sp/100.o
+                0x000000008001ba5c                loops_ip_3
+ .text          0x000000008001baac       0x58 benchmarks/fp/loops/ref-sp/100k.o
+                0x000000008001baac                loops_ip_2
+ .text          0x000000008001bb04       0x58 benchmarks/fp/loops/ref-sp/100kdot.o
+                0x000000008001bb04                loops_ip_7
+ .text          0x000000008001bb5c       0x58 benchmarks/fp/loops/ref-sp/10k.o
+                0x000000008001bb5c                loops_ip_1
+ .text          0x000000008001bbb4       0x58 benchmarks/fp/loops/ref-sp/10kdot.o
+                0x000000008001bbb4                loops_ip_5
+ .text          0x000000008001bc0c       0x54 benchmarks/fp/loops/ref-sp/1k.o
+                0x000000008001bc0c                loops_ip_0
+ .text          0x000000008001bc60       0x54 benchmarks/fp/loops/ref-sp/1kdot.o
+                0x000000008001bc60                loops_ip_6
+ .text          0x000000008001bcb4       0x5c benchmarks/fp/loops/ref-sp/32.o
+                0x000000008001bcb4                loops_ip_4
+ .text          0x000000008001bd10     0x1158 benchmarks/fp/nnet/nnet.o
+                0x000000008001bdec                init_random_patterns
+                0x000000008001bf4c                define_params_nnet
+                0x000000008001c114                bmark_clean_nnet
+                0x000000008001c190                bmark_init_nnet
+                0x000000008001c238                bmark_fini_nnet
+                0x000000008001c294                t_run_test_nnet
+                0x000000008001c9b8                bmark_verify_nnet
+                0x000000008001cd60                fill_preset_nnet
+ .text          0x000000008001ce68      0x418 workloads/nnet_test/nnet_test.o
+                0x000000008001ce68                helper_nnettest
+                0x000000008001cf7c                run_nnet
+ .text          0x000000008001d280       0xa8 benchmarks/fp/nnet/ref/1letter.o
+                0x000000008001d280                nnet_ip_1
+ .text          0x000000008001d328       0xa8 benchmarks/fp/nnet/ref/letters.o
+                0x000000008001d328                nnet_ip_0
+ .text          0x000000008001d3d0     0x3aec benchmarks/darkmark/parser/ezxml.o
+                0x000000008001d504                ezxml_child
+                0x000000008001d574                ezxml_idx
+                0x000000008001d58c                ezxml_attr
+                0x000000008001d738                ezxml_vget
+                0x000000008001d798                ezxml_get
+                0x000000008001d7d8                ezxml_pi
+                0x000000008001d894                ezxml_err
+                0x000000008001d92c                ezxml_decode
+                0x000000008001de04                ezxml_char_content
+                0x000000008001df30                ezxml_close_tag
+                0x000000008001dfbc                ezxml_ent_ok
+                0x000000008001e0bc                ezxml_proc_inst
+                0x000000008001e3d8                ezxml_internal_dtd
+                0x000000008001ebcc                ezxml_str2utf8
+                0x000000008001ee5c                ezxml_free_attr
+                0x000000008001ee74                ezxml_ampencode
+                0x000000008001f04c                ezxml_toxml_r
+                0x000000008001f508                ezxml_toxml
+                0x000000008001f92c                ezxml_free
+                0x000000008001fbd4                ezxml_error
+                0x000000008001fc0c                ezxml_new
+                0x000000008001fcb8                ezxml_insert
+                0x000000008001fe00                ezxml_add_child
+                0x000000008001fe84                ezxml_open_tag
+                0x000000008001ff10                ezxml_parse_str
+                0x00000000800208ac                ezxml_parse_fp
+                0x000000008002097c                ezxml_parse_file
+                0x00000000800209c4                ezxml_set_txt
+                0x0000000080020a2c                ezxml_set_attr
+                0x0000000080020db0                ezxml_set_flag
+                0x0000000080020dc4                ezxml_cut
+ .text          0x0000000080020ebc      0x83c benchmarks/darkmark/parser/parser.o
+                0x0000000080020ebc                define_params_parser
+                0x0000000080021220                bmark_clean_parser
+                0x0000000080021294                bmark_init_parser
+                0x0000000080021394                bmark_fini_parser
+                0x0000000080021408                t_run_test_parser
+                0x00000000800216a0                bmark_verify_parser
+ .text          0x00000000800216f8      0x418 workloads/parser-125k/parser-125k.o
+                0x00000000800216f8                helper_parser125k
+                0x000000008002180c                run_parser
+ .text          0x0000000080021b10      0xbc8 benchmarks/fp/fft_radix2/fft_radix2.o
+                0x0000000080021b10                define_params_radix2
+                0x0000000080021f20                bmark_clean_radix2
+                0x0000000080021f94                bmark_init_radix2
+                0x00000000800220a4                bmark_fini_radix2
+                0x0000000080022118                t_run_test_radix2
+                0x0000000080022498                bmark_verify_radix2
+ .text          0x00000000800226d8      0x418 workloads/radix2-big-64k/radix2-big-64k.o
+                0x00000000800226d8                helper_radix2big64k
+                0x00000000800227ec                run_radix2
+ .text          0x0000000080022af0       0x70 benchmarks/fp/fft_radix2/ref/2K.o
+                0x0000000080022af0                radix_ip_0
+ .text          0x0000000080022b60       0x6c benchmarks/fp/fft_radix2/ref/32K.o
+                0x0000000080022b60                radix_ip_2
+ .text          0x0000000080022bcc       0x6c benchmarks/fp/fft_radix2/ref/4K.o
+                0x0000000080022bcc                radix_ip_1
+ .text          0x0000000080022c38       0x6c benchmarks/fp/fft_radix2/ref/data3_big.o
+                0x0000000080022c38                radix_ip_3
+ .text          0x0000000080022ca4       0x6c benchmarks/fp/fft_radix2/ref/data4_mid.o
+                0x0000000080022ca4                radix_ip_4
+ .text          0x0000000080022d10       0x70 benchmarks/fp/fft_radix2/ref/data5_small.o
+                0x0000000080022d10                radix_ip_5
+ .text          0x0000000080022d80     0x4bac benchmarks/darkmark/sha/sha256.o
+                0x0000000080027554                sha2_update
+                0x000000008002757c                sha2_init
+                0x00000000800275cc                sha2_final
+                0x00000000800278a4                sha2
+ .text          0x000000008002792c      0x508 benchmarks/darkmark/sha/shabench.o
+                0x000000008002792c                define_params_sha
+                0x0000000080027a84                bmark_clean_sha
+                0x0000000080027af8                bmark_init_sha
+                0x0000000080027b94                bmark_fini_sha
+                0x0000000080027bf0                t_run_test_sha
+                0x0000000080027c74                bmark_verify_sha
+ .text          0x0000000080027e34      0x418 workloads/sha-test/sha-test.o
+                0x0000000080027e34                helper_shatest
+                0x0000000080027f48                run_sha
+ .text          0x000000008002824c      0x990 benchmarks/darkmark/zip/zip_darkmark.o
+                0x000000008002824c                do_zip
+                0x000000008002832c                define_params_zip
+                0x0000000080028780                do_unz
+                0x0000000080028854                bmark_clean_zip
+                0x00000000800288e0                bmark_init_zip
+                0x00000000800289e4                bmark_fini_zip
+                0x0000000080028a70                t_run_test_zip
+                0x0000000080028b00                bmark_verify_zip
+                0x0000000080028bcc                gzclose_r
+                0x0000000080028bd4                gzclose_w
+ .text          0x0000000080028bdc      0x418 benchmarks/darkmark/zip/zlib-1.2.8/adler32.o
+                0x0000000080028c8c                adler32
+                0x0000000080028fec                adler32_combine
+                0x0000000080028ff0                adler32_combine64
+ .text          0x0000000080028ff4       0xf4 benchmarks/darkmark/zip/zlib-1.2.8/compress.o
+                0x0000000080028ff4                compress2
+                0x00000000800290c0                compress
+                0x00000000800290c8                compressBound
+ .text          0x00000000800290e8      0x72c benchmarks/darkmark/zip/zlib-1.2.8/crc32.o
+                0x00000000800292c0                get_crc_table
+                0x00000000800292cc                crc32
+                0x000000008002980c                crc32_combine
+                0x0000000080029810                crc32_combine64
+ .text          0x0000000080029814     0x34e0 benchmarks/darkmark/zip/zlib-1.2.8/deflate.o
+                0x000000008002abf8                deflateSetDictionary
+                0x000000008002ae34                deflateResetKeep
+                0x000000008002af0c                deflateReset
+                0x000000008002afd4                deflateSetHeader
+                0x000000008002b000                deflatePending
+                0x000000008002b03c                deflatePrime
+                0x000000008002b148                deflateTune
+                0x000000008002b174                deflateBound
+                0x000000008002b27c                deflate
+                0x000000008002c5c0                deflateParams
+                0x000000008002c6e4                deflateEnd
+                0x000000008002c7e8                deflateInit2_
+                0x000000008002cad8                deflateInit_
+                0x000000008002caf4                deflateCopy
+ .text          0x000000008002ccf4       0x24 benchmarks/darkmark/zip/zlib-1.2.8/gzclose.o
+                0x000000008002ccf4                gzclose
+ .text          0x000000008002cd18      0x330 benchmarks/darkmark/zip/zlib-1.2.8/gzlib.o
+                0x000000008002cd18                gzopen
+                0x000000008002cd20                gzopen64
+                0x000000008002cd28                gzdopen
+                0x000000008002cda8                gzbuffer
+                0x000000008002ce00                gzrewind
+                0x000000008002ce08                gzseek64
+                0x000000008002ce10                gzoffset
+                0x000000008002ce18                gzoffset64
+                0x000000008002ce20                gztell
+                0x000000008002ce28                gztell64
+                0x000000008002ce30                gzseek
+                0x000000008002ce38                gzeof
+                0x000000008002ce68                gzerror
+                0x000000008002cecc                gz_error
+                0x000000008002d014                gzclearerr
+ .text          0x000000008002d048     0x1114 benchmarks/darkmark/zip/zlib-1.2.8/infback.o
+                0x000000008002d048                inflateBackInit_
+                0x000000008002d15c                inflateBack
+                0x000000008002e110                inflateBackEnd
+ .text          0x000000008002e15c      0x630 benchmarks/darkmark/zip/zlib-1.2.8/inffast.o
+                0x000000008002e15c                inflate_fast
+ .text          0x000000008002e78c     0x2778 benchmarks/darkmark/zip/zlib-1.2.8/inflate.o
+                0x000000008002e91c                inflateResetKeep
+                0x000000008002e9a0                inflateReset
+                0x000000008002e9c4                inflateReset2
+                0x000000008002ea94                inflateInit2_
+                0x000000008002eb90                inflateInit_
+                0x000000008002eba0                inflatePrime
+                0x000000008002ec0c                inflate
+                0x00000000800307a0                inflateEnd
+                0x0000000080030808                inflateGetDictionary
+                0x00000000800308bc                inflateSetDictionary
+                0x0000000080030994                inflateGetHeader
+                0x00000000800309c4                inflateSync
+                0x0000000080030cc4                inflateSyncPoint
+                0x0000000080030cf8                inflateCopy
+                0x0000000080030e70                inflateUndermine
+                0x0000000080030ea0                inflateMark
+ .text          0x0000000080030f04      0x530 benchmarks/darkmark/zip/zlib-1.2.8/inftrees.o
+                0x0000000080030f04                inflate_table
+ .text          0x0000000080031434     0x2318 benchmarks/darkmark/zip/zlib-1.2.8/trees.o
+                0x0000000080032a2c                _tr_init
+                0x0000000080032af4                _tr_stored_block
+                0x0000000080032cd0                _tr_flush_bits
+                0x0000000080032cd4                _tr_align
+                0x0000000080032e0c                _tr_flush_block
+                0x0000000080033630                _tr_tally
+ .text          0x000000008003374c      0x100 benchmarks/darkmark/zip/zlib-1.2.8/uncompr.o
+                0x000000008003374c                uncompress
+ .text          0x000000008003384c       0x64 benchmarks/darkmark/zip/zlib-1.2.8/zutil.o
+                0x000000008003384c                zlibVersion
+                0x0000000080033858                zlibCompileFlags
+                0x0000000080033860                zError
+                0x0000000080033880                zcalloc
+                0x000000008003389c                zcfree
+ .text          0x00000000800338b0      0x418 workloads/zip-test/zip-test.o
+                0x00000000800338b0                helper_ziptest
+                0x00000000800339c4                run_zip
+ .text          0x0000000080033cc8       0x94 workloads/all/all.o
+                0x0000000080033d10                simple_ln
+                0x0000000080033d28                simple_exp
+ .text.startup  0x0000000080033d5c      0x27c workloads/all/all.o
+                0x0000000080033d5c                main
+ .text          0x0000000080033fd8      0x700 stubs.o
+                0x00000000800340d8                log10
+                0x00000000800340e0                pow
+                0x00000000800340e8                sin
+                0x00000000800340f0                cos
+                0x00000000800340f8                sqrt
+                0x0000000080034100                ceil
+                0x0000000080034108                fabs
+                0x0000000080034110                floor
+                0x0000000080034118                strdup
+                0x0000000080034170                isspace
+                0x000000008003418c                isdigit
+                0x0000000080034198                isalpha
+                0x00000000800341a8                isupper
+                0x00000000800341b4                strtol
+                0x00000000800343b4                _strtol_r
+                0x00000000800343c4                vprintf
+                0x00000000800343c8                vsnprintf
+                0x0000000080034678                vsprintf
+                0x0000000080034688                localeconv
+                0x0000000080034690                _localeconv_r
+                0x0000000080034698                setlocale
+                0x00000000800346a4                _setlocale_r
+                0x00000000800346b0                __localeconv_l
+                0x00000000800346b8                __locale_ctype_ptr
+                0x00000000800346c4                __locale_ctype_ptr_l
+                0x00000000800346d0                __locale_mb_cur_max
+ .text          0x00000000800346d8       0x14 ../common/src/fpu.o
+                0x00000000800346d8                enable_fpu
+ .text          0x00000000800346ec      0x2f8 ../common/src/heap.o
+                0x00000000800346ec                _sbrk
+                0x0000000080034718                memset
+                0x0000000080034738                memcpy
+                0x000000008003475c                malloc
+                0x0000000080034824                free
+                0x0000000080034848                calloc
+                0x000000008003488c                realloc
+                0x0000000080034958                exit
+                0x000000008003495c                fprintf
+                0x000000008003499c                rand
+                0x00000000800349d0                srand
+ .text          0x00000000800349e4      0x60c ../common/src/kprintf.o
+                0x00000000800349e4                kputc
+                0x0000000080034a00                kputs
+                0x0000000080034a60                vkprintf
+                0x0000000080034fb0                kprintf
+ .text          0x0000000080034ff0      0x224 ../common/src/perf_counters.o
+                0x0000000080034ff0                configure_events
+                0x0000000080035038                read_l2_counters
+                0x0000000080035068                read_l1_counters
+                0x000000008003509c                print_l2_stats
+                0x000000008003514c                print_l1_stats
+ .text          0x0000000080035214        0xa /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-abs.o)
+                0x0000000080035214                abs
+ .text          0x000000008003521e       0x28 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-atoi.o)
+                0x000000008003521e                atoi
+                0x0000000080035232                _atoi_r
+ .text          0x0000000080035246       0x22 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-memcmp.o)
+                0x0000000080035246                memcmp
+ .text          0x0000000080035268       0x3e /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-memmove.o)
+                0x0000000080035268                memmove
+ .text          0x00000000800352a6       0x20 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcat.o)
+                0x00000000800352a6                strcat
+ .text          0x00000000800352c6       0x1a /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strchr.o)
+                0x00000000800352c6                strchr
+ .text          0x00000000800352e0       0xea /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcmp.o)
+                0x00000000800352e0                strcmp
+ .text          0x00000000800353ca       0x12 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcpy.o)
+                0x00000000800353ca                strcpy
+ .text          0x00000000800353dc       0x22 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcspn.o)
+                0x00000000800353dc                strcspn
+ .text          0x00000000800353fe       0x12 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strlen.o)
+                0x00000000800353fe                strlen
+ .text          0x0000000080035410       0x2a /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strncmp.o)
+                0x0000000080035410                strncmp
+ .text          0x000000008003543a       0x30 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strncpy.o)
+                0x000000008003543a                strncpy
+ .text          0x000000008003546a       0x2e /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strpbrk.o)
+                0x000000008003546a                strpbrk
+ .text          0x0000000080035498       0x32 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strrchr.o)
+                0x0000000080035498                strrchr
+ .text          0x00000000800354ca       0x22 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strspn.o)
+                0x00000000800354ca                strspn
+ .text          0x00000000800354ec       0x30 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strstr.o)
+                0x00000000800354ec                strstr
+                0x0000000080035520                . = ALIGN (0x8)
+ *fill*         0x000000008003551c        0x4 
+                [!provide]                        PROVIDE (_etext, .)
+ *(.eh_frame)
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x0000000080035520       0x11 mith/src/md5.o
+ *fill*         0x0000000080035531        0x7 
+ .rodata.str1.8
+                0x0000000080035538      0x29d mith/src/mith_lib.o
+ *fill*         0x00000000800357d5        0x3 
+ .rodata.str1.8
+                0x00000000800357d8       0x86 mith/src/mith_workload.o
+ *fill*         0x000000008003585e        0x2 
+ .rodata.str1.8
+                0x0000000080035860        0x4 mith/src/th_bignum.o
+ *fill*         0x0000000080035864        0x4 
+ .rodata        0x0000000080035868       0x48 mith/src/th_encode.o
+                0x0000000080035870                uu_std
+ .rodata.str1.8
+                0x00000000800358b0       0x42 mith/src/th_encode.o
+                                         0x52 (size before relaxing)
+ *fill*         0x00000000800358f2        0x6 
+ .rodata.str1.8
+                0x00000000800358f8      0x18e mith/src/th_getopt.o
+                                        0x196 (size before relaxing)
+ *fill*         0x0000000080035a86        0x2 
+ .rodata        0x0000000080035a88     0x4000 mith/src/th_lib.o
+                0x0000000080035a88                th_rand_data
+ .rodata.str1.8
+                0x0000000080039a88      0x13e mith/src/th_lib.o
+                                        0x146 (size before relaxing)
+ *fill*         0x0000000080039bc6        0x2 
+ .rodata.str1.8
+                0x0000000080039bc8       0x13 mith/src/th_rand.o
+ *fill*         0x0000000080039bdb        0x5 
+ .rodata.str1.8
+                0x0000000080039be0        0x7 mith/al/src/al_smp.o
+ *fill*         0x0000000080039be7        0x1 
+ .rodata.str1.8
+                0x0000000080039be8        0x2 mith/al/src/th_al.o
+ *fill*         0x0000000080039bea        0x6 
+ .rodata.str1.8
+                0x0000000080039bf0      0x1ea benchmarks/core/core_mith.o
+ *fill*         0x0000000080039dda        0x6 
+ .rodata.str1.8
+                0x0000000080039de0       0x34 benchmarks/core/core_portme.o
+ *fill*         0x0000000080039e14        0x4 
+ .rodata        0x0000000080039e18       0x98 benchmarks/core/core_state.o
+ .rodata.str1.8
+                0x0000000080039eb0       0xdd benchmarks/core/core_state.o
+ *fill*         0x0000000080039f8d        0x3 
+ .rodata        0x0000000080039f90      0x220 benchmarks/core/core_util.o
+ .rodata.str1.8
+                0x000000008003a1b0       0x92 workloads/core/core.o
+                                         0xaa (size before relaxing)
+ *fill*         0x000000008003a242        0x6 
+ .rodata        0x000000008003a248       0x10 benchmarks/consumer_v2/cjpeg/bmark_lite.o
+ .rodata.str1.8
+                0x000000008003a258       0xf3 benchmarks/consumer_v2/cjpeg/bmark_lite.o
+                                         0xfb (size before relaxing)
+ *fill*         0x000000008003a34b        0x5 
+ .rodata        0x000000008003a350       0x90 benchmarks/consumer_v2/cjpeg/cjpeg.o
+ .rodata.str1.8
+                0x000000008003a3e0      0x26f benchmarks/consumer_v2/cjpeg/cjpeg.o
+ *fill*         0x000000008003a64f        0x1 
+ .rodata        0x000000008003a650       0x1c benchmarks/consumer_v2/cjpeg/filedata.o
+ *fill*         0x000000008003a66c        0x4 
+ .rodata.str1.8
+                0x000000008003a670      0x2af benchmarks/consumer_v2/cjpeg/filedata.o
+                                        0x2b7 (size before relaxing)
+ *fill*         0x000000008003a91f        0x1 
+ .rodata        0x000000008003a920       0x30 benchmarks/consumer_v2/cjpeg/jccolor.o
+ .rodata        0x000000008003a950      0x3f9 benchmarks/consumer_v2/cjpeg/jcparam.o
+ *fill*         0x000000008003ad49        0x7 
+ .rodata        0x000000008003ad50      0x3e8 benchmarks/consumer_v2/cjpeg/jerror.o
+                0x000000008003ad50                cjpeg_std_message_table
+ .rodata.str1.8
+                0x000000008003b138     0x138b benchmarks/consumer_v2/cjpeg/jerror.o
+ *fill*         0x000000008003c4c3        0x5 
+ .rodata.str1.8
+                0x000000008003c4c8       0x28 benchmarks/consumer_v2/cjpeg/jmemansi.o
+                                         0x29 (size before relaxing)
+ .rodata        0x000000008003c4f0       0x20 benchmarks/consumer_v2/cjpeg/jmemmgr.o
+ .rodata        0x000000008003c510      0x180 benchmarks/consumer_v2/cjpeg/jutils.o
+                0x000000008003c550                cjpeg_natural_order
+ .rodata.str1.8
+                0x000000008003c690       0x79 benchmarks/consumer_v2/cjpeg/jutils.o
+                                         0x89 (size before relaxing)
+ *fill*         0x000000008003c709        0x7 
+ .rodata.str1.8
+                0x000000008003c710       0x86 workloads/cjpeg-rose7-preset/cjpeg-rose7-preset.o
+                                        0x106 (size before relaxing)
+ *fill*         0x000000008003c796        0x2 
+ .rodata.str1.8
+                0x000000008003c798      0x25f benchmarks/fp/linpack/linpack.o
+                                        0x2a7 (size before relaxing)
+ *fill*         0x000000008003c9f7        0x1 
+ .rodata.str1.8
+                0x000000008003c9f8       0x78 workloads/linear_alg-mid-100x100-sp/linear_alg-mid-100x100-sp.o
+                                         0xf8 (size before relaxing)
+ .rodata.str1.8
+                0x000000008003ca70      0x5d2 benchmarks/fp/loops/loops.o
+                                        0x6ca (size before relaxing)
+ *fill*         0x000000008003d042        0x6 
+ .rodata.str1.8
+                0x000000008003d048       0x64 workloads/loops-all-mid-10k-sp/loops-all-mid-10k-sp.o
+                                         0xe4 (size before relaxing)
+ *fill*         0x000000008003d0ac        0x4 
+ .rodata.str1.8
+                0x000000008003d0b0      0x38b benchmarks/fp/nnet/nnet.o
+                                        0x4b7 (size before relaxing)
+ *fill*         0x000000008003d43b        0x5 
+ .rodata.str1.8
+                0x000000008003d440       0x3d workloads/nnet_test/nnet_test.o
+                                         0xbd (size before relaxing)
+ *fill*         0x000000008003d47d        0x3 
+ .rodata        0x000000008003d480        0xc benchmarks/fp/nnet/ref/1letter.o
+ *fill*         0x000000008003d48c        0x4 
+ .rodata        0x000000008003d490        0xc benchmarks/fp/nnet/ref/letters.o
+ .rodata        0x000000008003d49c       0xfc benchmarks/darkmark/parser/ezxml.o
+ .rodata.str1.8
+                0x000000008003d598      0x366 benchmarks/darkmark/parser/ezxml.o
+                                        0x396 (size before relaxing)
+ *fill*         0x000000008003d8fe        0x2 
+ .rodata        0x000000008003d900       0x60 benchmarks/darkmark/parser/parser.o
+ .rodata.str1.8
+                0x000000008003d960      0x300 benchmarks/darkmark/parser/parser.o
+                                        0x379 (size before relaxing)
+ .rodata.str1.8
+                0x000000008003dc60       0x43 workloads/parser-125k/parser-125k.o
+                                         0xcd (size before relaxing)
+ *fill*         0x000000008003dca3        0x5 
+ .rodata.str1.8
+                0x000000008003dca8      0x270 benchmarks/fp/fft_radix2/fft_radix2.o
+                                        0x37f (size before relaxing)
+ .rodata.str1.8
+                0x000000008003df18       0x61 workloads/radix2-big-64k/radix2-big-64k.o
+                                         0xe1 (size before relaxing)
+ *fill*         0x000000008003df79        0x7 
+ .rodata        0x000000008003df80     0x6030 benchmarks/fp/fft_radix2/ref/2K.o
+ .rodata        0x0000000080043fb0    0x60030 benchmarks/fp/fft_radix2/ref/32K.o
+ .rodata        0x00000000800a3fe0     0xc030 benchmarks/fp/fft_radix2/ref/4K.o
+ .rodata        0x00000000800b0010    0xc0030 benchmarks/fp/fft_radix2/ref/data3_big.o
+ .rodata        0x0000000080170040    0x18030 benchmarks/fp/fft_radix2/ref/data4_mid.o
+ .rodata        0x0000000080188070     0x6030 benchmarks/fp/fft_radix2/ref/data5_small.o
+ .rodata.str1.8
+                0x000000008018e0a0       0x9b benchmarks/darkmark/sha/shabench.o
+                                         0xf3 (size before relaxing)
+ *fill*         0x000000008018e13b        0x5 
+ .rodata.str1.8
+                0x000000008018e140       0x34 workloads/sha-test/sha-test.o
+                                         0xbd (size before relaxing)
+ *fill*         0x000000008018e174        0x4 
+ .rodata        0x000000008018e178       0x60 benchmarks/darkmark/zip/zip_darkmark.o
+ .rodata.str1.8
+                0x000000008018e1d8       0xe7 benchmarks/darkmark/zip/zip_darkmark.o
+                                        0x260 (size before relaxing)
+ *fill*         0x000000008018e2bf        0x1 
+ .rodata.str1.8
+                0x000000008018e2c0        0x6 benchmarks/darkmark/zip/zlib-1.2.8/compress.o
+ *fill*         0x000000008018e2c6        0x2 
+ .rodata        0x000000008018e2c8     0x2000 benchmarks/darkmark/zip/zlib-1.2.8/crc32.o
+ .rodata        0x00000000801902c8       0xe4 benchmarks/darkmark/zip/zlib-1.2.8/deflate.o
+                0x0000000080190368                deflate_copyright
+ *fill*         0x00000000801903ac        0x4 
+ .rodata.str1.8
+                0x00000000801903b0       0x57 benchmarks/darkmark/zip/zlib-1.2.8/gzlib.o
+                                         0x5f (size before relaxing)
+ *fill*         0x0000000080190407        0x1 
+ .rodata        0x0000000080190408      0x8f8 benchmarks/darkmark/zip/zlib-1.2.8/infback.o
+ .rodata.str1.8
+                0x0000000080190d00      0x156 benchmarks/darkmark/zip/zlib-1.2.8/infback.o
+ .rodata.str1.8
+                0x0000000080190e56       0x54 benchmarks/darkmark/zip/zlib-1.2.8/inffast.o
+ *fill*         0x0000000080190e56        0x2 
+ .rodata        0x0000000080190e58      0x928 benchmarks/darkmark/zip/zlib-1.2.8/inflate.o
+ .rodata.str1.8
+                0x0000000080191780       0xb7 benchmarks/darkmark/zip/zlib-1.2.8/inflate.o
+                                        0x20f (size before relaxing)
+ *fill*         0x0000000080191837        0x1 
+ .rodata        0x0000000080191838      0x12f benchmarks/darkmark/zip/zlib-1.2.8/inftrees.o
+                0x0000000080191938                inflate_copyright
+ *fill*         0x0000000080191967        0x1 
+ .rodata        0x0000000080191968      0xa3c benchmarks/darkmark/zip/zlib-1.2.8/trees.o
+                0x0000000080191968                _length_code
+                0x0000000080191b58                _dist_code
+ .rodata.str1.8
+                0x00000000801923a4        0x6 benchmarks/darkmark/zip/zlib-1.2.8/uncompr.o
+ *fill*         0x00000000801923a4        0x4 
+ .rodata        0x00000000801923a8       0x50 benchmarks/darkmark/zip/zlib-1.2.8/zutil.o
+                0x00000000801923a8                z_errmsg
+ .rodata.str1.8
+                0x00000000801923f8       0xbd benchmarks/darkmark/zip/zlib-1.2.8/zutil.o
+                                         0xcd (size before relaxing)
+ *fill*         0x00000000801924b5        0x3 
+ .rodata.str1.8
+                0x00000000801924b8       0x34 workloads/zip-test/zip-test.o
+                                         0xbd (size before relaxing)
+ *fill*         0x00000000801924ec        0x4 
+ .rodata.str1.8
+                0x00000000801924f0      0x191 workloads/all/all.o
+                                        0x241 (size before relaxing)
+ *fill*         0x0000000080192681        0x7 
+ .rodata        0x0000000080192688      0x159 stubs.o
+                0x00000000801926e0                _ctype_
+ *fill*         0x00000000801927e1        0x7 
+ .rodata.str1.8
+                0x00000000801927e8        0xa stubs.o
+ *fill*         0x00000000801927f2        0x2 
+ .rodata        0x00000000801927f4      0x164 ../common/src/kprintf.o
+ .rodata.str1.8
+                0x0000000080192958       0xe0 ../common/src/perf_counters.o
+                                         0xdc (size before relaxing)
+ *(.srodata .srodata.*)
+ .srodata.cst8  0x0000000080192a38       0x10 mith/src/md5.o
+ .srodata.cst8  0x0000000080192a48       0x30 mith/src/th_lib.o
+ .srodata.cst4  0x0000000080192a78       0x38 mith/src/th_math.o
+ .srodata.cst8  0x0000000080192ab0       0x60 mith/src/th_math.o
+                                         0x70 (size before relaxing)
+ .srodata.cst4  0x0000000080192b10        0x4 mith/src/th_rand.o
+ *fill*         0x0000000080192b14        0x4 
+ .srodata.cst8  0x0000000080192b18       0x40 mith/src/th_rand.o
+                                         0x58 (size before relaxing)
+ .srodata.cst8  0x0000000080192b58        0x8 workloads/core/core.o
+ .srodata.cst8  0x0000000080192b60        0x8 benchmarks/consumer_v2/cjpeg/jcapimin.o
+ .srodata.cst8  0x0000000080192b60        0x8 workloads/cjpeg-rose7-preset/cjpeg-rose7-preset.o
+ .srodata.cst4  0x0000000080192b68        0x4 benchmarks/fp/linpack/linpack.o
+                                          0xc (size before relaxing)
+ .srodata.cst8  0x0000000080192b6c       0x10 benchmarks/fp/linpack/linpack.o
+ *fill*         0x0000000080192b6c        0x4 
+ .srodata.cst8  0x0000000080192b70        0x8 workloads/linear_alg-mid-100x100-sp/linear_alg-mid-100x100-sp.o
+ .srodata.cst4  0x0000000080192b78       0x5c benchmarks/fp/loops/loops.o
+                                         0x68 (size before relaxing)
+ .srodata.cst8  0x0000000080192bd4       0x10 benchmarks/fp/loops/loops.o
+ *fill*         0x0000000080192bd4        0x4 
+ .srodata.cst8  0x0000000080192bd8        0x8 workloads/loops-all-mid-10k-sp/loops-all-mid-10k-sp.o
+ .srodata.cst8  0x0000000080192be0       0x20 benchmarks/fp/nnet/nnet.o
+                                         0x38 (size before relaxing)
+ .srodata.cst8  0x0000000080192c00        0x8 workloads/parser-125k/parser-125k.o
+ .srodata.cst8  0x0000000080192c08       0x18 benchmarks/fp/fft_radix2/fft_radix2.o
+                                         0x28 (size before relaxing)
+ .srodata.cst8  0x0000000080192c20        0x8 workloads/radix2-big-64k/radix2-big-64k.o
+ .srodata.cst8  0x0000000080192c28       0x20 benchmarks/darkmark/sha/sha256.o
+ .srodata.cst8  0x0000000080192c48        0x8 workloads/sha-test/sha-test.o
+ .srodata.cst8  0x0000000080192c50        0x8 benchmarks/darkmark/zip/zlib-1.2.8/deflate.o
+ .srodata.cst8  0x0000000080192c58        0x8 benchmarks/darkmark/zip/zlib-1.2.8/trees.o
+ .srodata.cst8  0x0000000080192c60        0x8 workloads/zip-test/zip-test.o
+ .srodata.cst8  0x0000000080192c68       0x10 workloads/all/all.o
+                                         0x20 (size before relaxing)
+ .srodata.cst8  0x0000000080192c78        0x8 ../common/src/kprintf.o
+ .srodata.cst8  0x0000000080192c78        0x8 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcmp.o)
+
+.rela.dyn       0x0000000080192c80        0x0
+ .rela.text.start
+                0x0000000080192c80        0x0 /tmp/cc8mAx6Y.o
+ .rela.text     0x0000000080192c80        0x0 /tmp/cc8mAx6Y.o
+ .rela.text.startup
+                0x0000000080192c80        0x0 /tmp/cc8mAx6Y.o
+
+.data           0x0000000080192c80     0xa798
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000080192c80        0x0 /tmp/cc8mAx6Y.o
+ .data          0x0000000080192c80        0x0 mith/src/md5.o
+ .data          0x0000000080192c80        0x0 mith/src/mith_lib.o
+ .data          0x0000000080192c80        0x0 mith/src/mith_workload.o
+ .data          0x0000000080192c80      0x240 mith/src/th_bignum.o
+                0x0000000080192c80                acc_summary
+ .data          0x0000000080192ec0        0x0 mith/src/th_encode.o
+ .data          0x0000000080192ec0        0x0 mith/src/th_getopt.o
+ .data          0x0000000080192ec0       0x34 mith/src/th_lib.o
+                0x0000000080192ec0                th_err_code
+                0x0000000080192ee8                intparts_zero
+ .data          0x0000000080192ef4        0x0 mith/src/th_math.o
+ .data          0x0000000080192ef4        0x0 mith/src/th_rand.o
+ .data          0x0000000080192ef4        0x0 mith/al/src/al_file.o
+ .data          0x0000000080192ef4        0x0 mith/al/src/al_single.o
+ *fill*         0x0000000080192ef4        0x4 
+ .data          0x0000000080192ef8       0x10 mith/al/src/al_smp.o
+                0x0000000080192ef8                hardware_info
+ .data          0x0000000080192f08        0x0 mith/al/src/th_al.o
+ .data          0x0000000080192f08        0x0 benchmarks/core/core_list_join.o
+ .data          0x0000000080192f08        0x0 benchmarks/core/core_matrix.o
+ .data          0x0000000080192f08       0xa8 benchmarks/core/core_mith.o
+                0x0000000080192f08                presets_core
+ .data          0x0000000080192fb0        0x0 benchmarks/core/core_portme.o
+ .data          0x0000000080192fb0        0x0 benchmarks/core/core_state.o
+ .data          0x0000000080192fb0        0x0 benchmarks/core/core_util.o
+ .data          0x0000000080192fb0        0x0 workloads/core/core.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/bm_lib.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/bmark_lite.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/cdjpeg.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/cjpeg.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/filedata.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jcapimin.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jcapistd.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jccoefct.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jccolor.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jcdctmgr.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jchuff.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jcinit.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jcmainct.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jcmarker.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jcmaster.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jcomapi.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jcparam.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jcprepct.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jcsample.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jdatadst.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jerror.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jfdctint.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jmemansi.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jmemmgr.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/jutils.o
+ .data          0x0000000080192fb0        0x0 benchmarks/consumer_v2/cjpeg/rdbmp.o
+ .data          0x0000000080192fb0        0x0 workloads/cjpeg-rose7-preset/cjpeg-rose7-preset.o
+ .data          0x0000000080192fb0     0x88ea benchmarks/consumer_v2/cjpeg/data/Rose256_bmp.o
+                0x0000000080192fb0                Rose256_bmp
+ .data          0x000000008019b89a        0x0 benchmarks/fp/linpack/linpack.o
+ .data          0x000000008019b89a        0x0 workloads/linear_alg-mid-100x100-sp/linear_alg-mid-100x100-sp.o
+ *fill*         0x000000008019b89a        0x6 
+ .data          0x000000008019b8a0      0x4b0 benchmarks/fp/linpack/ref/inputs_f32.o
+ .data          0x000000008019bd50      0x1a0 benchmarks/fp/loops/loops.o
+                0x000000008019bd50                all_tests
+                0x000000008019be20                test_type_str
+ .data          0x000000008019bef0        0x0 workloads/loops-all-mid-10k-sp/loops-all-mid-10k-sp.o
+ .data          0x000000008019bef0      0x138 benchmarks/fp/loops/ref-sp/100.o
+ .data          0x000000008019c028      0x138 benchmarks/fp/loops/ref-sp/100k.o
+ .data          0x000000008019c160      0x138 benchmarks/fp/loops/ref-sp/100kdot.o
+ .data          0x000000008019c298      0x138 benchmarks/fp/loops/ref-sp/10k.o
+ .data          0x000000008019c3d0      0x138 benchmarks/fp/loops/ref-sp/10kdot.o
+ .data          0x000000008019c508      0x138 benchmarks/fp/loops/ref-sp/1k.o
+ .data          0x000000008019c640      0x138 benchmarks/fp/loops/ref-sp/1kdot.o
+ .data          0x000000008019c778      0x138 benchmarks/fp/loops/ref-sp/32.o
+ .data          0x000000008019c8b0        0x0 benchmarks/fp/nnet/nnet.o
+ .data          0x000000008019c8b0        0x0 workloads/nnet_test/nnet_test.o
+ .data          0x000000008019c8b0       0x64 benchmarks/fp/nnet/ref/1letter.o
+ *fill*         0x000000008019c914        0x4 
+ .data          0x000000008019c918      0x5bc benchmarks/fp/nnet/ref/letters.o
+ *fill*         0x000000008019ced4        0x4 
+ .data          0x000000008019ced8       0x58 benchmarks/darkmark/parser/ezxml.o
+ .data          0x000000008019cf30       0x90 benchmarks/darkmark/parser/parser.o
+ .data          0x000000008019cfc0        0x0 workloads/parser-125k/parser-125k.o
+ .data          0x000000008019cfc0        0x0 benchmarks/fp/fft_radix2/fft_radix2.o
+ .data          0x000000008019cfc0        0x0 workloads/radix2-big-64k/radix2-big-64k.o
+ .data          0x000000008019cfc0        0x0 benchmarks/fp/fft_radix2/ref/2K.o
+ .data          0x000000008019cfc0        0x0 benchmarks/fp/fft_radix2/ref/32K.o
+ .data          0x000000008019cfc0        0x0 benchmarks/fp/fft_radix2/ref/4K.o
+ .data          0x000000008019cfc0        0x0 benchmarks/fp/fft_radix2/ref/data3_big.o
+ .data          0x000000008019cfc0        0x0 benchmarks/fp/fft_radix2/ref/data4_mid.o
+ .data          0x000000008019cfc0        0x0 benchmarks/fp/fft_radix2/ref/data5_small.o
+ .data          0x000000008019cfc0        0x0 benchmarks/darkmark/sha/sha256.o
+ .data          0x000000008019cfc0      0x108 benchmarks/darkmark/sha/shabench.o
+                0x000000008019cfc0                presets_sha
+ .data          0x000000008019d0c8        0x0 workloads/sha-test/sha-test.o
+ .data          0x000000008019d0c8      0x190 benchmarks/darkmark/zip/zip_darkmark.o
+ .data          0x000000008019d258        0x0 benchmarks/darkmark/zip/zlib-1.2.8/adler32.o
+ .data          0x000000008019d258        0x0 benchmarks/darkmark/zip/zlib-1.2.8/compress.o
+ .data          0x000000008019d258        0x0 benchmarks/darkmark/zip/zlib-1.2.8/crc32.o
+ .data          0x000000008019d258        0x0 benchmarks/darkmark/zip/zlib-1.2.8/deflate.o
+ .data          0x000000008019d258        0x0 benchmarks/darkmark/zip/zlib-1.2.8/gzclose.o
+ .data          0x000000008019d258        0x0 benchmarks/darkmark/zip/zlib-1.2.8/gzlib.o
+ .data          0x000000008019d258        0x0 benchmarks/darkmark/zip/zlib-1.2.8/infback.o
+ .data          0x000000008019d258        0x0 benchmarks/darkmark/zip/zlib-1.2.8/inffast.o
+ .data          0x000000008019d258        0x0 benchmarks/darkmark/zip/zlib-1.2.8/inflate.o
+ .data          0x000000008019d258        0x0 benchmarks/darkmark/zip/zlib-1.2.8/inftrees.o
+ .data          0x000000008019d258       0x60 benchmarks/darkmark/zip/zlib-1.2.8/trees.o
+ .data          0x000000008019d2b8        0x0 benchmarks/darkmark/zip/zlib-1.2.8/uncompr.o
+ .data          0x000000008019d2b8        0x0 benchmarks/darkmark/zip/zlib-1.2.8/zutil.o
+ .data          0x000000008019d2b8        0x0 workloads/zip-test/zip-test.o
+ .data          0x000000008019d2b8      0x120 workloads/all/all.o
+                0x000000008019d2b8                workloads
+ .data          0x000000008019d3d8        0x0 stubs.o
+ .data          0x000000008019d3d8        0x0 ../common/src/fpu.o
+ .data          0x000000008019d3d8        0x0 ../common/src/heap.o
+ .data          0x000000008019d3d8        0x0 ../common/src/kprintf.o
+ .data          0x000000008019d3d8        0x0 ../common/src/perf_counters.o
+ .data          0x000000008019d3d8        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-abs.o)
+ .data          0x000000008019d3d8        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-atoi.o)
+ .data          0x000000008019d3d8        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-memcmp.o)
+ .data          0x000000008019d3d8        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-memmove.o)
+ .data          0x000000008019d3d8        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcat.o)
+ .data          0x000000008019d3d8        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strchr.o)
+ .data          0x000000008019d3d8        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcmp.o)
+ .data          0x000000008019d3d8        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcpy.o)
+ .data          0x000000008019d3d8        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcspn.o)
+ .data          0x000000008019d3d8        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strlen.o)
+ .data          0x000000008019d3d8        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strncmp.o)
+ .data          0x000000008019d3d8        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strncpy.o)
+ .data          0x000000008019d3d8        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strpbrk.o)
+ .data          0x000000008019d3d8        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strrchr.o)
+ .data          0x000000008019d3d8        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strspn.o)
+ .data          0x000000008019d3d8        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strstr.o)
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata         0x000000008019d3d8        0x8 mith/src/mith_lib.o
+                0x000000008019d3d8                reporting_threshold
+                0x000000008019d3dc                verify_output
+ .sdata         0x000000008019d3e0        0x4 mith/src/mith_workload.o
+ *fill*         0x000000008019d3e4        0x4 
+ .sdata         0x000000008019d3e8        0x8 mith/src/th_encode.o
+                0x000000008019d3e8                trans_ptr
+ .sdata         0x000000008019d3f0        0xc mith/src/th_getopt.o
+                0x000000008019d3f0                optopt
+                0x000000008019d3f4                opterr
+                0x000000008019d3f8                th_optind
+ .sdata         0x000000008019d3fc        0xc benchmarks/core/core_portme.o
+                0x000000008019d3fc                default_num_contexts
+                0x000000008019d400                seed4_volatile
+                0x000000008019d404                seed3_volatile
+ .sdata         0x000000008019d408        0x4 benchmarks/consumer_v2/cjpeg/bmark_lite.o
+ *fill*         0x000000008019d40c        0x4 
+ .sdata         0x000000008019d410        0x8 ../common/src/heap.o
+ *(.tohost)
+
+.bss            0x000000008019d440     0xbae0
+                [!provide]                        PROVIDE (_fbss, .)
+                [!provide]                        PROVIDE (__global_pointer$, (. + 0x7c0))
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss          0x000000008019d440       0x18 mith/src/mith_lib.o
+                0x000000008019d440                mith_mutex
+                0x000000008019d448                gcontext
+                0x000000008019d450                g_last_score
+ .sbss          0x000000008019d458        0x4 mith/src/mith_workload.o
+ *fill*         0x000000008019d45c        0x4 
+ .sbss          0x000000008019d460       0x28 mith/src/th_getopt.o
+                0x000000008019d478                __getopt_initialized
+                0x000000008019d480                th_optarg
+ .sbss          0x000000008019d488       0x1c mith/src/th_lib.o
+                0x000000008019d488                th_stderr
+                0x000000008019d490                th_stdout
+                0x000000008019d498                th_stdin
+                0x000000008019d4a0                pgo_training_run
+ *fill*         0x000000008019d4a4        0x4 
+ .sbss          0x000000008019d4a8        0x8 mith/al/src/th_al.o
+ .sbss          0x000000008019d4b0       0x14 benchmarks/core/core_mith.o
+                0x000000008019d4b0                time_multiplier
+                0x000000008019d4b4                total_data_size
+                0x000000008019d4b8                matrix_n
+                0x000000008019d4bc                state_size
+                0x000000008019d4c0                list_items
+ .sbss          0x000000008019d4c4        0xc benchmarks/core/core_portme.o
+                0x000000008019d4c4                seed5_volatile
+                0x000000008019d4c8                seed2_volatile
+                0x000000008019d4cc                seed1_volatile
+ .sbss          0x000000008019d4d0        0x8 benchmarks/darkmark/parser/ezxml.o
+                0x000000008019d4d0                EZXML_NIL
+ .sbss          0x000000008019d4d8        0x4 benchmarks/darkmark/parser/parser.o
+ .sbss          0x000000008019d4dc        0x4 benchmarks/darkmark/zip/zip_darkmark.o
+ .sbss          0x000000008019d4e0       0x10 ../common/src/heap.o
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x000000008019d4f0        0x0 /tmp/cc8mAx6Y.o
+ .bss           0x000000008019d4f0        0x0 mith/src/md5.o
+ .bss           0x000000008019d4f0        0x0 mith/src/mith_lib.o
+ .bss           0x000000008019d4f0        0x0 mith/src/mith_workload.o
+ .bss           0x000000008019d4f0        0x0 mith/src/th_bignum.o
+ .bss           0x000000008019d4f0        0x0 mith/src/th_encode.o
+ .bss           0x000000008019d4f0        0x0 mith/src/th_getopt.o
+ .bss           0x000000008019d4f0        0x0 mith/src/th_lib.o
+ .bss           0x000000008019d4f0        0x0 mith/src/th_math.o
+ .bss           0x000000008019d4f0        0x0 mith/src/th_rand.o
+ .bss           0x000000008019d4f0        0x0 mith/al/src/al_file.o
+ .bss           0x000000008019d4f0        0x0 mith/al/src/al_single.o
+ .bss           0x000000008019d4f0        0x0 mith/al/src/al_smp.o
+ .bss           0x000000008019d4f0       0x20 mith/al/src/th_al.o
+                0x000000008019d4f0                final
+                0x000000008019d500                initial
+ .bss           0x000000008019d510        0x0 benchmarks/core/core_list_join.o
+ .bss           0x000000008019d510        0x0 benchmarks/core/core_matrix.o
+ .bss           0x000000008019d510       0x80 benchmarks/core/core_mith.o
+                0x000000008019d510                mem_req
+ .bss           0x000000008019d590        0x0 benchmarks/core/core_portme.o
+ .bss           0x000000008019d590      0x800 benchmarks/core/core_state.o
+                0x000000008019d590                state_tables
+ .bss           0x000000008019dd90        0x0 benchmarks/core/core_util.o
+ .bss           0x000000008019dd90        0x0 workloads/core/core.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/bm_lib.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/bmark_lite.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/cdjpeg.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/cjpeg.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/filedata.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jcapimin.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jcapistd.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jccoefct.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jccolor.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jcdctmgr.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jchuff.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jcinit.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jcmainct.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jcmarker.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jcmaster.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jcomapi.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jcparam.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jcprepct.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jcsample.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jdatadst.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jerror.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jfdctint.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jmemansi.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jmemmgr.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/jutils.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/rdbmp.o
+ .bss           0x000000008019dd90        0x0 workloads/cjpeg-rose7-preset/cjpeg-rose7-preset.o
+ .bss           0x000000008019dd90        0x0 benchmarks/consumer_v2/cjpeg/data/Rose256_bmp.o
+ .bss           0x000000008019dd90      0x4b0 benchmarks/fp/linpack/linpack.o
+                0x000000008019dd90                presets_linpack
+ .bss           0x000000008019e240        0x0 workloads/linear_alg-mid-100x100-sp/linear_alg-mid-100x100-sp.o
+ .bss           0x000000008019e240        0x0 benchmarks/fp/linpack/ref/inputs_f32.o
+ .bss           0x000000008019e240      0xd80 benchmarks/fp/loops/loops.o
+                0x000000008019e240                presets_loops
+ .bss           0x000000008019efc0        0x0 workloads/loops-all-mid-10k-sp/loops-all-mid-10k-sp.o
+ .bss           0x000000008019efc0        0x0 benchmarks/fp/loops/ref-sp/100.o
+ .bss           0x000000008019efc0        0x0 benchmarks/fp/loops/ref-sp/100k.o
+ .bss           0x000000008019efc0        0x0 benchmarks/fp/loops/ref-sp/100kdot.o
+ .bss           0x000000008019efc0        0x0 benchmarks/fp/loops/ref-sp/10k.o
+ .bss           0x000000008019efc0        0x0 benchmarks/fp/loops/ref-sp/10kdot.o
+ .bss           0x000000008019efc0        0x0 benchmarks/fp/loops/ref-sp/1k.o
+ .bss           0x000000008019efc0        0x0 benchmarks/fp/loops/ref-sp/1kdot.o
+ .bss           0x000000008019efc0        0x0 benchmarks/fp/loops/ref-sp/32.o
+ .bss           0x000000008019efc0     0x9c80 benchmarks/fp/nnet/nnet.o
+                0x000000008019efc0                presets_nnet
+ .bss           0x00000000801a8c40        0x0 workloads/nnet_test/nnet_test.o
+ .bss           0x00000000801a8c40        0x0 benchmarks/fp/nnet/ref/1letter.o
+ .bss           0x00000000801a8c40        0x0 benchmarks/fp/nnet/ref/letters.o
+ .bss           0x00000000801a8c40        0x0 benchmarks/darkmark/parser/ezxml.o
+ .bss           0x00000000801a8c40        0x0 benchmarks/darkmark/parser/parser.o
+ .bss           0x00000000801a8c40        0x0 workloads/parser-125k/parser-125k.o
+ .bss           0x00000000801a8c40      0x1e0 benchmarks/fp/fft_radix2/fft_radix2.o
+                0x00000000801a8c40                presets_radix2
+ .bss           0x00000000801a8e20        0x0 workloads/radix2-big-64k/radix2-big-64k.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/fp/fft_radix2/ref/2K.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/fp/fft_radix2/ref/32K.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/fp/fft_radix2/ref/4K.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/fp/fft_radix2/ref/data3_big.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/fp/fft_radix2/ref/data4_mid.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/fp/fft_radix2/ref/data5_small.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/darkmark/sha/sha256.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/darkmark/sha/shabench.o
+ .bss           0x00000000801a8e20        0x0 workloads/sha-test/sha-test.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/darkmark/zip/zip_darkmark.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/darkmark/zip/zlib-1.2.8/adler32.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/darkmark/zip/zlib-1.2.8/compress.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/darkmark/zip/zlib-1.2.8/crc32.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/darkmark/zip/zlib-1.2.8/deflate.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/darkmark/zip/zlib-1.2.8/gzclose.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/darkmark/zip/zlib-1.2.8/gzlib.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/darkmark/zip/zlib-1.2.8/infback.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/darkmark/zip/zlib-1.2.8/inffast.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/darkmark/zip/zlib-1.2.8/inflate.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/darkmark/zip/zlib-1.2.8/inftrees.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/darkmark/zip/zlib-1.2.8/trees.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/darkmark/zip/zlib-1.2.8/uncompr.o
+ .bss           0x00000000801a8e20        0x0 benchmarks/darkmark/zip/zlib-1.2.8/zutil.o
+ .bss           0x00000000801a8e20        0x0 workloads/zip-test/zip-test.o
+ .bss           0x00000000801a8e20        0x0 workloads/all/all.o
+ .bss           0x00000000801a8e20      0x100 stubs.o
+                0x00000000801a8e20                __global_locale
+ .bss           0x00000000801a8f20        0x0 ../common/src/fpu.o
+ .bss           0x00000000801a8f20        0x0 ../common/src/heap.o
+ .bss           0x00000000801a8f20        0x0 ../common/src/kprintf.o
+ .bss           0x00000000801a8f20        0x0 ../common/src/perf_counters.o
+ .bss           0x00000000801a8f20        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-abs.o)
+ .bss           0x00000000801a8f20        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-atoi.o)
+ .bss           0x00000000801a8f20        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-memcmp.o)
+ .bss           0x00000000801a8f20        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-memmove.o)
+ .bss           0x00000000801a8f20        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcat.o)
+ .bss           0x00000000801a8f20        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strchr.o)
+ .bss           0x00000000801a8f20        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcmp.o)
+ .bss           0x00000000801a8f20        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcpy.o)
+ .bss           0x00000000801a8f20        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcspn.o)
+ .bss           0x00000000801a8f20        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strlen.o)
+ .bss           0x00000000801a8f20        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strncmp.o)
+ .bss           0x00000000801a8f20        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strncpy.o)
+ .bss           0x00000000801a8f20        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strpbrk.o)
+ .bss           0x00000000801a8f20        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strrchr.o)
+ .bss           0x00000000801a8f20        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strspn.o)
+ .bss           0x00000000801a8f20        0x0 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strstr.o)
+                0x00000000801a8f20                . = ALIGN (0x8)
+                [!provide]                        PROVIDE (_ebss, .)
+                0x00000000801a8f20                PROVIDE (_end, .)
+
+.note
+ *(.note .note.*)
+OUTPUT(boot.elf elf64-littleriscv)
+
+.debug_line     0x0000000000000000    0x2b2ec
+ .debug_line    0x0000000000000000       0x57 /tmp/cc8mAx6Y.o
+ .debug_line    0x0000000000000057      0x673 mith/src/md5.o
+ .debug_line    0x00000000000006ca      0xb1c mith/src/mith_lib.o
+ .debug_line    0x00000000000011e6      0x65a mith/src/mith_workload.o
+ .debug_line    0x0000000000001840      0xbe0 mith/src/th_bignum.o
+ .debug_line    0x0000000000002420      0x305 mith/src/th_encode.o
+ .debug_line    0x0000000000002725      0x91d mith/src/th_getopt.o
+ .debug_line    0x0000000000003042     0x1931 mith/src/th_lib.o
+ .debug_line    0x0000000000004973      0x44e mith/src/th_math.o
+ .debug_line    0x0000000000004dc1     0x1697 mith/src/th_rand.o
+ .debug_line    0x0000000000006458      0x28e mith/al/src/al_file.o
+ .debug_line    0x00000000000066e6      0x136 mith/al/src/al_single.o
+ .debug_line    0x000000000000681c      0x140 mith/al/src/al_smp.o
+ .debug_line    0x000000000000695c      0x6b1 mith/al/src/th_al.o
+ .debug_line    0x000000000000700d      0x8a7 benchmarks/core/core_list_join.o
+ .debug_line    0x00000000000078b4      0x808 benchmarks/core/core_matrix.o
+ .debug_line    0x00000000000080bc      0x695 benchmarks/core/core_mith.o
+ .debug_line    0x0000000000008751      0x239 benchmarks/core/core_portme.o
+ .debug_line    0x000000000000898a      0x828 benchmarks/core/core_state.o
+ .debug_line    0x00000000000091b2      0x35b benchmarks/core/core_util.o
+ .debug_line    0x000000000000950d      0x343 workloads/core/core.o
+ .debug_line    0x0000000000009850        0x0 benchmarks/consumer_v2/cjpeg/bm_lib.o
+ .debug_line    0x0000000000009850      0x5f9 benchmarks/consumer_v2/cjpeg/bmark_lite.o
+ .debug_line    0x0000000000009e49      0x26a benchmarks/consumer_v2/cjpeg/cdjpeg.o
+ .debug_line    0x000000000000a0b3      0x31b benchmarks/consumer_v2/cjpeg/cjpeg.o
+ .debug_line    0x000000000000a3ce      0x491 benchmarks/consumer_v2/cjpeg/filedata.o
+ .debug_line    0x000000000000a85f      0x554 benchmarks/consumer_v2/cjpeg/jcapimin.o
+ .debug_line    0x000000000000adb3      0x3cc benchmarks/consumer_v2/cjpeg/jcapistd.o
+ .debug_line    0x000000000000b17f      0x557 benchmarks/consumer_v2/cjpeg/jccoefct.o
+ .debug_line    0x000000000000b6d6      0x85d benchmarks/consumer_v2/cjpeg/jccolor.o
+ .debug_line    0x000000000000bf33      0x47b benchmarks/consumer_v2/cjpeg/jcdctmgr.o
+ .debug_line    0x000000000000c3ae      0xdbe benchmarks/consumer_v2/cjpeg/jchuff.o
+ .debug_line    0x000000000000d16c      0x292 benchmarks/consumer_v2/cjpeg/jcinit.o
+ .debug_line    0x000000000000d3fe      0x39d benchmarks/consumer_v2/cjpeg/jcmainct.o
+ .debug_line    0x000000000000d79b      0xa28 benchmarks/consumer_v2/cjpeg/jcmarker.o
+ .debug_line    0x000000000000e1c3      0x840 benchmarks/consumer_v2/cjpeg/jcmaster.o
+ .debug_line    0x000000000000ea03      0x2d3 benchmarks/consumer_v2/cjpeg/jcomapi.o
+ .debug_line    0x000000000000ecd6      0x755 benchmarks/consumer_v2/cjpeg/jcparam.o
+ .debug_line    0x000000000000f42b      0x476 benchmarks/consumer_v2/cjpeg/jcprepct.o
+ .debug_line    0x000000000000f8a1      0x6dd benchmarks/consumer_v2/cjpeg/jcsample.o
+ .debug_line    0x000000000000ff7e      0x36b benchmarks/consumer_v2/cjpeg/jdatadst.o
+ .debug_line    0x00000000000102e9      0x3fc benchmarks/consumer_v2/cjpeg/jerror.o
+ .debug_line    0x00000000000106e5      0x7b7 benchmarks/consumer_v2/cjpeg/jfdctint.o
+ .debug_line    0x0000000000010e9c      0x3f1 benchmarks/consumer_v2/cjpeg/jmemansi.o
+ .debug_line    0x000000000001128d      0xf18 benchmarks/consumer_v2/cjpeg/jmemmgr.o
+ .debug_line    0x00000000000121a5      0x3f9 benchmarks/consumer_v2/cjpeg/jutils.o
+ .debug_line    0x000000000001259e      0xa7d benchmarks/consumer_v2/cjpeg/rdbmp.o
+ .debug_line    0x000000000001301b      0x469 workloads/cjpeg-rose7-preset/cjpeg-rose7-preset.o
+ .debug_line    0x0000000000013484       0x89 benchmarks/consumer_v2/cjpeg/data/Rose256_bmp.o
+ .debug_line    0x000000000001350d      0xe40 benchmarks/fp/linpack/linpack.o
+ .debug_line    0x000000000001434d      0x36d workloads/linear_alg-mid-100x100-sp/linear_alg-mid-100x100-sp.o
+ .debug_line    0x00000000000146ba      0x140 benchmarks/fp/linpack/ref/inputs_f32.o
+ .debug_line    0x00000000000147fa     0x2e67 benchmarks/fp/loops/loops.o
+ .debug_line    0x0000000000017661      0x363 workloads/loops-all-mid-10k-sp/loops-all-mid-10k-sp.o
+ .debug_line    0x00000000000179c4      0x15c benchmarks/fp/loops/ref-sp/100.o
+ .debug_line    0x0000000000017b20      0x151 benchmarks/fp/loops/ref-sp/100k.o
+ .debug_line    0x0000000000017c71      0x17e benchmarks/fp/loops/ref-sp/100kdot.o
+ .debug_line    0x0000000000017def      0x150 benchmarks/fp/loops/ref-sp/10k.o
+ .debug_line    0x0000000000017f3f      0x17d benchmarks/fp/loops/ref-sp/10kdot.o
+ .debug_line    0x00000000000180bc      0x14f benchmarks/fp/loops/ref-sp/1k.o
+ .debug_line    0x000000000001820b      0x17c benchmarks/fp/loops/ref-sp/1kdot.o
+ .debug_line    0x0000000000018387      0x15b benchmarks/fp/loops/ref-sp/32.o
+ .debug_line    0x00000000000184e2      0xa71 benchmarks/fp/nnet/nnet.o
+ .debug_line    0x0000000000018f53      0x365 workloads/nnet_test/nnet_test.o
+ .debug_line    0x00000000000192b8      0x1ab benchmarks/fp/nnet/ref/1letter.o
+ .debug_line    0x0000000000019463      0x1ac benchmarks/fp/nnet/ref/letters.o
+ .debug_line    0x000000000001960f     0x2210 benchmarks/darkmark/parser/ezxml.o
+ .debug_line    0x000000000001b81f      0x5ec benchmarks/darkmark/parser/parser.o
+ .debug_line    0x000000000001be0b      0x351 workloads/parser-125k/parser-125k.o
+ .debug_line    0x000000000001c15c      0x894 benchmarks/fp/fft_radix2/fft_radix2.o
+ .debug_line    0x000000000001c9f0      0x357 workloads/radix2-big-64k/radix2-big-64k.o
+ .debug_line    0x000000000001cd47      0x159 benchmarks/fp/fft_radix2/ref/2K.o
+ .debug_line    0x000000000001cea0      0x15b benchmarks/fp/fft_radix2/ref/32K.o
+ .debug_line    0x000000000001cffb      0x159 benchmarks/fp/fft_radix2/ref/4K.o
+ .debug_line    0x000000000001d154      0x161 benchmarks/fp/fft_radix2/ref/data3_big.o
+ .debug_line    0x000000000001d2b5      0x161 benchmarks/fp/fft_radix2/ref/data4_mid.o
+ .debug_line    0x000000000001d416      0x162 benchmarks/fp/fft_radix2/ref/data5_small.o
+ .debug_line    0x000000000001d578     0x31bc benchmarks/darkmark/sha/sha256.o
+ .debug_line    0x0000000000020734      0x3ed benchmarks/darkmark/sha/shabench.o
+ .debug_line    0x0000000000020b21      0x34b workloads/sha-test/sha-test.o
+ .debug_line    0x0000000000020e6c      0x773 benchmarks/darkmark/zip/zip_darkmark.o
+ .debug_line    0x00000000000215df      0x427 benchmarks/darkmark/zip/zlib-1.2.8/adler32.o
+ .debug_line    0x0000000000021a06      0x173 benchmarks/darkmark/zip/zlib-1.2.8/compress.o
+ .debug_line    0x0000000000021b79      0x4be benchmarks/darkmark/zip/zlib-1.2.8/crc32.o
+ .debug_line    0x0000000000022037     0x22e4 benchmarks/darkmark/zip/zlib-1.2.8/deflate.o
+ .debug_line    0x000000000002431b      0x228 benchmarks/darkmark/zip/zlib-1.2.8/gzclose.o
+ .debug_line    0x0000000000024543      0x450 benchmarks/darkmark/zip/zlib-1.2.8/gzlib.o
+ .debug_line    0x0000000000024993      0xd90 benchmarks/darkmark/zip/zlib-1.2.8/infback.o
+ .debug_line    0x0000000000025723      0x7fa benchmarks/darkmark/zip/zlib-1.2.8/inffast.o
+ .debug_line    0x0000000000025f1d     0x1e27 benchmarks/darkmark/zip/zlib-1.2.8/inflate.o
+ .debug_line    0x0000000000027d44      0x555 benchmarks/darkmark/zip/zlib-1.2.8/inftrees.o
+ .debug_line    0x0000000000028299     0x101d benchmarks/darkmark/zip/zlib-1.2.8/trees.o
+ .debug_line    0x00000000000292b6      0x158 benchmarks/darkmark/zip/zlib-1.2.8/uncompr.o
+ .debug_line    0x000000000002940e      0x237 benchmarks/darkmark/zip/zlib-1.2.8/zutil.o
+ .debug_line    0x0000000000029645      0x34b workloads/zip-test/zip-test.o
+ .debug_line    0x0000000000029990      0x400 workloads/all/all.o
+ .debug_line    0x0000000000029d90      0x79a stubs.o
+ .debug_line    0x000000000002a52a       0xc5 ../common/src/fpu.o
+ .debug_line    0x000000000002a5ef      0x407 ../common/src/heap.o
+ .debug_line    0x000000000002a9f6      0x59e ../common/src/kprintf.o
+ .debug_line    0x000000000002af94      0x358 ../common/src/perf_counters.o
+
+.debug_info     0x0000000000000000    0x8058f
+ .debug_info    0x0000000000000000       0x2e /tmp/cc8mAx6Y.o
+ .debug_info    0x000000000000002e      0x752 mith/src/md5.o
+ .debug_info    0x0000000000000780     0x2d7f mith/src/mith_lib.o
+ .debug_info    0x00000000000034ff     0x100a mith/src/mith_workload.o
+ .debug_info    0x0000000000004509     0x18c7 mith/src/th_bignum.o
+ .debug_info    0x0000000000005dd0      0x5ce mith/src/th_encode.o
+ .debug_info    0x000000000000639e     0x1132 mith/src/th_getopt.o
+ .debug_info    0x00000000000074d0     0x53d5 mith/src/th_lib.o
+ .debug_info    0x000000000000c8a5     0x126e mith/src/th_math.o
+ .debug_info    0x000000000000db13     0x33e4 mith/src/th_rand.o
+ .debug_info    0x0000000000010ef7     0x103d mith/al/src/al_file.o
+ .debug_info    0x0000000000011f34      0x49e mith/al/src/al_single.o
+ .debug_info    0x00000000000123d2      0x440 mith/al/src/al_smp.o
+ .debug_info    0x0000000000012812     0x1647 mith/al/src/th_al.o
+ .debug_info    0x0000000000013e59     0x1796 benchmarks/core/core_list_join.o
+ .debug_info    0x00000000000155ef     0x14f4 benchmarks/core/core_matrix.o
+ .debug_info    0x0000000000016ae3     0x1c42 benchmarks/core/core_mith.o
+ .debug_info    0x0000000000018725      0xf2e benchmarks/core/core_portme.o
+ .debug_info    0x0000000000019653     0x1080 benchmarks/core/core_state.o
+ .debug_info    0x000000000001a6d3      0xe6c benchmarks/core/core_util.o
+ .debug_info    0x000000000001b53f      0xf96 workloads/core/core.o
+ .debug_info    0x000000000001c4d5     0x1641 benchmarks/consumer_v2/cjpeg/bmark_lite.o
+ .debug_info    0x000000000001db16      0xb53 benchmarks/consumer_v2/cjpeg/cdjpeg.o
+ .debug_info    0x000000000001e669     0x1bd2 benchmarks/consumer_v2/cjpeg/cjpeg.o
+ .debug_info    0x000000000002023b      0xff6 benchmarks/consumer_v2/cjpeg/filedata.o
+ .debug_info    0x0000000000021231     0x2243 benchmarks/consumer_v2/cjpeg/jcapimin.o
+ .debug_info    0x0000000000023474     0x1f99 benchmarks/consumer_v2/cjpeg/jcapistd.o
+ .debug_info    0x000000000002540d     0x20c3 benchmarks/consumer_v2/cjpeg/jccoefct.o
+ .debug_info    0x00000000000274d0     0x236a benchmarks/consumer_v2/cjpeg/jccolor.o
+ .debug_info    0x000000000002983a     0x2078 benchmarks/consumer_v2/cjpeg/jcdctmgr.o
+ .debug_info    0x000000000002b8b2     0x2cbd benchmarks/consumer_v2/cjpeg/jchuff.o
+ .debug_info    0x000000000002e56f     0x1bb1 benchmarks/consumer_v2/cjpeg/jcinit.o
+ .debug_info    0x0000000000030120     0x1f9d benchmarks/consumer_v2/cjpeg/jcmainct.o
+ .debug_info    0x00000000000320bd     0x31c8 benchmarks/consumer_v2/cjpeg/jcmarker.o
+ .debug_info    0x0000000000035285     0x2289 benchmarks/consumer_v2/cjpeg/jcmaster.o
+ .debug_info    0x000000000003750e     0x1dc4 benchmarks/consumer_v2/cjpeg/jcomapi.o
+ .debug_info    0x00000000000392d2     0x26d7 benchmarks/consumer_v2/cjpeg/jcparam.o
+ .debug_info    0x000000000003b9a9     0x20ff benchmarks/consumer_v2/cjpeg/jcprepct.o
+ .debug_info    0x000000000003daa8     0x2494 benchmarks/consumer_v2/cjpeg/jcsample.o
+ .debug_info    0x000000000003ff3c     0x1cc3 benchmarks/consumer_v2/cjpeg/jdatadst.o
+ .debug_info    0x0000000000041bff     0x14ff benchmarks/consumer_v2/cjpeg/jerror.o
+ .debug_info    0x00000000000430fe      0xbef benchmarks/consumer_v2/cjpeg/jfdctint.o
+ .debug_info    0x0000000000043ced     0x17b9 benchmarks/consumer_v2/cjpeg/jmemansi.o
+ .debug_info    0x00000000000454a6     0x2694 benchmarks/consumer_v2/cjpeg/jmemmgr.o
+ .debug_info    0x0000000000047b3a     0x1129 benchmarks/consumer_v2/cjpeg/jutils.o
+ .debug_info    0x0000000000048c63     0x282d benchmarks/consumer_v2/cjpeg/rdbmp.o
+ .debug_info    0x000000000004b490     0x173a workloads/cjpeg-rose7-preset/cjpeg-rose7-preset.o
+ .debug_info    0x000000000004cbca       0xe5 benchmarks/consumer_v2/cjpeg/data/Rose256_bmp.o
+ .debug_info    0x000000000004ccaf     0x2204 benchmarks/fp/linpack/linpack.o
+ .debug_info    0x000000000004eeb3      0xf96 workloads/linear_alg-mid-100x100-sp/linear_alg-mid-100x100-sp.o
+ .debug_info    0x000000000004fe49      0x440 benchmarks/fp/linpack/ref/inputs_f32.o
+ .debug_info    0x0000000000050289     0x504a benchmarks/fp/loops/loops.o
+ .debug_info    0x00000000000552d3      0xf96 workloads/loops-all-mid-10k-sp/loops-all-mid-10k-sp.o
+ .debug_info    0x0000000000056269      0x502 benchmarks/fp/loops/ref-sp/100.o
+ .debug_info    0x000000000005676b      0x502 benchmarks/fp/loops/ref-sp/100k.o
+ .debug_info    0x0000000000056c6d      0x502 benchmarks/fp/loops/ref-sp/100kdot.o
+ .debug_info    0x000000000005716f      0x502 benchmarks/fp/loops/ref-sp/10k.o
+ .debug_info    0x0000000000057671      0x502 benchmarks/fp/loops/ref-sp/10kdot.o
+ .debug_info    0x0000000000057b73      0x502 benchmarks/fp/loops/ref-sp/1k.o
+ .debug_info    0x0000000000058075      0x502 benchmarks/fp/loops/ref-sp/1kdot.o
+ .debug_info    0x0000000000058577      0x502 benchmarks/fp/loops/ref-sp/32.o
+ .debug_info    0x0000000000058a79     0x1a95 benchmarks/fp/nnet/nnet.o
+ .debug_info    0x000000000005a50e      0xf96 workloads/nnet_test/nnet_test.o
+ .debug_info    0x000000000005b4a4      0x56e benchmarks/fp/nnet/ref/1letter.o
+ .debug_info    0x000000000005ba12      0x571 benchmarks/fp/nnet/ref/letters.o
+ .debug_info    0x000000000005bf83     0x3da5 benchmarks/darkmark/parser/ezxml.o
+ .debug_info    0x000000000005fd28     0x1d17 benchmarks/darkmark/parser/parser.o
+ .debug_info    0x0000000000061a3f      0xf96 workloads/parser-125k/parser-125k.o
+ .debug_info    0x00000000000629d5     0x15eb benchmarks/fp/fft_radix2/fft_radix2.o
+ .debug_info    0x0000000000063fc0      0xf96 workloads/radix2-big-64k/radix2-big-64k.o
+ .debug_info    0x0000000000064f56      0x36f benchmarks/fp/fft_radix2/ref/2K.o
+ .debug_info    0x00000000000652c5      0x36f benchmarks/fp/fft_radix2/ref/32K.o
+ .debug_info    0x0000000000065634      0x36f benchmarks/fp/fft_radix2/ref/4K.o
+ .debug_info    0x00000000000659a3      0x377 benchmarks/fp/fft_radix2/ref/data3_big.o
+ .debug_info    0x0000000000065d1a      0x36f benchmarks/fp/fft_radix2/ref/data4_mid.o
+ .debug_info    0x0000000000066089      0x36f benchmarks/fp/fft_radix2/ref/data5_small.o
+ .debug_info    0x00000000000663f8      0xce6 benchmarks/darkmark/sha/sha256.o
+ .debug_info    0x00000000000670de      0xcf1 benchmarks/darkmark/sha/shabench.o
+ .debug_info    0x0000000000067dcf      0xf96 workloads/sha-test/sha-test.o
+ .debug_info    0x0000000000068d65     0x1e9e benchmarks/darkmark/zip/zip_darkmark.o
+ .debug_info    0x000000000006ac03      0xca4 benchmarks/darkmark/zip/zlib-1.2.8/adler32.o
+ .debug_info    0x000000000006b8a7      0x408 benchmarks/darkmark/zip/zlib-1.2.8/compress.o
+ .debug_info    0x000000000006bcaf     0x1117 benchmarks/darkmark/zip/zlib-1.2.8/crc32.o
+ .debug_info    0x000000000006cdc6     0x29fe benchmarks/darkmark/zip/zlib-1.2.8/deflate.o
+ .debug_info    0x000000000006f7c4      0xde8 benchmarks/darkmark/zip/zlib-1.2.8/gzclose.o
+ .debug_info    0x00000000000705ac     0x132f benchmarks/darkmark/zip/zlib-1.2.8/gzlib.o
+ .debug_info    0x00000000000718db     0x1ec7 benchmarks/darkmark/zip/zlib-1.2.8/infback.o
+ .debug_info    0x00000000000737a2     0x1169 benchmarks/darkmark/zip/zlib-1.2.8/inffast.o
+ .debug_info    0x000000000007490b     0x26b1 benchmarks/darkmark/zip/zlib-1.2.8/inflate.o
+ .debug_info    0x0000000000076fbc      0xd99 benchmarks/darkmark/zip/zlib-1.2.8/inftrees.o
+ .debug_info    0x0000000000077d55     0x25c1 benchmarks/darkmark/zip/zlib-1.2.8/trees.o
+ .debug_info    0x000000000007a316      0x33a benchmarks/darkmark/zip/zlib-1.2.8/uncompr.o
+ .debug_info    0x000000000007a650      0xc41 benchmarks/darkmark/zip/zlib-1.2.8/zutil.o
+ .debug_info    0x000000000007b291      0xf96 workloads/zip-test/zip-test.o
+ .debug_info    0x000000000007c227      0xa97 workloads/all/all.o
+ .debug_info    0x000000000007ccbe     0x14d4 stubs.o
+ .debug_info    0x000000000007e192       0x9a ../common/src/fpu.o
+ .debug_info    0x000000000007e22c      0xea8 ../common/src/heap.o
+ .debug_info    0x000000000007f0d4      0x7b0 ../common/src/kprintf.o
+ .debug_info    0x000000000007f884      0xd0b ../common/src/perf_counters.o
+
+.debug_abbrev   0x0000000000000000    0x10f29
+ .debug_abbrev  0x0000000000000000       0x14 /tmp/cc8mAx6Y.o
+ .debug_abbrev  0x0000000000000014      0x2d0 mith/src/md5.o
+ .debug_abbrev  0x00000000000002e4      0x45f mith/src/mith_lib.o
+ .debug_abbrev  0x0000000000000743      0x23e mith/src/mith_workload.o
+ .debug_abbrev  0x0000000000000981      0x41c mith/src/th_bignum.o
+ .debug_abbrev  0x0000000000000d9d      0x229 mith/src/th_encode.o
+ .debug_abbrev  0x0000000000000fc6      0x332 mith/src/th_getopt.o
+ .debug_abbrev  0x00000000000012f8      0x5ee mith/src/th_lib.o
+ .debug_abbrev  0x00000000000018e6      0x1df mith/src/th_math.o
+ .debug_abbrev  0x0000000000001ac5      0x3dd mith/src/th_rand.o
+ .debug_abbrev  0x0000000000001ea2      0x2c0 mith/al/src/al_file.o
+ .debug_abbrev  0x0000000000002162      0x1be mith/al/src/al_single.o
+ .debug_abbrev  0x0000000000002320      0x1f1 mith/al/src/al_smp.o
+ .debug_abbrev  0x0000000000002511      0x439 mith/al/src/th_al.o
+ .debug_abbrev  0x000000000000294a      0x418 benchmarks/core/core_list_join.o
+ .debug_abbrev  0x0000000000002d62      0x37c benchmarks/core/core_matrix.o
+ .debug_abbrev  0x00000000000030de      0x2f1 benchmarks/core/core_mith.o
+ .debug_abbrev  0x00000000000033cf      0x2da benchmarks/core/core_portme.o
+ .debug_abbrev  0x00000000000036a9      0x3f8 benchmarks/core/core_state.o
+ .debug_abbrev  0x0000000000003aa1      0x303 benchmarks/core/core_util.o
+ .debug_abbrev  0x0000000000003da4      0x23c workloads/core/core.o
+ .debug_abbrev  0x0000000000003fe0      0x37c benchmarks/consumer_v2/cjpeg/bmark_lite.o
+ .debug_abbrev  0x000000000000435c      0x22f benchmarks/consumer_v2/cjpeg/cdjpeg.o
+ .debug_abbrev  0x000000000000458b      0x2fb benchmarks/consumer_v2/cjpeg/cjpeg.o
+ .debug_abbrev  0x0000000000004886      0x2a2 benchmarks/consumer_v2/cjpeg/filedata.o
+ .debug_abbrev  0x0000000000004b28      0x34a benchmarks/consumer_v2/cjpeg/jcapimin.o
+ .debug_abbrev  0x0000000000004e72      0x2bd benchmarks/consumer_v2/cjpeg/jcapistd.o
+ .debug_abbrev  0x000000000000512f      0x378 benchmarks/consumer_v2/cjpeg/jccoefct.o
+ .debug_abbrev  0x00000000000054a7      0x351 benchmarks/consumer_v2/cjpeg/jccolor.o
+ .debug_abbrev  0x00000000000057f8      0x2cd benchmarks/consumer_v2/cjpeg/jcdctmgr.o
+ .debug_abbrev  0x0000000000005ac5      0x41c benchmarks/consumer_v2/cjpeg/jchuff.o
+ .debug_abbrev  0x0000000000005ee1      0x288 benchmarks/consumer_v2/cjpeg/jcinit.o
+ .debug_abbrev  0x0000000000006169      0x312 benchmarks/consumer_v2/cjpeg/jcmainct.o
+ .debug_abbrev  0x000000000000647b      0x449 benchmarks/consumer_v2/cjpeg/jcmarker.o
+ .debug_abbrev  0x00000000000068c4      0x371 benchmarks/consumer_v2/cjpeg/jcmaster.o
+ .debug_abbrev  0x0000000000006c35      0x2a1 benchmarks/consumer_v2/cjpeg/jcomapi.o
+ .debug_abbrev  0x0000000000006ed6      0x45b benchmarks/consumer_v2/cjpeg/jcparam.o
+ .debug_abbrev  0x0000000000007331      0x311 benchmarks/consumer_v2/cjpeg/jcprepct.o
+ .debug_abbrev  0x0000000000007642      0x3c6 benchmarks/consumer_v2/cjpeg/jcsample.o
+ .debug_abbrev  0x0000000000007a08      0x33c benchmarks/consumer_v2/cjpeg/jdatadst.o
+ .debug_abbrev  0x0000000000007d44      0x312 benchmarks/consumer_v2/cjpeg/jerror.o
+ .debug_abbrev  0x0000000000008056      0x202 benchmarks/consumer_v2/cjpeg/jfdctint.o
+ .debug_abbrev  0x0000000000008258      0x2a7 benchmarks/consumer_v2/cjpeg/jmemansi.o
+ .debug_abbrev  0x00000000000084ff      0x3da benchmarks/consumer_v2/cjpeg/jmemmgr.o
+ .debug_abbrev  0x00000000000088d9      0x29f benchmarks/consumer_v2/cjpeg/jutils.o
+ .debug_abbrev  0x0000000000008b78      0x47e benchmarks/consumer_v2/cjpeg/rdbmp.o
+ .debug_abbrev  0x0000000000008ff6      0x23c workloads/cjpeg-rose7-preset/cjpeg-rose7-preset.o
+ .debug_abbrev  0x0000000000009232       0x7b benchmarks/consumer_v2/cjpeg/data/Rose256_bmp.o
+ .debug_abbrev  0x00000000000092ad      0x3aa benchmarks/fp/linpack/linpack.o
+ .debug_abbrev  0x0000000000009657      0x23c workloads/linear_alg-mid-100x100-sp/linear_alg-mid-100x100-sp.o
+ .debug_abbrev  0x0000000000009893      0x15b benchmarks/fp/linpack/ref/inputs_f32.o
+ .debug_abbrev  0x00000000000099ee      0x4dd benchmarks/fp/loops/loops.o
+ .debug_abbrev  0x0000000000009ecb      0x23c workloads/loops-all-mid-10k-sp/loops-all-mid-10k-sp.o
+ .debug_abbrev  0x000000000000a107      0x16b benchmarks/fp/loops/ref-sp/100.o
+ .debug_abbrev  0x000000000000a272      0x16b benchmarks/fp/loops/ref-sp/100k.o
+ .debug_abbrev  0x000000000000a3dd      0x16b benchmarks/fp/loops/ref-sp/100kdot.o
+ .debug_abbrev  0x000000000000a548      0x16b benchmarks/fp/loops/ref-sp/10k.o
+ .debug_abbrev  0x000000000000a6b3      0x16b benchmarks/fp/loops/ref-sp/10kdot.o
+ .debug_abbrev  0x000000000000a81e      0x16b benchmarks/fp/loops/ref-sp/1k.o
+ .debug_abbrev  0x000000000000a989      0x16b benchmarks/fp/loops/ref-sp/1kdot.o
+ .debug_abbrev  0x000000000000aaf4      0x16b benchmarks/fp/loops/ref-sp/32.o
+ .debug_abbrev  0x000000000000ac5f      0x3f0 benchmarks/fp/nnet/nnet.o
+ .debug_abbrev  0x000000000000b04f      0x23c workloads/nnet_test/nnet_test.o
+ .debug_abbrev  0x000000000000b28b      0x1b5 benchmarks/fp/nnet/ref/1letter.o
+ .debug_abbrev  0x000000000000b440      0x1cd benchmarks/fp/nnet/ref/letters.o
+ .debug_abbrev  0x000000000000b60d      0x46a benchmarks/darkmark/parser/ezxml.o
+ .debug_abbrev  0x000000000000ba77      0x37c benchmarks/darkmark/parser/parser.o
+ .debug_abbrev  0x000000000000bdf3      0x23c workloads/parser-125k/parser-125k.o
+ .debug_abbrev  0x000000000000c02f      0x361 benchmarks/fp/fft_radix2/fft_radix2.o
+ .debug_abbrev  0x000000000000c390      0x23c workloads/radix2-big-64k/radix2-big-64k.o
+ .debug_abbrev  0x000000000000c5cc      0x133 benchmarks/fp/fft_radix2/ref/2K.o
+ .debug_abbrev  0x000000000000c6ff      0x133 benchmarks/fp/fft_radix2/ref/32K.o
+ .debug_abbrev  0x000000000000c832      0x133 benchmarks/fp/fft_radix2/ref/4K.o
+ .debug_abbrev  0x000000000000c965      0x133 benchmarks/fp/fft_radix2/ref/data3_big.o
+ .debug_abbrev  0x000000000000ca98      0x133 benchmarks/fp/fft_radix2/ref/data4_mid.o
+ .debug_abbrev  0x000000000000cbcb      0x133 benchmarks/fp/fft_radix2/ref/data5_small.o
+ .debug_abbrev  0x000000000000ccfe      0x2d9 benchmarks/darkmark/sha/sha256.o
+ .debug_abbrev  0x000000000000cfd7      0x23d benchmarks/darkmark/sha/shabench.o
+ .debug_abbrev  0x000000000000d214      0x23c workloads/sha-test/sha-test.o
+ .debug_abbrev  0x000000000000d450      0x3d0 benchmarks/darkmark/zip/zip_darkmark.o
+ .debug_abbrev  0x000000000000d820      0x28a benchmarks/darkmark/zip/zlib-1.2.8/adler32.o
+ .debug_abbrev  0x000000000000daaa      0x14d benchmarks/darkmark/zip/zlib-1.2.8/compress.o
+ .debug_abbrev  0x000000000000dbf7      0x3a1 benchmarks/darkmark/zip/zlib-1.2.8/crc32.o
+ .debug_abbrev  0x000000000000df98      0x468 benchmarks/darkmark/zip/zlib-1.2.8/deflate.o
+ .debug_abbrev  0x000000000000e400      0x225 benchmarks/darkmark/zip/zlib-1.2.8/gzclose.o
+ .debug_abbrev  0x000000000000e625      0x333 benchmarks/darkmark/zip/zlib-1.2.8/gzlib.o
+ .debug_abbrev  0x000000000000e958      0x37d benchmarks/darkmark/zip/zlib-1.2.8/infback.o
+ .debug_abbrev  0x000000000000ecd5      0x279 benchmarks/darkmark/zip/zlib-1.2.8/inffast.o
+ .debug_abbrev  0x000000000000ef4e      0x439 benchmarks/darkmark/zip/zlib-1.2.8/inflate.o
+ .debug_abbrev  0x000000000000f387      0x242 benchmarks/darkmark/zip/zlib-1.2.8/inftrees.o
+ .debug_abbrev  0x000000000000f5c9      0x424 benchmarks/darkmark/zip/zlib-1.2.8/trees.o
+ .debug_abbrev  0x000000000000f9ed      0x13f benchmarks/darkmark/zip/zlib-1.2.8/uncompr.o
+ .debug_abbrev  0x000000000000fb2c      0x290 benchmarks/darkmark/zip/zlib-1.2.8/zutil.o
+ .debug_abbrev  0x000000000000fdbc      0x23c workloads/zip-test/zip-test.o
+ .debug_abbrev  0x000000000000fff8      0x2a4 workloads/all/all.o
+ .debug_abbrev  0x000000000001029c      0x483 stubs.o
+ .debug_abbrev  0x000000000001071f       0x5c ../common/src/fpu.o
+ .debug_abbrev  0x000000000001077b      0x37d ../common/src/heap.o
+ .debug_abbrev  0x0000000000010af8      0x1c7 ../common/src/kprintf.o
+ .debug_abbrev  0x0000000000010cbf      0x26a ../common/src/perf_counters.o
+
+.debug_aranges  0x0000000000000000     0x12d0
+ .debug_aranges
+                0x0000000000000000       0x30 /tmp/cc8mAx6Y.o
+ .debug_aranges
+                0x0000000000000030       0x30 mith/src/md5.o
+ .debug_aranges
+                0x0000000000000060       0x30 mith/src/mith_lib.o
+ .debug_aranges
+                0x0000000000000090       0x30 mith/src/mith_workload.o
+ .debug_aranges
+                0x00000000000000c0       0x30 mith/src/th_bignum.o
+ .debug_aranges
+                0x00000000000000f0       0x30 mith/src/th_encode.o
+ .debug_aranges
+                0x0000000000000120       0x30 mith/src/th_getopt.o
+ .debug_aranges
+                0x0000000000000150       0x30 mith/src/th_lib.o
+ .debug_aranges
+                0x0000000000000180       0x30 mith/src/th_math.o
+ .debug_aranges
+                0x00000000000001b0       0x30 mith/src/th_rand.o
+ .debug_aranges
+                0x00000000000001e0       0x30 mith/al/src/al_file.o
+ .debug_aranges
+                0x0000000000000210       0x30 mith/al/src/al_single.o
+ .debug_aranges
+                0x0000000000000240       0x30 mith/al/src/al_smp.o
+ .debug_aranges
+                0x0000000000000270       0x30 mith/al/src/th_al.o
+ .debug_aranges
+                0x00000000000002a0       0x30 benchmarks/core/core_list_join.o
+ .debug_aranges
+                0x00000000000002d0       0x30 benchmarks/core/core_matrix.o
+ .debug_aranges
+                0x0000000000000300       0x30 benchmarks/core/core_mith.o
+ .debug_aranges
+                0x0000000000000330       0x30 benchmarks/core/core_portme.o
+ .debug_aranges
+                0x0000000000000360       0x30 benchmarks/core/core_state.o
+ .debug_aranges
+                0x0000000000000390       0x30 benchmarks/core/core_util.o
+ .debug_aranges
+                0x00000000000003c0       0x30 workloads/core/core.o
+ .debug_aranges
+                0x00000000000003f0       0x30 benchmarks/consumer_v2/cjpeg/bmark_lite.o
+ .debug_aranges
+                0x0000000000000420       0x30 benchmarks/consumer_v2/cjpeg/cdjpeg.o
+ .debug_aranges
+                0x0000000000000450       0x30 benchmarks/consumer_v2/cjpeg/cjpeg.o
+ .debug_aranges
+                0x0000000000000480       0x30 benchmarks/consumer_v2/cjpeg/filedata.o
+ .debug_aranges
+                0x00000000000004b0       0x30 benchmarks/consumer_v2/cjpeg/jcapimin.o
+ .debug_aranges
+                0x00000000000004e0       0x30 benchmarks/consumer_v2/cjpeg/jcapistd.o
+ .debug_aranges
+                0x0000000000000510       0x30 benchmarks/consumer_v2/cjpeg/jccoefct.o
+ .debug_aranges
+                0x0000000000000540       0x30 benchmarks/consumer_v2/cjpeg/jccolor.o
+ .debug_aranges
+                0x0000000000000570       0x30 benchmarks/consumer_v2/cjpeg/jcdctmgr.o
+ .debug_aranges
+                0x00000000000005a0       0x30 benchmarks/consumer_v2/cjpeg/jchuff.o
+ .debug_aranges
+                0x00000000000005d0       0x30 benchmarks/consumer_v2/cjpeg/jcinit.o
+ .debug_aranges
+                0x0000000000000600       0x30 benchmarks/consumer_v2/cjpeg/jcmainct.o
+ .debug_aranges
+                0x0000000000000630       0x30 benchmarks/consumer_v2/cjpeg/jcmarker.o
+ .debug_aranges
+                0x0000000000000660       0x30 benchmarks/consumer_v2/cjpeg/jcmaster.o
+ .debug_aranges
+                0x0000000000000690       0x30 benchmarks/consumer_v2/cjpeg/jcomapi.o
+ .debug_aranges
+                0x00000000000006c0       0x30 benchmarks/consumer_v2/cjpeg/jcparam.o
+ .debug_aranges
+                0x00000000000006f0       0x30 benchmarks/consumer_v2/cjpeg/jcprepct.o
+ .debug_aranges
+                0x0000000000000720       0x30 benchmarks/consumer_v2/cjpeg/jcsample.o
+ .debug_aranges
+                0x0000000000000750       0x30 benchmarks/consumer_v2/cjpeg/jdatadst.o
+ .debug_aranges
+                0x0000000000000780       0x30 benchmarks/consumer_v2/cjpeg/jerror.o
+ .debug_aranges
+                0x00000000000007b0       0x30 benchmarks/consumer_v2/cjpeg/jfdctint.o
+ .debug_aranges
+                0x00000000000007e0       0x30 benchmarks/consumer_v2/cjpeg/jmemansi.o
+ .debug_aranges
+                0x0000000000000810       0x30 benchmarks/consumer_v2/cjpeg/jmemmgr.o
+ .debug_aranges
+                0x0000000000000840       0x30 benchmarks/consumer_v2/cjpeg/jutils.o
+ .debug_aranges
+                0x0000000000000870       0x30 benchmarks/consumer_v2/cjpeg/rdbmp.o
+ .debug_aranges
+                0x00000000000008a0       0x30 workloads/cjpeg-rose7-preset/cjpeg-rose7-preset.o
+ .debug_aranges
+                0x00000000000008d0       0x30 benchmarks/consumer_v2/cjpeg/data/Rose256_bmp.o
+ .debug_aranges
+                0x0000000000000900       0x30 benchmarks/fp/linpack/linpack.o
+ .debug_aranges
+                0x0000000000000930       0x30 workloads/linear_alg-mid-100x100-sp/linear_alg-mid-100x100-sp.o
+ .debug_aranges
+                0x0000000000000960       0x30 benchmarks/fp/linpack/ref/inputs_f32.o
+ .debug_aranges
+                0x0000000000000990       0x30 benchmarks/fp/loops/loops.o
+ .debug_aranges
+                0x00000000000009c0       0x30 workloads/loops-all-mid-10k-sp/loops-all-mid-10k-sp.o
+ .debug_aranges
+                0x00000000000009f0       0x30 benchmarks/fp/loops/ref-sp/100.o
+ .debug_aranges
+                0x0000000000000a20       0x30 benchmarks/fp/loops/ref-sp/100k.o
+ .debug_aranges
+                0x0000000000000a50       0x30 benchmarks/fp/loops/ref-sp/100kdot.o
+ .debug_aranges
+                0x0000000000000a80       0x30 benchmarks/fp/loops/ref-sp/10k.o
+ .debug_aranges
+                0x0000000000000ab0       0x30 benchmarks/fp/loops/ref-sp/10kdot.o
+ .debug_aranges
+                0x0000000000000ae0       0x30 benchmarks/fp/loops/ref-sp/1k.o
+ .debug_aranges
+                0x0000000000000b10       0x30 benchmarks/fp/loops/ref-sp/1kdot.o
+ .debug_aranges
+                0x0000000000000b40       0x30 benchmarks/fp/loops/ref-sp/32.o
+ .debug_aranges
+                0x0000000000000b70       0x30 benchmarks/fp/nnet/nnet.o
+ .debug_aranges
+                0x0000000000000ba0       0x30 workloads/nnet_test/nnet_test.o
+ .debug_aranges
+                0x0000000000000bd0       0x30 benchmarks/fp/nnet/ref/1letter.o
+ .debug_aranges
+                0x0000000000000c00       0x30 benchmarks/fp/nnet/ref/letters.o
+ .debug_aranges
+                0x0000000000000c30       0x30 benchmarks/darkmark/parser/ezxml.o
+ .debug_aranges
+                0x0000000000000c60       0x30 benchmarks/darkmark/parser/parser.o
+ .debug_aranges
+                0x0000000000000c90       0x30 workloads/parser-125k/parser-125k.o
+ .debug_aranges
+                0x0000000000000cc0       0x30 benchmarks/fp/fft_radix2/fft_radix2.o
+ .debug_aranges
+                0x0000000000000cf0       0x30 workloads/radix2-big-64k/radix2-big-64k.o
+ .debug_aranges
+                0x0000000000000d20       0x30 benchmarks/fp/fft_radix2/ref/2K.o
+ .debug_aranges
+                0x0000000000000d50       0x30 benchmarks/fp/fft_radix2/ref/32K.o
+ .debug_aranges
+                0x0000000000000d80       0x30 benchmarks/fp/fft_radix2/ref/4K.o
+ .debug_aranges
+                0x0000000000000db0       0x30 benchmarks/fp/fft_radix2/ref/data3_big.o
+ .debug_aranges
+                0x0000000000000de0       0x30 benchmarks/fp/fft_radix2/ref/data4_mid.o
+ .debug_aranges
+                0x0000000000000e10       0x30 benchmarks/fp/fft_radix2/ref/data5_small.o
+ .debug_aranges
+                0x0000000000000e40       0x30 benchmarks/darkmark/sha/sha256.o
+ .debug_aranges
+                0x0000000000000e70       0x30 benchmarks/darkmark/sha/shabench.o
+ .debug_aranges
+                0x0000000000000ea0       0x30 workloads/sha-test/sha-test.o
+ .debug_aranges
+                0x0000000000000ed0       0x30 benchmarks/darkmark/zip/zip_darkmark.o
+ .debug_aranges
+                0x0000000000000f00       0x30 benchmarks/darkmark/zip/zlib-1.2.8/adler32.o
+ .debug_aranges
+                0x0000000000000f30       0x30 benchmarks/darkmark/zip/zlib-1.2.8/compress.o
+ .debug_aranges
+                0x0000000000000f60       0x30 benchmarks/darkmark/zip/zlib-1.2.8/crc32.o
+ .debug_aranges
+                0x0000000000000f90       0x30 benchmarks/darkmark/zip/zlib-1.2.8/deflate.o
+ .debug_aranges
+                0x0000000000000fc0       0x30 benchmarks/darkmark/zip/zlib-1.2.8/gzclose.o
+ .debug_aranges
+                0x0000000000000ff0       0x30 benchmarks/darkmark/zip/zlib-1.2.8/gzlib.o
+ .debug_aranges
+                0x0000000000001020       0x30 benchmarks/darkmark/zip/zlib-1.2.8/infback.o
+ .debug_aranges
+                0x0000000000001050       0x30 benchmarks/darkmark/zip/zlib-1.2.8/inffast.o
+ .debug_aranges
+                0x0000000000001080       0x30 benchmarks/darkmark/zip/zlib-1.2.8/inflate.o
+ .debug_aranges
+                0x00000000000010b0       0x30 benchmarks/darkmark/zip/zlib-1.2.8/inftrees.o
+ .debug_aranges
+                0x00000000000010e0       0x30 benchmarks/darkmark/zip/zlib-1.2.8/trees.o
+ .debug_aranges
+                0x0000000000001110       0x30 benchmarks/darkmark/zip/zlib-1.2.8/uncompr.o
+ .debug_aranges
+                0x0000000000001140       0x30 benchmarks/darkmark/zip/zlib-1.2.8/zutil.o
+ .debug_aranges
+                0x0000000000001170       0x30 workloads/zip-test/zip-test.o
+ .debug_aranges
+                0x00000000000011a0       0x40 workloads/all/all.o
+ .debug_aranges
+                0x00000000000011e0       0x30 stubs.o
+ .debug_aranges
+                0x0000000000001210       0x30 ../common/src/fpu.o
+ .debug_aranges
+                0x0000000000001240       0x30 ../common/src/heap.o
+ .debug_aranges
+                0x0000000000001270       0x30 ../common/src/kprintf.o
+ .debug_aranges
+                0x00000000000012a0       0x30 ../common/src/perf_counters.o
+
+.debug_str      0x0000000000000000     0x92aa
+ .debug_str     0x0000000000000000       0x44 /tmp/cc8mAx6Y.o
+ .debug_str     0x0000000000000044      0x22c mith/src/md5.o
+                                        0x2d3 (size before relaxing)
+ .debug_str     0x0000000000000270      0x7c1 mith/src/mith_lib.o
+                                        0xb14 (size before relaxing)
+ .debug_str     0x0000000000000a31       0xf3 mith/src/mith_workload.o
+                                        0x7d6 (size before relaxing)
+ .debug_str     0x0000000000000b24      0x220 mith/src/th_bignum.o
+                                        0x480 (size before relaxing)
+ .debug_str     0x0000000000000d44       0x56 mith/src/th_encode.o
+                                        0x2a2 (size before relaxing)
+ .debug_str     0x0000000000000d9a      0x50a mith/src/th_getopt.o
+                                        0x7e3 (size before relaxing)
+ .debug_str     0x00000000000012a4      0x927 mith/src/th_lib.o
+                                       0x12b2 (size before relaxing)
+ .debug_str     0x0000000000001bcb      0x173 mith/src/th_math.o
+                                        0x2cc (size before relaxing)
+ .debug_str     0x0000000000001d3e      0x2fd mith/src/th_rand.o
+                                        0x5a9 (size before relaxing)
+ .debug_str     0x000000000000203b       0x3b mith/al/src/al_file.o
+                                        0x7db (size before relaxing)
+ .debug_str     0x0000000000002076       0x65 mith/al/src/al_single.o
+                                        0x3a7 (size before relaxing)
+ .debug_str     0x00000000000020db       0x86 mith/al/src/al_smp.o
+                                        0x379 (size before relaxing)
+ .debug_str     0x0000000000002161      0x250 mith/al/src/th_al.o
+                                        0xaee (size before relaxing)
+ .debug_str     0x00000000000023b1      0x320 benchmarks/core/core_list_join.o
+                                        0x9f3 (size before relaxing)
+ .debug_str     0x00000000000026d1       0xd1 benchmarks/core/core_matrix.o
+                                        0x7fa (size before relaxing)
+ .debug_str     0x00000000000027a2      0x1ac benchmarks/core/core_mith.o
+                                        0xc1b (size before relaxing)
+ .debug_str     0x000000000000294e       0x88 benchmarks/core/core_portme.o
+                                        0x8c8 (size before relaxing)
+ .debug_str     0x00000000000029d6      0x15c benchmarks/core/core_state.o
+                                        0x89c (size before relaxing)
+ .debug_str     0x0000000000002b32       0x4f benchmarks/core/core_util.o
+                                        0x7af (size before relaxing)
+ .debug_str     0x0000000000002b81       0x89 workloads/core/core.o
+                                        0x7b3 (size before relaxing)
+ .debug_str     0x0000000000002c0a       0x26 benchmarks/consumer_v2/cjpeg/bm_lib.o
+                                         0xc9 (size before relaxing)
+ .debug_str     0x0000000000002c30      0x2a3 benchmarks/consumer_v2/cjpeg/bmark_lite.o
+                                        0xb2c (size before relaxing)
+ .debug_str     0x0000000000002ed3       0x64 benchmarks/consumer_v2/cjpeg/cdjpeg.o
+                                        0x6b2 (size before relaxing)
+ .debug_str     0x0000000000002f37      0xb76 benchmarks/consumer_v2/cjpeg/cjpeg.o
+                                       0x136c (size before relaxing)
+ .debug_str     0x0000000000003aad       0x9a benchmarks/consumer_v2/cjpeg/filedata.o
+                                        0x8c5 (size before relaxing)
+ .debug_str     0x0000000000003b47      0xb08 benchmarks/consumer_v2/cjpeg/jcapimin.o
+                                       0x1b0b (size before relaxing)
+ .debug_str     0x000000000000464f       0x8a benchmarks/consumer_v2/cjpeg/jcapistd.o
+                                       0x1a8a (size before relaxing)
+ .debug_str     0x00000000000046d9      0x156 benchmarks/consumer_v2/cjpeg/jccoefct.o
+                                       0x1b08 (size before relaxing)
+ .debug_str     0x000000000000482f      0x13b benchmarks/consumer_v2/cjpeg/jccolor.o
+                                       0x1af0 (size before relaxing)
+ .debug_str     0x000000000000496a      0x10d benchmarks/consumer_v2/cjpeg/jcdctmgr.o
+                                       0x1ad9 (size before relaxing)
+ .debug_str     0x0000000000004a77      0x1bb benchmarks/consumer_v2/cjpeg/jchuff.o
+                                       0x1be4 (size before relaxing)
+ .debug_str     0x0000000000004c32       0x7f benchmarks/consumer_v2/cjpeg/jcinit.o
+                                       0x1226 (size before relaxing)
+ .debug_str     0x0000000000004cb1       0xad benchmarks/consumer_v2/cjpeg/jcmainct.o
+                                       0x1aa4 (size before relaxing)
+ .debug_str     0x0000000000004d5e      0x270 benchmarks/consumer_v2/cjpeg/jcmarker.o
+                                       0x1c66 (size before relaxing)
+ .debug_str     0x0000000000004fce       0xfb benchmarks/consumer_v2/cjpeg/jcmaster.o
+                                       0x1af5 (size before relaxing)
+ .debug_str     0x00000000000050c9      0x66b benchmarks/consumer_v2/cjpeg/jcomapi.o
+                                       0x14b0 (size before relaxing)
+ .debug_str     0x0000000000005734      0x1ad benchmarks/consumer_v2/cjpeg/jcparam.o
+                                       0x1be9 (size before relaxing)
+ .debug_str     0x00000000000058e1       0xf7 benchmarks/consumer_v2/cjpeg/jcprepct.o
+                                       0x1b14 (size before relaxing)
+ .debug_str     0x00000000000059d8      0x199 benchmarks/consumer_v2/cjpeg/jcsample.o
+                                       0x1bbf (size before relaxing)
+ .debug_str     0x0000000000005b71       0x59 benchmarks/consumer_v2/cjpeg/jdatadst.o
+                                       0x194d (size before relaxing)
+ .debug_str     0x0000000000005bca       0x60 benchmarks/consumer_v2/cjpeg/jerror.o
+                                       0x1286 (size before relaxing)
+ .debug_str     0x0000000000005c2a       0x78 benchmarks/consumer_v2/cjpeg/jfdctint.o
+                                        0x6ef (size before relaxing)
+ .debug_str     0x0000000000005ca2      0x1b9 benchmarks/consumer_v2/cjpeg/jmemansi.o
+                                       0x13e2 (size before relaxing)
+ .debug_str     0x0000000000005e5b      0x2c9 benchmarks/consumer_v2/cjpeg/jmemmgr.o
+                                       0x16a3 (size before relaxing)
+ .debug_str     0x0000000000006124       0xab benchmarks/consumer_v2/cjpeg/jutils.o
+                                        0x982 (size before relaxing)
+ .debug_str     0x00000000000061cf      0x1d9 benchmarks/consumer_v2/cjpeg/rdbmp.o
+                                       0x1ccc (size before relaxing)
+ .debug_str     0x00000000000063a8       0x4a workloads/cjpeg-rose7-preset/cjpeg-rose7-preset.o
+                                        0x7dd (size before relaxing)
+ .debug_str     0x00000000000063f2       0x30 benchmarks/consumer_v2/cjpeg/data/Rose256_bmp.o
+                                        0x196 (size before relaxing)
+ .debug_str     0x0000000000006422      0x1f9 benchmarks/fp/linpack/linpack.o
+                                        0x794 (size before relaxing)
+ .debug_str     0x000000000000661b       0x68 workloads/linear_alg-mid-100x100-sp/linear_alg-mid-100x100-sp.o
+                                        0x7f3 (size before relaxing)
+ .debug_str     0x0000000000006683       0x2f benchmarks/fp/linpack/ref/inputs_f32.o
+                                        0x355 (size before relaxing)
+ .debug_str     0x00000000000066b2      0x7a7 benchmarks/fp/loops/loops.o
+                                        0xe43 (size before relaxing)
+ .debug_str     0x0000000000006e59       0x58 workloads/loops-all-mid-10k-sp/loops-all-mid-10k-sp.o
+                                        0x7e1 (size before relaxing)
+ .debug_str     0x0000000000006eb1       0x2c benchmarks/fp/loops/ref-sp/100.o
+                                        0x4ea (size before relaxing)
+ .debug_str     0x0000000000006edd       0x2d benchmarks/fp/loops/ref-sp/100k.o
+                                        0x4eb (size before relaxing)
+ .debug_str     0x0000000000006f0a       0x30 benchmarks/fp/loops/ref-sp/100kdot.o
+                                        0x4ee (size before relaxing)
+ .debug_str     0x0000000000006f3a       0x2c benchmarks/fp/loops/ref-sp/10k.o
+                                        0x4ea (size before relaxing)
+ .debug_str     0x0000000000006f66       0x2f benchmarks/fp/loops/ref-sp/10kdot.o
+                                        0x4ed (size before relaxing)
+ .debug_str     0x0000000000006f95       0x2b benchmarks/fp/loops/ref-sp/1k.o
+                                        0x4e9 (size before relaxing)
+ .debug_str     0x0000000000006fc0       0x2e benchmarks/fp/loops/ref-sp/1kdot.o
+                                        0x4ec (size before relaxing)
+ .debug_str     0x0000000000006fee       0x2b benchmarks/fp/loops/ref-sp/32.o
+                                        0x4e9 (size before relaxing)
+ .debug_str     0x0000000000007019      0x2f8 benchmarks/fp/nnet/nnet.o
+                                        0x8dc (size before relaxing)
+ .debug_str     0x0000000000007311       0x39 workloads/nnet_test/nnet_test.o
+                                        0x7c1 (size before relaxing)
+ .debug_str     0x000000000000734a       0x49 benchmarks/fp/nnet/ref/1letter.o
+                                        0x40c (size before relaxing)
+ .debug_str     0x0000000000007393       0x49 benchmarks/fp/nnet/ref/letters.o
+                                        0x40c (size before relaxing)
+ .debug_str     0x00000000000073dc      0x21f benchmarks/darkmark/parser/ezxml.o
+                                        0x9f3 (size before relaxing)
+ .debug_str     0x00000000000075fb      0x162 benchmarks/darkmark/parser/parser.o
+                                        0xb89 (size before relaxing)
+ .debug_str     0x000000000000775d       0x41 workloads/parser-125k/parser-125k.o
+                                        0x7cb (size before relaxing)
+ .debug_str     0x000000000000779e      0x1bb benchmarks/fp/fft_radix2/fft_radix2.o
+                                        0x73c (size before relaxing)
+ .debug_str     0x0000000000007959       0x49 workloads/radix2-big-64k/radix2-big-64k.o
+                                        0x7d3 (size before relaxing)
+ .debug_str     0x00000000000079a2       0x22 benchmarks/fp/fft_radix2/ref/2K.o
+                                        0x2d8 (size before relaxing)
+ .debug_str     0x00000000000079c4       0x23 benchmarks/fp/fft_radix2/ref/32K.o
+                                        0x2d9 (size before relaxing)
+ .debug_str     0x00000000000079e7       0x22 benchmarks/fp/fft_radix2/ref/4K.o
+                                        0x2d8 (size before relaxing)
+ .debug_str     0x0000000000007a09       0x29 benchmarks/fp/fft_radix2/ref/data3_big.o
+                                        0x2df (size before relaxing)
+ .debug_str     0x0000000000007a32       0x29 benchmarks/fp/fft_radix2/ref/data4_mid.o
+                                        0x2df (size before relaxing)
+ .debug_str     0x0000000000007a5b       0x2b benchmarks/fp/fft_radix2/ref/data5_small.o
+                                        0x2e1 (size before relaxing)
+ .debug_str     0x0000000000007a86       0x95 benchmarks/darkmark/sha/sha256.o
+                                        0x311 (size before relaxing)
+ .debug_str     0x0000000000007b1b       0xc5 benchmarks/darkmark/sha/shabench.o
+                                        0x5db (size before relaxing)
+ .debug_str     0x0000000000007be0       0x35 workloads/sha-test/sha-test.o
+                                        0x7bc (size before relaxing)
+ .debug_str     0x0000000000007c15      0x15a benchmarks/darkmark/zip/zip_darkmark.o
+                                        0xb8f (size before relaxing)
+ .debug_str     0x0000000000007d6f       0xa4 benchmarks/darkmark/zip/zlib-1.2.8/adler32.o
+                                        0x70d (size before relaxing)
+ .debug_str     0x0000000000007e13       0xfb benchmarks/darkmark/zip/zlib-1.2.8/compress.o
+                                        0x2b0 (size before relaxing)
+ .debug_str     0x0000000000007f0e       0xc6 benchmarks/darkmark/zip/zlib-1.2.8/crc32.o
+                                        0x75b (size before relaxing)
+ .debug_str     0x0000000000007fd4      0x5e1 benchmarks/darkmark/zip/zlib-1.2.8/deflate.o
+                                        0xe4d (size before relaxing)
+ .debug_str     0x00000000000085b5       0x59 benchmarks/darkmark/zip/zlib-1.2.8/gzclose.o
+                                        0x7e7 (size before relaxing)
+ .debug_str     0x000000000000860e       0xba benchmarks/darkmark/zip/zlib-1.2.8/gzlib.o
+                                        0x892 (size before relaxing)
+ .debug_str     0x00000000000086c8      0x1d2 benchmarks/darkmark/zip/zlib-1.2.8/infback.o
+                                        0xa30 (size before relaxing)
+ .debug_str     0x000000000000889a       0x52 benchmarks/darkmark/zip/zlib-1.2.8/inffast.o
+                                        0x995 (size before relaxing)
+ .debug_str     0x00000000000088ec      0x141 benchmarks/darkmark/zip/zlib-1.2.8/inflate.o
+                                        0xb37 (size before relaxing)
+ .debug_str     0x0000000000008a2d       0x73 benchmarks/darkmark/zip/zlib-1.2.8/inftrees.o
+                                        0x742 (size before relaxing)
+ .debug_str     0x0000000000008aa0      0x24a benchmarks/darkmark/zip/zlib-1.2.8/trees.o
+                                        0xd35 (size before relaxing)
+ .debug_str     0x0000000000008cea       0x2d benchmarks/darkmark/zip/zlib-1.2.8/uncompr.o
+                                        0x293 (size before relaxing)
+ .debug_str     0x0000000000008d17       0x5e benchmarks/darkmark/zip/zlib-1.2.8/zutil.o
+                                        0x6f0 (size before relaxing)
+ .debug_str     0x0000000000008d75       0x35 workloads/zip-test/zip-test.o
+                                        0x7bc (size before relaxing)
+ .debug_str     0x0000000000008daa      0x176 workloads/all/all.o
+                                        0x481 (size before relaxing)
+ .debug_str     0x0000000000008f20      0x25a stubs.o
+                                        0x901 (size before relaxing)
+ .debug_str     0x000000000000917a       0x27 ../common/src/fpu.o
+                                        0x132 (size before relaxing)
+ .debug_str     0x00000000000091a1       0x63 ../common/src/heap.o
+                                        0x66e (size before relaxing)
+ .debug_str     0x0000000000009204       0x69 ../common/src/kprintf.o
+                                        0x1d3 (size before relaxing)
+ .debug_str     0x000000000000926d       0x3d ../common/src/perf_counters.o
+                                        0x623 (size before relaxing)
+
+.debug_loc      0x0000000000000000    0x5c2c9
+ .debug_loc     0x0000000000000000     0x16ea mith/src/md5.o
+ .debug_loc     0x00000000000016ea     0x3b5f mith/src/mith_lib.o
+ .debug_loc     0x0000000000005249      0x98c mith/src/mith_workload.o
+ .debug_loc     0x0000000000005bd5     0x257c mith/src/th_bignum.o
+ .debug_loc     0x0000000000008151      0x53b mith/src/th_encode.o
+ .debug_loc     0x000000000000868c     0x1251 mith/src/th_getopt.o
+ .debug_loc     0x00000000000098dd     0x6abd mith/src/th_lib.o
+ .debug_loc     0x000000000001039a     0x22e8 mith/src/th_math.o
+ .debug_loc     0x0000000000012682     0x3ff3 mith/src/th_rand.o
+ .debug_loc     0x0000000000016675      0x31e mith/al/src/al_file.o
+ .debug_loc     0x0000000000016993      0x167 mith/al/src/al_single.o
+ .debug_loc     0x0000000000016afa      0x1bb mith/al/src/al_smp.o
+ .debug_loc     0x0000000000016cb5      0x9cb mith/al/src/th_al.o
+ .debug_loc     0x0000000000017680     0x179e benchmarks/core/core_list_join.o
+ .debug_loc     0x0000000000018e1e     0x11f9 benchmarks/core/core_matrix.o
+ .debug_loc     0x000000000001a017      0x87c benchmarks/core/core_mith.o
+ .debug_loc     0x000000000001a893       0xab benchmarks/core/core_portme.o
+ .debug_loc     0x000000000001a93e     0x10da benchmarks/core/core_state.o
+ .debug_loc     0x000000000001ba18      0x505 benchmarks/core/core_util.o
+ .debug_loc     0x000000000001bf1d      0x75d workloads/core/core.o
+ .debug_loc     0x000000000001c67a      0x910 benchmarks/consumer_v2/cjpeg/bmark_lite.o
+ .debug_loc     0x000000000001cf8a      0x2db benchmarks/consumer_v2/cjpeg/cdjpeg.o
+ .debug_loc     0x000000000001d265      0x19f benchmarks/consumer_v2/cjpeg/cjpeg.o
+ .debug_loc     0x000000000001d404      0x3f6 benchmarks/consumer_v2/cjpeg/filedata.o
+ .debug_loc     0x000000000001d7fa      0x71b benchmarks/consumer_v2/cjpeg/jcapimin.o
+ .debug_loc     0x000000000001df15      0x2c3 benchmarks/consumer_v2/cjpeg/jcapistd.o
+ .debug_loc     0x000000000001e1d8      0x881 benchmarks/consumer_v2/cjpeg/jccoefct.o
+ .debug_loc     0x000000000001ea59      0xd12 benchmarks/consumer_v2/cjpeg/jccolor.o
+ .debug_loc     0x000000000001f76b      0x75b benchmarks/consumer_v2/cjpeg/jcdctmgr.o
+ .debug_loc     0x000000000001fec6     0x37fd benchmarks/consumer_v2/cjpeg/jchuff.o
+ .debug_loc     0x00000000000236c3       0x72 benchmarks/consumer_v2/cjpeg/jcinit.o
+ .debug_loc     0x0000000000023735      0x45b benchmarks/consumer_v2/cjpeg/jcmainct.o
+ .debug_loc     0x0000000000023b90     0x14d3 benchmarks/consumer_v2/cjpeg/jcmarker.o
+ .debug_loc     0x0000000000025063      0x6b3 benchmarks/consumer_v2/cjpeg/jcmaster.o
+ .debug_loc     0x0000000000025716      0x155 benchmarks/consumer_v2/cjpeg/jcomapi.o
+ .debug_loc     0x000000000002586b      0xddc benchmarks/consumer_v2/cjpeg/jcparam.o
+ .debug_loc     0x0000000000026647      0x81c benchmarks/consumer_v2/cjpeg/jcprepct.o
+ .debug_loc     0x0000000000026e63     0x126e benchmarks/consumer_v2/cjpeg/jcsample.o
+ .debug_loc     0x00000000000280d1      0x2a1 benchmarks/consumer_v2/cjpeg/jdatadst.o
+ .debug_loc     0x0000000000028372      0x4fb benchmarks/consumer_v2/cjpeg/jerror.o
+ .debug_loc     0x000000000002886d      0x7a5 benchmarks/consumer_v2/cjpeg/jfdctint.o
+ .debug_loc     0x0000000000029012      0x746 benchmarks/consumer_v2/cjpeg/jmemansi.o
+ .debug_loc     0x0000000000029758     0x26d7 benchmarks/consumer_v2/cjpeg/jmemmgr.o
+ .debug_loc     0x000000000002be2f      0x667 benchmarks/consumer_v2/cjpeg/jutils.o
+ .debug_loc     0x000000000002c496     0x157f benchmarks/consumer_v2/cjpeg/rdbmp.o
+ .debug_loc     0x000000000002da15      0x93b workloads/cjpeg-rose7-preset/cjpeg-rose7-preset.o
+ .debug_loc     0x000000000002e350     0x254b benchmarks/fp/linpack/linpack.o
+ .debug_loc     0x000000000003089b      0x75d workloads/linear_alg-mid-100x100-sp/linear_alg-mid-100x100-sp.o
+ .debug_loc     0x0000000000030ff8       0x24 benchmarks/fp/linpack/ref/inputs_f32.o
+ .debug_loc     0x000000000003101c     0x82e7 benchmarks/fp/loops/loops.o
+ .debug_loc     0x0000000000039303      0x75d workloads/loops-all-mid-10k-sp/loops-all-mid-10k-sp.o
+ .debug_loc     0x0000000000039a60     0x1675 benchmarks/fp/nnet/nnet.o
+ .debug_loc     0x000000000003b0d5      0x75d workloads/nnet_test/nnet_test.o
+ .debug_loc     0x000000000003b832     0x458f benchmarks/darkmark/parser/ezxml.o
+ .debug_loc     0x000000000003fdc1      0xb9f benchmarks/darkmark/parser/parser.o
+ .debug_loc     0x0000000000040960      0x75d workloads/parser-125k/parser-125k.o
+ .debug_loc     0x00000000000410bd     0x18a8 benchmarks/fp/fft_radix2/fft_radix2.o
+ .debug_loc     0x0000000000042965      0x75d workloads/radix2-big-64k/radix2-big-64k.o
+ .debug_loc     0x00000000000430c2     0x3cc9 benchmarks/darkmark/sha/sha256.o
+ .debug_loc     0x0000000000046d8b      0x75f benchmarks/darkmark/sha/shabench.o
+ .debug_loc     0x00000000000474ea      0x75d workloads/sha-test/sha-test.o
+ .debug_loc     0x0000000000047c47      0xd81 benchmarks/darkmark/zip/zip_darkmark.o
+ .debug_loc     0x00000000000489c8      0x728 benchmarks/darkmark/zip/zlib-1.2.8/adler32.o
+ .debug_loc     0x00000000000490f0      0x324 benchmarks/darkmark/zip/zlib-1.2.8/compress.o
+ .debug_loc     0x0000000000049414      0xb3e benchmarks/darkmark/zip/zlib-1.2.8/crc32.o
+ .debug_loc     0x0000000000049f52     0x3548 benchmarks/darkmark/zip/zlib-1.2.8/deflate.o
+ .debug_loc     0x000000000004d49a       0xed benchmarks/darkmark/zip/zlib-1.2.8/gzclose.o
+ .debug_loc     0x000000000004d587      0x77d benchmarks/darkmark/zip/zlib-1.2.8/gzlib.o
+ .debug_loc     0x000000000004dd04     0x1b91 benchmarks/darkmark/zip/zlib-1.2.8/infback.o
+ .debug_loc     0x000000000004f895      0xf16 benchmarks/darkmark/zip/zlib-1.2.8/inffast.o
+ .debug_loc     0x00000000000507ab     0x39a2 benchmarks/darkmark/zip/zlib-1.2.8/inflate.o
+ .debug_loc     0x000000000005414d     0x100b benchmarks/darkmark/zip/zlib-1.2.8/inftrees.o
+ .debug_loc     0x0000000000055158     0x31ec benchmarks/darkmark/zip/zlib-1.2.8/trees.o
+ .debug_loc     0x0000000000058344      0x207 benchmarks/darkmark/zip/zlib-1.2.8/uncompr.o
+ .debug_loc     0x000000000005854b      0x169 benchmarks/darkmark/zip/zlib-1.2.8/zutil.o
+ .debug_loc     0x00000000000586b4      0x75d workloads/zip-test/zip-test.o
+ .debug_loc     0x0000000000058e11      0x504 workloads/all/all.o
+ .debug_loc     0x0000000000059315     0x16c3 stubs.o
+ .debug_loc     0x000000000005a9d8       0x3c ../common/src/fpu.o
+ .debug_loc     0x000000000005aa14      0x95f ../common/src/heap.o
+ .debug_loc     0x000000000005b373      0xc7b ../common/src/kprintf.o
+ .debug_loc     0x000000000005bfee      0x2db ../common/src/perf_counters.o
+
+.debug_ranges   0x0000000000000000     0x7670
+ .debug_ranges  0x0000000000000000       0x60 mith/src/md5.o
+ .debug_ranges  0x0000000000000060      0x360 mith/src/mith_lib.o
+ .debug_ranges  0x00000000000003c0       0x30 mith/src/mith_workload.o
+ .debug_ranges  0x00000000000003f0      0x470 mith/src/th_bignum.o
+ .debug_ranges  0x0000000000000860       0x80 mith/src/th_encode.o
+ .debug_ranges  0x00000000000008e0      0x2b0 mith/src/th_getopt.o
+ .debug_ranges  0x0000000000000b90      0x720 mith/src/th_lib.o
+ .debug_ranges  0x00000000000012b0      0x380 mith/src/th_math.o
+ .debug_ranges  0x0000000000001630     0x1250 mith/src/th_rand.o
+ .debug_ranges  0x0000000000002880       0x60 mith/al/src/th_al.o
+ .debug_ranges  0x00000000000028e0      0x210 benchmarks/core/core_list_join.o
+ .debug_ranges  0x0000000000002af0       0x60 benchmarks/core/core_matrix.o
+ .debug_ranges  0x0000000000002b50       0x80 benchmarks/core/core_mith.o
+ .debug_ranges  0x0000000000002bd0      0x1a0 benchmarks/core/core_state.o
+ .debug_ranges  0x0000000000002d70       0xd0 benchmarks/core/core_util.o
+ .debug_ranges  0x0000000000002e40       0x30 workloads/core/core.o
+ .debug_ranges  0x0000000000002e70       0x60 benchmarks/consumer_v2/cjpeg/bmark_lite.o
+ .debug_ranges  0x0000000000002ed0       0x40 benchmarks/consumer_v2/cjpeg/cjpeg.o
+ .debug_ranges  0x0000000000002f10       0x30 benchmarks/consumer_v2/cjpeg/jcapimin.o
+ .debug_ranges  0x0000000000002f40       0xd0 benchmarks/consumer_v2/cjpeg/jccoefct.o
+ .debug_ranges  0x0000000000003010      0x810 benchmarks/consumer_v2/cjpeg/jchuff.o
+ .debug_ranges  0x0000000000003820      0x210 benchmarks/consumer_v2/cjpeg/jcmarker.o
+ .debug_ranges  0x0000000000003a30       0x90 benchmarks/consumer_v2/cjpeg/jcmaster.o
+ .debug_ranges  0x0000000000003ac0       0x40 benchmarks/consumer_v2/cjpeg/jcparam.o
+ .debug_ranges  0x0000000000003b00       0xb0 benchmarks/consumer_v2/cjpeg/jcsample.o
+ .debug_ranges  0x0000000000003bb0       0x50 benchmarks/consumer_v2/cjpeg/jdatadst.o
+ .debug_ranges  0x0000000000003c00       0xa0 benchmarks/consumer_v2/cjpeg/jmemmgr.o
+ .debug_ranges  0x0000000000003ca0      0x240 benchmarks/consumer_v2/cjpeg/rdbmp.o
+ .debug_ranges  0x0000000000003ee0       0x30 workloads/cjpeg-rose7-preset/cjpeg-rose7-preset.o
+ .debug_ranges  0x0000000000003f10      0x3f0 benchmarks/fp/linpack/linpack.o
+ .debug_ranges  0x0000000000004300       0x30 workloads/linear_alg-mid-100x100-sp/linear_alg-mid-100x100-sp.o
+ .debug_ranges  0x0000000000004330      0x7d0 benchmarks/fp/loops/loops.o
+ .debug_ranges  0x0000000000004b00       0x30 workloads/loops-all-mid-10k-sp/loops-all-mid-10k-sp.o
+ .debug_ranges  0x0000000000004b30      0x350 benchmarks/fp/nnet/nnet.o
+ .debug_ranges  0x0000000000004e80       0x30 workloads/nnet_test/nnet_test.o
+ .debug_ranges  0x0000000000004eb0       0x50 benchmarks/darkmark/parser/ezxml.o
+ .debug_ranges  0x0000000000004f00       0xb0 benchmarks/darkmark/parser/parser.o
+ .debug_ranges  0x0000000000004fb0       0x30 workloads/parser-125k/parser-125k.o
+ .debug_ranges  0x0000000000004fe0      0x2b0 benchmarks/fp/fft_radix2/fft_radix2.o
+ .debug_ranges  0x0000000000005290       0x30 workloads/radix2-big-64k/radix2-big-64k.o
+ .debug_ranges  0x00000000000052c0      0xb80 benchmarks/darkmark/sha/sha256.o
+ .debug_ranges  0x0000000000005e40       0x30 workloads/sha-test/sha-test.o
+ .debug_ranges  0x0000000000005e70       0xf0 benchmarks/darkmark/zip/zip_darkmark.o
+ .debug_ranges  0x0000000000005f60       0x30 benchmarks/darkmark/zip/zlib-1.2.8/crc32.o
+ .debug_ranges  0x0000000000005f90      0x6f0 benchmarks/darkmark/zip/zlib-1.2.8/deflate.o
+ .debug_ranges  0x0000000000006680       0x80 benchmarks/darkmark/zip/zlib-1.2.8/gzlib.o
+ .debug_ranges  0x0000000000006700       0x60 benchmarks/darkmark/zip/zlib-1.2.8/infback.o
+ .debug_ranges  0x0000000000006760      0x130 benchmarks/darkmark/zip/zlib-1.2.8/inflate.o
+ .debug_ranges  0x0000000000006890      0x800 benchmarks/darkmark/zip/zlib-1.2.8/trees.o
+ .debug_ranges  0x0000000000007090       0x30 workloads/zip-test/zip-test.o
+ .debug_ranges  0x00000000000070c0       0x90 workloads/all/all.o
+ .debug_ranges  0x0000000000007150      0x160 stubs.o
+ .debug_ranges  0x00000000000072b0       0x80 ../common/src/heap.o
+ .debug_ranges  0x0000000000007330      0x340 ../common/src/kprintf.o
+
+.comment        0x0000000000000000       0x11
+ .comment       0x0000000000000000       0x11 mith/src/md5.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000011       0x12 mith/src/mith_lib.o
+ .comment       0x0000000000000011       0x12 mith/src/mith_workload.o
+ .comment       0x0000000000000011       0x12 mith/src/th_bignum.o
+ .comment       0x0000000000000011       0x12 mith/src/th_encode.o
+ .comment       0x0000000000000011       0x12 mith/src/th_getopt.o
+ .comment       0x0000000000000011       0x12 mith/src/th_lib.o
+ .comment       0x0000000000000011       0x12 mith/src/th_math.o
+ .comment       0x0000000000000011       0x12 mith/src/th_rand.o
+ .comment       0x0000000000000011       0x12 mith/al/src/al_file.o
+ .comment       0x0000000000000011       0x12 mith/al/src/al_single.o
+ .comment       0x0000000000000011       0x12 mith/al/src/al_smp.o
+ .comment       0x0000000000000011       0x12 mith/al/src/th_al.o
+ .comment       0x0000000000000011       0x12 benchmarks/core/core_list_join.o
+ .comment       0x0000000000000011       0x12 benchmarks/core/core_matrix.o
+ .comment       0x0000000000000011       0x12 benchmarks/core/core_mith.o
+ .comment       0x0000000000000011       0x12 benchmarks/core/core_portme.o
+ .comment       0x0000000000000011       0x12 benchmarks/core/core_state.o
+ .comment       0x0000000000000011       0x12 benchmarks/core/core_util.o
+ .comment       0x0000000000000011       0x12 workloads/core/core.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/bm_lib.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/bmark_lite.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/cdjpeg.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/cjpeg.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/filedata.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jcapimin.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jcapistd.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jccoefct.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jccolor.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jcdctmgr.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jchuff.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jcinit.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jcmainct.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jcmarker.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jcmaster.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jcomapi.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jcparam.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jcprepct.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jcsample.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jdatadst.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jerror.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jfdctint.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jmemansi.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jmemmgr.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/jutils.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/rdbmp.o
+ .comment       0x0000000000000011       0x12 workloads/cjpeg-rose7-preset/cjpeg-rose7-preset.o
+ .comment       0x0000000000000011       0x12 benchmarks/consumer_v2/cjpeg/data/Rose256_bmp.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/linpack/linpack.o
+ .comment       0x0000000000000011       0x12 workloads/linear_alg-mid-100x100-sp/linear_alg-mid-100x100-sp.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/linpack/ref/inputs_f32.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/loops/loops.o
+ .comment       0x0000000000000011       0x12 workloads/loops-all-mid-10k-sp/loops-all-mid-10k-sp.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/loops/ref-sp/100.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/loops/ref-sp/100k.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/loops/ref-sp/100kdot.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/loops/ref-sp/10k.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/loops/ref-sp/10kdot.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/loops/ref-sp/1k.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/loops/ref-sp/1kdot.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/loops/ref-sp/32.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/nnet/nnet.o
+ .comment       0x0000000000000011       0x12 workloads/nnet_test/nnet_test.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/nnet/ref/1letter.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/nnet/ref/letters.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/parser/ezxml.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/parser/parser.o
+ .comment       0x0000000000000011       0x12 workloads/parser-125k/parser-125k.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/fft_radix2/fft_radix2.o
+ .comment       0x0000000000000011       0x12 workloads/radix2-big-64k/radix2-big-64k.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/fft_radix2/ref/2K.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/fft_radix2/ref/32K.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/fft_radix2/ref/4K.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/fft_radix2/ref/data3_big.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/fft_radix2/ref/data4_mid.o
+ .comment       0x0000000000000011       0x12 benchmarks/fp/fft_radix2/ref/data5_small.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/sha/sha256.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/sha/shabench.o
+ .comment       0x0000000000000011       0x12 workloads/sha-test/sha-test.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/zip/zip_darkmark.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/zip/zlib-1.2.8/adler32.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/zip/zlib-1.2.8/compress.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/zip/zlib-1.2.8/crc32.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/zip/zlib-1.2.8/deflate.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/zip/zlib-1.2.8/gzclose.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/zip/zlib-1.2.8/gzlib.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/zip/zlib-1.2.8/infback.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/zip/zlib-1.2.8/inffast.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/zip/zlib-1.2.8/inflate.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/zip/zlib-1.2.8/inftrees.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/zip/zlib-1.2.8/trees.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/zip/zlib-1.2.8/uncompr.o
+ .comment       0x0000000000000011       0x12 benchmarks/darkmark/zip/zlib-1.2.8/zutil.o
+ .comment       0x0000000000000011       0x12 workloads/zip-test/zip-test.o
+ .comment       0x0000000000000011       0x12 workloads/all/all.o
+ .comment       0x0000000000000011       0x12 stubs.o
+ .comment       0x0000000000000011       0x12 ../common/src/fpu.o
+ .comment       0x0000000000000011       0x12 ../common/src/heap.o
+ .comment       0x0000000000000011       0x12 ../common/src/kprintf.o
+ .comment       0x0000000000000011       0x12 ../common/src/perf_counters.o
+ .comment       0x0000000000000011       0x12 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-abs.o)
+ .comment       0x0000000000000011       0x12 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-atoi.o)
+ .comment       0x0000000000000011       0x12 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-memcmp.o)
+ .comment       0x0000000000000011       0x12 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-memmove.o)
+ .comment       0x0000000000000011       0x12 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcat.o)
+ .comment       0x0000000000000011       0x12 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strchr.o)
+ .comment       0x0000000000000011       0x12 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcpy.o)
+ .comment       0x0000000000000011       0x12 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strcspn.o)
+ .comment       0x0000000000000011       0x12 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strlen.o)
+ .comment       0x0000000000000011       0x12 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strncmp.o)
+ .comment       0x0000000000000011       0x12 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strncpy.o)
+ .comment       0x0000000000000011       0x12 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strpbrk.o)
+ .comment       0x0000000000000011       0x12 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strrchr.o)
+ .comment       0x0000000000000011       0x12 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strspn.o)
+ .comment       0x0000000000000011       0x12 /home/user/vivado-risc-v/workspace/gcc/riscv/bin/../lib/gcc/riscv64-unknown-elf/7.2.0/../../../../riscv64-unknown-elf/lib/libc.a(lib_a-strstr.o)
+
+.debug_frame    0x0000000000000000     0x9740
+ .debug_frame   0x0000000000000000      0x148 mith/src/md5.o
+ .debug_frame   0x0000000000000148      0x428 mith/src/mith_lib.o
+ .debug_frame   0x0000000000000570      0x1a0 mith/src/mith_workload.o
+ .debug_frame   0x0000000000000710      0x3f8 mith/src/th_bignum.o
+ .debug_frame   0x0000000000000b08       0xd0 mith/src/th_encode.o
+ .debug_frame   0x0000000000000bd8       0x88 mith/src/th_getopt.o
+ .debug_frame   0x0000000000000c60      0xfd8 mith/src/th_lib.o
+ .debug_frame   0x0000000000001c38      0x450 mith/src/th_math.o
+ .debug_frame   0x0000000000002088      0x700 mith/src/th_rand.o
+ .debug_frame   0x0000000000002788      0x2c8 mith/al/src/al_file.o
+ .debug_frame   0x0000000000002a50      0x140 mith/al/src/al_single.o
+ .debug_frame   0x0000000000002b90       0x68 mith/al/src/al_smp.o
+ .debug_frame   0x0000000000002bf8      0x268 mith/al/src/th_al.o
+ .debug_frame   0x0000000000002e60      0x1e0 benchmarks/core/core_list_join.o
+ .debug_frame   0x0000000000003040      0x168 benchmarks/core/core_matrix.o
+ .debug_frame   0x00000000000031a8      0x178 benchmarks/core/core_mith.o
+ .debug_frame   0x0000000000003320       0xc0 benchmarks/core/core_portme.o
+ .debug_frame   0x00000000000033e0       0xe0 benchmarks/core/core_state.o
+ .debug_frame   0x00000000000034c0       0xc8 benchmarks/core/core_util.o
+ .debug_frame   0x0000000000003588       0x98 workloads/core/core.o
+ .debug_frame   0x0000000000003620      0x158 benchmarks/consumer_v2/cjpeg/bmark_lite.o
+ .debug_frame   0x0000000000003778       0x58 benchmarks/consumer_v2/cjpeg/cdjpeg.o
+ .debug_frame   0x00000000000037d0       0x40 benchmarks/consumer_v2/cjpeg/cjpeg.o
+ .debug_frame   0x0000000000003810       0xd8 benchmarks/consumer_v2/cjpeg/filedata.o
+ .debug_frame   0x00000000000038e8      0x178 benchmarks/consumer_v2/cjpeg/jcapimin.o
+ .debug_frame   0x0000000000003a60       0xb0 benchmarks/consumer_v2/cjpeg/jcapistd.o
+ .debug_frame   0x0000000000003b10       0xe8 benchmarks/consumer_v2/cjpeg/jccoefct.o
+ .debug_frame   0x0000000000003bf8      0x150 benchmarks/consumer_v2/cjpeg/jccolor.o
+ .debug_frame   0x0000000000003d48       0xd8 benchmarks/consumer_v2/cjpeg/jcdctmgr.o
+ .debug_frame   0x0000000000003e20      0x190 benchmarks/consumer_v2/cjpeg/jchuff.o
+ .debug_frame   0x0000000000003fb0       0x40 benchmarks/consumer_v2/cjpeg/jcinit.o
+ .debug_frame   0x0000000000003ff0       0xb0 benchmarks/consumer_v2/cjpeg/jcmainct.o
+ .debug_frame   0x00000000000040a0      0x2c8 benchmarks/consumer_v2/cjpeg/jcmarker.o
+ .debug_frame   0x0000000000004368      0x168 benchmarks/consumer_v2/cjpeg/jcmaster.o
+ .debug_frame   0x00000000000044d0       0xb8 benchmarks/consumer_v2/cjpeg/jcomapi.o
+ .debug_frame   0x0000000000004588      0x1b0 benchmarks/consumer_v2/cjpeg/jcparam.o
+ .debug_frame   0x0000000000004738       0xe8 benchmarks/consumer_v2/cjpeg/jcprepct.o
+ .debug_frame   0x0000000000004820      0x168 benchmarks/consumer_v2/cjpeg/jcsample.o
+ .debug_frame   0x0000000000004988       0xd0 benchmarks/consumer_v2/cjpeg/jdatadst.o
+ .debug_frame   0x0000000000004a58       0xf0 benchmarks/consumer_v2/cjpeg/jerror.o
+ .debug_frame   0x0000000000004b48       0x68 benchmarks/consumer_v2/cjpeg/jfdctint.o
+ .debug_frame   0x0000000000004bb0      0x188 benchmarks/consumer_v2/cjpeg/jmemansi.o
+ .debug_frame   0x0000000000004d38      0x380 benchmarks/consumer_v2/cjpeg/jmemmgr.o
+ .debug_frame   0x00000000000050b8      0x118 benchmarks/consumer_v2/cjpeg/jutils.o
+ .debug_frame   0x00000000000051d0      0x198 benchmarks/consumer_v2/cjpeg/rdbmp.o
+ .debug_frame   0x0000000000005368       0x98 workloads/cjpeg-rose7-preset/cjpeg-rose7-preset.o
+ .debug_frame   0x0000000000005400       0x28 benchmarks/consumer_v2/cjpeg/data/Rose256_bmp.o
+ .debug_frame   0x0000000000005428      0x328 benchmarks/fp/linpack/linpack.o
+ .debug_frame   0x0000000000005750       0x98 workloads/linear_alg-mid-100x100-sp/linear_alg-mid-100x100-sp.o
+ .debug_frame   0x00000000000057e8       0x40 benchmarks/fp/linpack/ref/inputs_f32.o
+ .debug_frame   0x0000000000005828      0xe30 benchmarks/fp/loops/loops.o
+ .debug_frame   0x0000000000006658       0x98 workloads/loops-all-mid-10k-sp/loops-all-mid-10k-sp.o
+ .debug_frame   0x00000000000066f0       0x28 benchmarks/fp/loops/ref-sp/100.o
+ .debug_frame   0x0000000000006718       0x28 benchmarks/fp/loops/ref-sp/100k.o
+ .debug_frame   0x0000000000006740       0x28 benchmarks/fp/loops/ref-sp/100kdot.o
+ .debug_frame   0x0000000000006768       0x28 benchmarks/fp/loops/ref-sp/10k.o
+ .debug_frame   0x0000000000006790       0x28 benchmarks/fp/loops/ref-sp/10kdot.o
+ .debug_frame   0x00000000000067b8       0x28 benchmarks/fp/loops/ref-sp/1k.o
+ .debug_frame   0x00000000000067e0       0x28 benchmarks/fp/loops/ref-sp/1kdot.o
+ .debug_frame   0x0000000000006808       0x28 benchmarks/fp/loops/ref-sp/32.o
+ .debug_frame   0x0000000000006830      0x200 benchmarks/fp/nnet/nnet.o
+ .debug_frame   0x0000000000006a30       0x98 workloads/nnet_test/nnet_test.o
+ .debug_frame   0x0000000000006ac8       0x38 benchmarks/fp/nnet/ref/1letter.o
+ .debug_frame   0x0000000000006b00       0x38 benchmarks/fp/nnet/ref/letters.o
+ .debug_frame   0x0000000000006b38      0x7f8 benchmarks/darkmark/parser/ezxml.o
+ .debug_frame   0x0000000000007330      0x188 benchmarks/darkmark/parser/parser.o
+ .debug_frame   0x00000000000074b8       0x98 workloads/parser-125k/parser-125k.o
+ .debug_frame   0x0000000000007550      0x1a8 benchmarks/fp/fft_radix2/fft_radix2.o
+ .debug_frame   0x00000000000076f8       0x98 workloads/radix2-big-64k/radix2-big-64k.o
+ .debug_frame   0x0000000000007790       0x28 benchmarks/fp/fft_radix2/ref/2K.o
+ .debug_frame   0x00000000000077b8       0x28 benchmarks/fp/fft_radix2/ref/32K.o
+ .debug_frame   0x00000000000077e0       0x28 benchmarks/fp/fft_radix2/ref/4K.o
+ .debug_frame   0x0000000000007808       0x28 benchmarks/fp/fft_radix2/ref/data3_big.o
+ .debug_frame   0x0000000000007830       0x28 benchmarks/fp/fft_radix2/ref/data4_mid.o
+ .debug_frame   0x0000000000007858       0x28 benchmarks/fp/fft_radix2/ref/data5_small.o
+ .debug_frame   0x0000000000007880      0x178 benchmarks/darkmark/sha/sha256.o
+ .debug_frame   0x00000000000079f8      0x158 benchmarks/darkmark/sha/shabench.o
+ .debug_frame   0x0000000000007b50       0x98 workloads/sha-test/sha-test.o
+ .debug_frame   0x0000000000007be8      0x228 benchmarks/darkmark/zip/zip_darkmark.o
+ .debug_frame   0x0000000000007e10       0x98 benchmarks/darkmark/zip/zlib-1.2.8/adler32.o
+ .debug_frame   0x0000000000007ea8       0x80 benchmarks/darkmark/zip/zlib-1.2.8/compress.o
+ .debug_frame   0x0000000000007f28       0x98 benchmarks/darkmark/zip/zlib-1.2.8/crc32.o
+ .debug_frame   0x0000000000007fc0      0x530 benchmarks/darkmark/zip/zlib-1.2.8/deflate.o
+ .debug_frame   0x00000000000084f0       0x28 benchmarks/darkmark/zip/zlib-1.2.8/gzclose.o
+ .debug_frame   0x0000000000008518      0x1d0 benchmarks/darkmark/zip/zlib-1.2.8/gzlib.o
+ .debug_frame   0x00000000000086e8      0x130 benchmarks/darkmark/zip/zlib-1.2.8/infback.o
+ .debug_frame   0x0000000000008818       0x70 benchmarks/darkmark/zip/zlib-1.2.8/inffast.o
+ .debug_frame   0x0000000000008888      0x378 benchmarks/darkmark/zip/zlib-1.2.8/inflate.o
+ .debug_frame   0x0000000000008c00       0x68 benchmarks/darkmark/zip/zlib-1.2.8/inftrees.o
+ .debug_frame   0x0000000000008c68      0x260 benchmarks/darkmark/zip/zlib-1.2.8/trees.o
+ .debug_frame   0x0000000000008ec8       0x58 benchmarks/darkmark/zip/zlib-1.2.8/uncompr.o
+ .debug_frame   0x0000000000008f20       0x88 benchmarks/darkmark/zip/zlib-1.2.8/zutil.o
+ .debug_frame   0x0000000000008fa8       0x98 workloads/zip-test/zip-test.o
+ .debug_frame   0x0000000000009040       0xc0 workloads/all/all.o
+ .debug_frame   0x0000000000009100      0x348 stubs.o
+ .debug_frame   0x0000000000009448       0x28 ../common/src/fpu.o
+ .debug_frame   0x0000000000009470      0x168 ../common/src/heap.o
+ .debug_frame   0x00000000000095d8       0xb0 ../common/src/kprintf.o
+ .debug_frame   0x0000000000009688       0xb8 ../common/src/perf_counters.o

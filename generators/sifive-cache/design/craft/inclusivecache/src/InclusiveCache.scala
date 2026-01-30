@@ -75,7 +75,7 @@ class InclusiveCache(
   val node: TLAdapterNode = TLAdapterNode(
     clientFn  = { _ => TLClientPortParameters(Seq(TLClientParameters(
       name          = s"L${cache.level} InclusiveCache",
-      sourceId      = IdRange(0, InclusiveCacheParameters.out_mshrs(cache, micro)),
+      sourceId      = IdRange(0, InclusiveCacheParameters.all_mshrs(cache, micro) + micro.streamBufferEntries),
       supportsProbe = xfer)))
     },
     managerFn = { m => TLManagerPortParameters(
@@ -176,6 +176,26 @@ class InclusiveCache(
         when (sched.io.resp.valid) { ctrl.module.io.flush_resp := true.B }
         sched.io.resp.ready := true.B
       }}
+    }
+
+    // Performance Counter Wiring
+    if (!ctrls.isEmpty) {
+       if (ctrls.size == 1) {
+         val c = ctrls.head
+         c.module.counters.l2_hit     := mods.map(_.io.counters.l2_hit).reduce(_||_)
+         c.module.counters.l2_miss    := mods.map(_.io.counters.l2_miss).reduce(_||_)
+         c.module.counters.mshr_alloc := mods.map(_.io.counters.mshr_alloc).reduce(_||_)
+         c.module.counters.pf_issued  := mods.map(_.io.counters.pf_issued).reduce(_||_)
+         c.module.counters.pf_used    := mods.map(_.io.counters.pf_used).reduce(_||_)
+       } else {
+         mods.zip(ctrls).foreach { case (m, c) =>
+           c.module.counters.l2_hit     := m.io.counters.l2_hit
+           c.module.counters.l2_miss    := m.io.counters.l2_miss
+           c.module.counters.mshr_alloc := m.io.counters.mshr_alloc
+           c.module.counters.pf_issued  := m.io.counters.pf_issued
+           c.module.counters.pf_used    := m.io.counters.pf_used
+         }
+       }
     }
 
     def json = s"""{"banks":[${mods.map(_.json).mkString(",")}]}"""

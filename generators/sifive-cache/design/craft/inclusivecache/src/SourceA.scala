@@ -19,9 +19,7 @@ package sifive.blocks.inclusivecache
 
 import chisel3._
 import chisel3.util._
-import org.chipsalliance.cde.config._
 import freechips.rocketchip.tilelink._
-import freechips.rocketchip.subsystem.InclusiveCacheKey
 
 class SourceARequest(params: InclusiveCacheParameters) extends InclusiveCacheBundle(params)
 {
@@ -30,9 +28,10 @@ class SourceARequest(params: InclusiveCacheParameters) extends InclusiveCacheBun
   val param  = UInt(3.W)
   val source = UInt(params.outer.bundle.sourceBits.W)
   val block  = Bool()
+  val prefetch = Bool()
 }
 
-class SourceA(params: InclusiveCacheParameters)(implicit p: Parameters) extends Module
+class SourceA(params: InclusiveCacheParameters) extends Module
 {
   val io = IO(new Bundle {
     val req = Flipped(Decoupled(new SourceARequest(params)))
@@ -49,13 +48,8 @@ class SourceA(params: InclusiveCacheParameters)(implicit p: Parameters) extends 
   val a = Wire(chiselTypeOf(io.a))
   io.a <> params.micro.outerBuf.a(a)
 
-  // MSHR requests always get A channel access
-  io.req.ready := a.ready
-
   a.valid := io.req.valid
-  params.ccover(a.valid && !a.ready, "SOURCEA_STALL", "Backpressured when issuing an Acquire")
-
-  // Normal MSHR Acquire request (includes prefetch requests that went through MSHR)
+  io.req.ready := a.ready
   a.bits.opcode  := Mux(io.req.bits.block, TLMessages.AcquireBlock, TLMessages.AcquirePerm)
   a.bits.param   := io.req.bits.param
   a.bits.size    := params.offsetBits.U
@@ -65,8 +59,12 @@ class SourceA(params: InclusiveCacheParameters)(implicit p: Parameters) extends 
   a.bits.data    := 0.U
   a.bits.corrupt := false.B
 
-  // Snoop: expose fired Acquire requests for prefetcher to observe
-  io.snoop_valid := a.fire
+  params.ccover(a.valid && !a.ready, "SOURCEA_STALL", "Backpressured when issuing an Acquire")
+
+  // Expose the issued request for prefetcher to snoop
+  // FIX: Don't snoop our own prefetch requests! This prevents infinite prefetch loops.
+  io.snoop_valid := a.fire && !io.req.bits.prefetch
   io.snoop_address := a.bits.address
   io.snoop_opcode := a.bits.opcode
 }
+

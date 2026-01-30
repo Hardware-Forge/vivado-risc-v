@@ -58,6 +58,34 @@ class InclusiveCacheControl(outer: InclusiveCache, control: InclusiveCacheContro
       flushOutValid := true.B
     }
 
+    // Performance Counters
+    val counters = IO(Input(new Bundle {
+      val l2_hit     = Bool()
+      val l2_miss    = Bool()
+      val mshr_alloc = Bool()
+      // L2 prefetcher performance counters (pulses)
+      val pf_issued  = Bool()
+      val pf_used    = Bool()
+    }))
+
+    val l2_hit_ctr      = RegInit(0.U(64.W))
+    val l2_miss_ctr     = RegInit(0.U(64.W))
+    val mshr_alloc_ctr  = RegInit(0.U(64.W))
+    val pf_issued_ctr   = RegInit(0.U(64.W))
+    val pf_used_ctr     = RegInit(0.U(64.W))
+
+    when (counters.l2_hit)     { l2_hit_ctr     := l2_hit_ctr + 1.U }
+    when (counters.l2_miss)    { l2_miss_ctr    := l2_miss_ctr + 1.U }
+    when (counters.mshr_alloc) { mshr_alloc_ctr := mshr_alloc_ctr + 1.U }
+    when (counters.pf_issued)  { pf_issued_ctr  := pf_issued_ctr + 1.U }
+    when (counters.pf_used)    { pf_used_ctr    := pf_used_ctr + 1.U }
+
+    val l2_hit_reg     = RegField.r(64, l2_hit_ctr,     RegFieldDesc("L2Hits",      "Number of L2 Hits"))
+    val l2_miss_reg    = RegField.r(64, l2_miss_ctr,    RegFieldDesc("L2Misses",    "Number of L2 Misses"))
+    val mshr_alloc_reg = RegField.r(64, mshr_alloc_ctr, RegFieldDesc("MSHRAllocs",  "Number of MSHR Allocations (Primary Misses)"))
+    val pf_issued_reg  = RegField.r(64, pf_issued_ctr,  RegFieldDesc("PFIssued",    "Number of L2 Prefetches Issued"))
+    val pf_used_reg    = RegField.r(64, pf_used_ctr,    RegFieldDesc("PFUsed",      "Number of L2 Prefetched Lines Used"))
+
     val flush32 = RegField.w(32, RegWriteFn((ivalid, oready, data) => {
       when (oready) { flushOutReady := true.B }
       when (ivalid) { flushInValid := true.B }
@@ -85,6 +113,7 @@ class InclusiveCacheControl(outer: InclusiveCache, control: InclusiveCacheContro
 
     val regmap = ctrlnode.regmap(
       0x000 -> RegFieldGroup("Config", Some("Information about the Cache Configuration"), Seq(banksR, waysR, lgSetsR, lgBlockBytesR)),
+      0x100 -> Seq(l2_hit_reg, l2_miss_reg, mshr_alloc_reg, pf_issued_reg, pf_used_reg),
       0x200 -> (if (control.beatBytes >= 8) Seq(flush64) else Nil),
       0x240 -> Seq(flush32)
     )

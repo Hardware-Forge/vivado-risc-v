@@ -39,6 +39,16 @@ class InclusiveCacheBankScheduler(params: InclusiveCacheParameters) extends Modu
     // Control port
     val req = Flipped(Decoupled(new SinkXRequest(params)))
     val resp = Decoupled(new SourceXRequest(params))
+    val counters = Output(new Bundle {
+      val l2_hit     = Bool()
+      val l2_miss    = Bool()
+      val mshr_alloc = Bool()
+      // L2 prefetcher performance counters
+      // pf_issued: L2 prefetch requests sent toward RAM
+      // pf_used:   L2 prefetch hits serviced from the stream buffer
+      val pf_issued = Bool()
+      val pf_used   = Bool()
+    })
   })
 
   val sourceA = Module(new SourceA(params))
@@ -50,12 +60,13 @@ class InclusiveCacheBankScheduler(params: InclusiveCacheParameters) extends Modu
 
   // Instantiate L2-to-RAM prefetcher
   val prefetcher = L2RamPrefetcher(params)
+  prefetcher.io.can_prefetch := true.B
 
-  io.out.a <> sourceA.io.a
   io.out.c <> sourceC.io.c
-  io.out.e <> sourceE.io.e
+  // io.out.e <> sourceE.io.e // MOVED: Now goes through arbiter to include StreamBuffer acks
   io.in.b <> sourceB.io.b
-  io.in.d <> sourceD.io.d
+  io.in.d <> sourceD.io.d // RESTORED: This is L2->L1 response, unrelated to SinkD
+  // sinkD logic moved to Arbiter below
   io.resp <> sourceX.io.x
 
   val sinkA = Module(new SinkA(params))
@@ -63,12 +74,12 @@ class InclusiveCacheBankScheduler(params: InclusiveCacheParameters) extends Modu
   val sinkD = Module(new SinkD(params))
   val sinkE = Module(new SinkE(params))
   val sinkX = Module(new SinkX(params))
-  val sinkPrefetch = Module(new SinkPrefetch(params))
+  // val sinkPrefetch = Module(new SinkPrefetch(params)) // REMOVED
 
   sinkA.io.a <> io.in.a
   sinkC.io.c <> io.in.c
   sinkE.io.e <> io.in.e
-  sinkD.io.d <> io.out.d
+  // sinkD.io.d <> io.out.d // REMOVED: Managed by Demux
   sinkX.io.x <> io.req
 
   io.out.b.ready := true.B // disconnected
@@ -137,10 +148,14 @@ class InclusiveCacheBankScheduler(params: InclusiveCacheParameters) extends Modu
 
   // Fill in which MSHR sends the request
   schedule.a.bits.source := mshr_select
+  
+  // Forward delcaration for Stream Buffer hit logic (defined later)
+  val stream_hit_wire = Wire(Bool())
   schedule.c.bits.source := Mux(schedule.c.bits.opcode(1), mshr_select, 0.U) // only set for Release[Data] not ProbeAck[Data]
   schedule.d.bits.sink   := mshr_select
 
-  sourceA.io.req.valid := schedule.a.valid
+  // FIX: Suppress SourceA if Stream Buffer Hit
+  sourceA.io.req.valid := schedule.a.valid && !stream_hit_wire
   sourceB.io.req.valid := schedule.b.valid
   sourceC.io.req.valid := schedule.c.valid
   sourceD.io.req.valid := schedule.d.valid
@@ -168,16 +183,16 @@ class InclusiveCacheBankScheduler(params: InclusiveCacheParameters) extends Modu
   nestedwb.c_set_dirty := select_c  &&  c_mshr.io.schedule.bits.dir.valid && c_mshr.io.schedule.bits.dir.bits.data.dirty
 
   // Pick highest priority request
-  // Priority: sinkC > sinkX > sinkA > sinkPrefetch
+  // Priority: sinkC > sinkX > sinkA
   val request = Wire(Decoupled(new FullRequest(params)))
-  request.valid := directory.io.ready && (sinkA.io.req.valid || sinkX.io.req.valid || sinkC.io.req.valid || sinkPrefetch.io.req.valid)
+  request.valid := directory.io.ready && (sinkA.io.req.valid || sinkX.io.req.valid || sinkC.io.req.valid)
   request.bits := Mux(sinkC.io.req.valid, sinkC.io.req.bits,
                   Mux(sinkX.io.req.valid, sinkX.io.req.bits,
-                  Mux(sinkA.io.req.valid, sinkA.io.req.bits, sinkPrefetch.io.req.bits)))
+                  sinkA.io.req.bits)) // Removed sinkPrefetch
   sinkC.io.req.ready := directory.io.ready && request.ready
   sinkX.io.req.ready := directory.io.ready && request.ready && !sinkC.io.req.valid
   sinkA.io.req.ready := directory.io.ready && request.ready && !sinkC.io.req.valid && !sinkX.io.req.valid
-  sinkPrefetch.io.req.ready := directory.io.ready && request.ready && !sinkC.io.req.valid && !sinkX.io.req.valid && !sinkA.io.req.valid
+  // sinkPrefetch.io.req.ready ... REMOVED
 
   // If no MSHR has been assigned to this set, we need to allocate one
   val setMatches = Cat(mshrs.map { m => m.io.status.valid && m.io.status.bits.set === request.bits.set }.reverse)
@@ -252,6 +267,16 @@ class InclusiveCacheBankScheduler(params: InclusiveCacheParameters) extends Modu
   val pop_index = OHToUInt(Cat(mshr_selectOH, mshr_selectOH, mshr_selectOH) & prio_requests)
   requests.io.pop.valid := will_pop
   requests.io.pop.bits  := pop_index
+  
+  if (!params.lastLevel) { // Use this guard to avoid printing in other instantiations if any
+    when (will_pop) {
+      printf("[SCHED POP] Popping index %d. MSHR %d. Reload: %d. MayPop: %d. Bypass: %d.\n", 
+             pop_index, mshr_select, schedule.reload, may_pop, bypass)
+    }
+    when (mshr_selectOH.orR && !will_pop && schedule.reload) {
+       printf("[SCHED NOPOP] MSHR %d Reloading but NOT popping. MayPop: %d. Bypass: %d.\n", mshr_select, may_pop, bypass)
+    }
+  }
 
   // Reload from the Directory if the next MSHR operation changes tags
   val lb_tag_mismatch = scheduleTag =/= requests.io.data.tag
@@ -270,6 +295,9 @@ class InclusiveCacheBankScheduler(params: InclusiveCacheParameters) extends Modu
      (nestB && !mshr_uses_directory_assuming_no_bypass && !bc_mshr.io.status.valid && !c_mshr.io.status.valid) ||
      (nestC && !mshr_uses_directory_assuming_no_bypass && !c_mshr.io.status.valid)
   request.ready := request_alloc_cases || (queue && (bypassQueue || requests.io.push.ready))
+  
+  params.ccover(request.valid && request_alloc_cases, "SCHEDULER_ALLOC", "Allocate new MSHR (Primary Miss)")
+  
   val alloc_uses_directory = request.valid && request_alloc_cases
 
   // When a request goes through, it will need to hit the Directory
@@ -378,15 +406,146 @@ class InclusiveCacheBankScheduler(params: InclusiveCacheParameters) extends Modu
   prefetcher.io.grant_valid := sinkD.io.resp.valid
   prefetcher.io.grant_source := sinkD.io.resp.bits.source
 
-  // Prefetcher can issue requests when there are no higher priority requests pending
-  // and we have MSHR capacity (approximated by checking if sinkPrefetch is ready)
-  val prefetch_can_issue = !sinkA.io.req.valid && !sinkX.io.req.valid && !sinkC.io.req.valid
-  prefetcher.io.can_prefetch := prefetch_can_issue
+  // STREAM BUFFER: Decouple prefetch storage from MSHRs
+  // Allocation: 16 entries, starting at source ID = params.mshrs (after MSHR B/C)
+  val streamBuffer = Module(new StreamBuffer(params, params.micro.streamBufferEntries, params.mshrs))
+  
+  prefetcher.io.can_prefetch := true.B // Always allow prefetch generation
+  streamBuffer.io.alloc.valid := prefetcher.io.prefetch.valid
+  streamBuffer.io.alloc.bits.address := prefetcher.io.prefetch.bits.address
+  prefetcher.io.prefetch.ready := streamBuffer.io.alloc.ready
 
-  // Connect prefetcher output to SinkPrefetch (goes through MSHR allocation)
-  sinkPrefetch.io.prefetch.valid := prefetcher.io.prefetch.valid
-  sinkPrefetch.io.prefetch.bits := prefetcher.io.prefetch.bits.address
-  prefetcher.io.prefetch.ready := sinkPrefetch.io.prefetch.ready
+  // INVALIDATION CONNECTION:
+  // Hook up L2 evictions (SourceC) to invalidation port.
+  // When L2 evicts a block (Release) or writes back (ProbeAckData),
+  // we must invalidate any matching entry in StreamBuffer to prevent stale data.
+  // sourceC.io.c is Decoupled, so use .fire and .bits
+  streamBuffer.io.inval_valid := io.out.c.fire
+  streamBuffer.io.inval_addr  := io.out.c.bits.address
+
+  // 1. SourceA Arbitration (MSHR vs StreamBuffer)
+  // Round-robin for fair bandwidth sharing. For bandwidth-bound workloads like STREAM,
+  // this ensures prefetches get issued, keeping the StreamBuffer populated.
+  val sourceArb = Module(new RRArbiter(new TLBundleA(params.outer.bundle), 2))
+  sourceArb.io.in(0) <> sourceA.io.a       // MSHR requests
+  sourceArb.io.in(1) <> streamBuffer.io.req // StreamBuffer requests
+  io.out.a <> sourceArb.io.out
+
+  // 2. SinkD Demux (MSHR vs StreamBuffer)
+  // Determine if response is for StreamBuffer (high IDs)
+  val isStreamBufferResp = io.out.d.bits.source >= params.mshrs.U
+  
+  streamBuffer.io.resp.valid := io.out.d.valid && isStreamBufferResp
+  streamBuffer.io.resp.bits := io.out.d.bits
+  
+  // SinkD comes from EITHER io.out.d (if MSHR) OR StreamBuffer.io.replay_d (if Hit)
+  // CRITICAL: We must use a LOCKED arbiter to prevent interleaving beats of different bursts.
+  val sinkDArb = Module(new RRArbiter(new TLBundleD(params.outer.bundle), 2))
+  
+  // Input sources
+  val flow_d_valid = io.out.d.valid && !isStreamBufferResp
+  val flow_s_valid = streamBuffer.io.replay_d.valid
+  
+  // Locking logic (Robustified)
+  // We must LOCK onto a source until the burst is complete (out_last).
+  // This prevents switching mid-burst if validity drops ("bubble").
+  val locked = RegInit(false.B)
+  val locked_choice = Reg(UInt(1.W)) // 0=Memory, 1=StreamBuffer
+
+  val arb_choice = sinkDArb.io.chosen
+  val (out_first, out_last, _, out_beat) = params.outer.count(sinkDArb.io.out)
+
+  when (!locked && sinkDArb.io.out.fire) {
+    // Start of new burst
+    when (!out_last) {
+      locked := true.B
+      locked_choice := arb_choice
+      if (!params.lastLevel) {
+         printf("[SINKD LOCK] Locking on %d (0=Mem, 1=SB)\n", arb_choice)
+      }
+    }
+  }
+
+  when (locked && sinkDArb.io.out.fire && out_last) {
+    locked := false.B
+    if (!params.lastLevel) {
+       // printf("[SINKD LOCK] Releasing lock\n")
+    }
+  }
+
+  // FORCE arbitration choice when locked
+  // If locked, we MASK valid of the other source to 0.
+  // This forces RRArbiter to pick the locked source (if it has valid data) or wait.
+  // It prevents switching to the other source.
+  val mask_d = locked && locked_choice === 1.U // Locked on SB -> Mask Mem
+  val mask_s = locked && locked_choice === 0.U // Locked on Mem -> Mask SB
+
+  sinkDArb.io.in(0).valid := flow_d_valid && !mask_d
+  sinkDArb.io.in(0).bits  := io.out.d.bits
+  sinkDArb.io.in(1).valid := flow_s_valid && !mask_s
+  sinkDArb.io.in(1).bits  <> streamBuffer.io.replay_d.bits
+  streamBuffer.io.replay_d.ready := sinkDArb.io.in(1).ready && !mask_s
+
+  // Ready logic:
+  // Downstream ready comes from sinkDArb (which handles routing).
+  // Logic for upstream `io.out.d.ready`:
+  // If isStreamBufferResp -> Direct connection (always true)
+  // Else (MSHR Resp) -> Check arbiter input 0.
+  io.out.d.ready := Mux(isStreamBufferResp, streamBuffer.io.resp.ready, sinkDArb.io.in(0).ready && !mask_d)
+  
+  sinkD.io.d <> sinkDArb.io.out
+  // Tell SinkD if this response came from Stream Buffer (arbiter input 1)
+  // Use locked status if locked, otherwise check current arbiter choice
+  sinkD.io.from_stream_buffer := (locked && locked_choice === 1.U) || (!locked && sinkDArb.io.chosen === 1.U && sinkDArb.io.out.fire)
+
+  // 3. Stream Buffer Hit Logic (Bypass SourceA)
+  // FIX: SourceARequest does not have 'address'. It has tag/set.
+  // We need to reconstruct.
+  streamBuffer.io.peek_addr := params.expandAddress(schedule.a.bits.tag, schedule.a.bits.set, 0.U)
+  
+  // We only peek for AcquireBlock/Perm (not Put, etc - though MSHR A is usually Acquire)
+  // FIX: opcode is in 'bits' of SourceARequest? No, SourceARequest (line 24 in SourceA.scala) DOES NOT have opcode or address.
+  // It has 'tag', 'set', 'param', 'source', 'block'.
+  // We need to reconstruct address or check tag/set directly.
+  // We need to infer opcode from 'block' bit?
+  // SourceA.scala:53: a.bits.opcode := Mux(io.req.bits.block, TLMessages.AcquireBlock, TLMessages.AcquirePerm)
+  val sche_s_req = schedule.a.bits
+  val can_hit_stream = schedule.a.valid && (sche_s_req.block || !sche_s_req.block) // All SourceA requests are Acquires in this design
+  
+  // RACE CONDITION FIX: Only allow stream_hit when we're CERTAIN replay can proceed.
+  // Issue: `locked` is a register (previous cycle's value). The arbiter might be starting
+  // a Memory burst in THIS cycle, making the lock stale. By the time replay fires, it's masked.
+  // Solution: Only hit when NO Memory data is pending at the arbiter input.
+  // If Memory (input 0) has no valid data, there's nothing to lock on, so replay is safe.
+  val memory_data_pending = sinkDArb.io.in(0).valid // Memory has data waiting
+  val can_use_stream_buffer = !locked && !memory_data_pending
+  val stream_hit = can_hit_stream && streamBuffer.io.peek_hit && can_use_stream_buffer
+  stream_hit_wire := stream_hit
+  
+  when (stream_hit) {
+    printf("[STREAM HIT] Address 0x%x matched in StreamBuffer. Suppressing SourceA. SourceID=%d\n", streamBuffer.io.peek_addr, schedule.a.bits.source)
+  }
+
+  // Pop StreamBuffer immediately on hit
+  streamBuffer.io.pop_valid := stream_hit
+  streamBuffer.io.pop_source := schedule.a.bits.source
+  
+  // 4. SourceE Arbitration (MSHR GrantAcks vs StreamBuffer GrantAcks)
+  val sourceEArb = Module(new RRArbiter(new TLBundleE(params.outer.bundle), 2))
+  sourceEArb.io.in(0) <> sourceE.io.e       // MSHR GrantAcks
+  sourceEArb.io.in(1) <> streamBuffer.io.ack_e  // StreamBuffer GrantAcks
+  io.out.e <> sourceEArb.io.out
+
+  // L2 directory hit / miss
+  io.counters.l2_hit  := mshrs.map(_.io.counters.l2_hit).reduce(_||_)
+  io.counters.l2_miss := mshrs.map(_.io.counters.l2_miss).reduce(_||_)
+
+  // MSHR allocations (primary L2 misses)
+  io.counters.mshr_alloc := request.valid && request_alloc_cases
+
+  // L2 prefetcher performance: issued vs used (via Stream Buffer)
+  io.counters.pf_issued := prefetcher.io.prefetch_issued
+  io.counters.pf_used   := stream_hit
 
   private def afmt(x: AddressSet) = s"""{"base":${x.base},"mask":${x.mask}}"""
   private def addresses = params.inner.manager.managers.flatMap(_.address).map(afmt _).mkString(",")

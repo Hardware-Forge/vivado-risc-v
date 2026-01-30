@@ -398,3 +398,521 @@ class Rocket64z2m extends Config(
   new boom.common.WithNMegaBooms(2) ++
   new WithExtMemSize(0x3f80000000L) ++
   new RocketWideBusConfig)
+
+class Rocket64x1WithL2NLDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("nl"), streamBufferEntries = 16) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2StridedDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("strided"), prefetchDistance = 1, prefetchDegree = 4, streamBufferEntries = 16) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2AMPMDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("ampm"), streamBufferEntries = 16) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2BOPDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("bop"), streamBufferEntries = 16) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2SPPDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("spp"), streamBufferEntries = 16) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2StridedBOPDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("strided", "bop"), prefetchDistance = 1, prefetchDegree = 4, streamBufferEntries = 32) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2StridedAMPMBOPDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("strided", "ampm", "bop"), prefetchDistance = 1, prefetchDegree = 4, streamBufferEntries = 32) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)  
+
+class Rocket64x1WithL2HighNLDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("nl"), streamBufferEntries = 32) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2HighStridedDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("strided"), prefetchDistance = 1, prefetchDegree = 4, streamBufferEntries = 32) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2HighAMPMDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("ampm"), streamBufferEntries = 32) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2HighBOPDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("bop"), streamBufferEntries = 32) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2HighSPPDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("spp"), streamBufferEntries = 32) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2HighStridedBOPDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("strided", "bop"), prefetchDistance = 1, prefetchDegree = 4, streamBufferEntries = 32) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2HighStridedAMPMBOPDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("strided", "ampm", "bop"), prefetchDistance = 1, prefetchDegree = 4, streamBufferEntries = 32) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2LowNLDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("nl"), streamBufferEntries = 8) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2LowStridedDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("strided"), prefetchDistance = 1, prefetchDegree = 4, streamBufferEntries = 8) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2LowAMPMDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("ampm"), streamBufferEntries = 8) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2LowBOPDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("bop"), streamBufferEntries = 8) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2LowSPPDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("spp"), streamBufferEntries = 8) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2LowStridedBOPDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("strided", "bop"), prefetchDistance = 1, prefetchDegree = 4, streamBufferEntries = 8) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithL2LowStridedAMPMBOPDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("strided", "ampm", "bop"), prefetchDistance = 1, prefetchDegree = 4, streamBufferEntries = 8) ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+/*
+class Rocket64x1WithNLDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(core =
+                tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("nl"),
+                  streamBufferEntries = 16
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithStridedDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(
+                core = tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("strided"),
+                  prefetchDistance = 1,
+                  prefetchDegree = 8,
+                  streamBufferEntries = 16
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithAMPMDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(core =
+                tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("ampm"),
+                  streamBufferEntries = 16
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithBOPDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(core =
+                tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("bop"),
+                  streamBufferEntries = 16
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithSPPDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(core =
+                tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("spp"),
+                  streamBufferEntries = 16
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithHighNLDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(core =
+                tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("nl"),
+                  streamBufferEntries = 32
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithHighStridedDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(
+                core = tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("strided"),
+                  prefetchDistance = 1,
+                  prefetchDegree = 8,
+                  streamBufferEntries = 32
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithHighAMPMDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(core =
+                tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("ampm"),
+                  streamBufferEntries = 32
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithHighBOPDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(core =
+                tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("bop"),
+                  streamBufferEntries = 32
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithHighSPPDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(core =
+                tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("spp"),
+                  streamBufferEntries = 32
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithStridedAMPMBOPDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(core =
+                tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("strided", "ampm", "bop"),
+                  streamBufferEntries = 32
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithStridedAMPMDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(core =
+                tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("strided", "ampm"),
+                  streamBufferEntries = 32
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithLowNLDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(core =
+                tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("nl"),
+                  streamBufferEntries = 8
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithLowStridedDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(core =
+                tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("strided"),
+                  prefetchDistance = 1,
+                  prefetchDegree = 8,
+                  streamBufferEntries = 8
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithLowAMPMDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(core =
+                tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("ampm"),
+                  streamBufferEntries = 8
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithLowBOPDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(core =
+                tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("bop"),
+                  streamBufferEntries = 8
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+
+class Rocket64x1WithLowSPPDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(core =
+                tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("spp"),
+                  streamBufferEntries = 8
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)
+*/
+
+/*class Rocket64x1WithStridedL2BOPDirectPrefetching extends Config(
+  new WithInclusiveCache(enablePrefetch = true, prefetchTypes = Seq("strided"), streamBufferEntries = 16) ++
+  new WithNBreakpoints(8) ++
+  new Config((site, here, up) => { case TilesLocated(InSubsystem) =>
+        up(TilesLocated(InSubsystem), site) map {
+          case tp: boom.common.BoomTileAttachParams =>
+            tp.copy(tileParams =
+              tp.tileParams.copy(core =
+                tp.tileParams.core.copy(
+                  enablePrefetching = true,
+                  prefetchers = Seq("spp"),
+                  streamBufferEntries = 16
+                )
+              )
+            )
+          case other => other
+        }
+      }) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)*/
+
+class Rocket64x1WithoutDirectPrefetching extends Config(
+  new WithInclusiveCache  ++
+  new WithNBreakpoints(8) ++
+  new boom.common.WithNMediumBooms(1) ++
+  new RocketWideBusConfig)

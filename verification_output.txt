@@ -1,0 +1,152 @@
+Config                                             | Metric     | Value      | Source File                                                                      | Timestamp
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+gcc                                                | LUTs       | MISSING    | workspace/gcc/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/riscv_wrapper_utilization_placed.rpt | -
+gcc                                                | Regs       | MISSING    | workspace/gcc/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/riscv_wrapper_utilization_placed.rpt | -
+gcc                                                | Power      | MISSING    | workspace/gcc/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/riscv_wrapper_power_routed.rpt | -
+gcc                                                | Log-LUTs   | MISSING    | workspace/gcc/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/runme.log         | -
+gcc                                                | Log-Regs   | MISSING    | workspace/gcc/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/runme.log         | -
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1                                         | LUTs       | 169362     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-23 21:26:01
+rocket64x1                                         | Regs       | 91422      | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-23 21:26:01
+rocket64x1                                         | Power      | 2.549      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-23 21:30:38
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithAMPMDirectPrefetching                | LUTs       | 178091     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-16 21:59:54
+rocket64x1WithAMPMDirectPrefetching                | Regs       | 102179     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-16 21:59:54
+rocket64x1WithAMPMDirectPrefetching                | Power      | 2.297      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-16 22:05:13
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithBOPDirectPrefetching                 | LUTs       | 177502     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-16 22:32:55
+rocket64x1WithBOPDirectPrefetching                 | Regs       | 100648     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-16 22:32:55
+rocket64x1WithBOPDirectPrefetching                 | Power      | 2.307      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-16 22:38:13
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithHighAMPMDirectPrefetching            | LUTs       | 184188     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-16 22:01:55
+rocket64x1WithHighAMPMDirectPrefetching            | Regs       | 110876     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-16 22:01:55
+rocket64x1WithHighAMPMDirectPrefetching            | Power      | 2.320      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-16 22:07:58
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithHighBOPDirectPrefetching             | LUTs       | 184259     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-22 15:49:14
+rocket64x1WithHighBOPDirectPrefetching             | Regs       | 109325     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-22 15:49:14
+rocket64x1WithHighBOPDirectPrefetching             | Power      | 2.317      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-22 15:54:32
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithHighNLDirectPrefetching              | LUTs       | 183325     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-16 21:27:59
+rocket64x1WithHighNLDirectPrefetching              | Regs       | 109432     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-16 21:27:59
+rocket64x1WithHighNLDirectPrefetching              | Power      | 2.306      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-16 21:33:28
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithHighSPPDirectPrefetching             | LUTs       | 191496     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-24 18:22:39
+rocket64x1WithHighSPPDirectPrefetching             | Regs       | 116157     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-24 18:22:39
+rocket64x1WithHighSPPDirectPrefetching             | Power      | 2.362      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-24 18:30:27
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithHighStridedDirectPrefetching         | LUTs       | 187897     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-17 10:13:47
+rocket64x1WithHighStridedDirectPrefetching         | Regs       | 111445     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-17 10:13:47
+rocket64x1WithHighStridedDirectPrefetching         | Power      | 2.345      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-17 10:20:08
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithL2AMPMDirectPrefetching              | LUTs       | 183086     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-25 10:49:54
+rocket64x1WithL2AMPMDirectPrefetching              | Regs       | 101955     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-25 10:49:54
+rocket64x1WithL2AMPMDirectPrefetching              | Power      | 2.356      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-25 10:55:33
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithL2BOPDirectPrefetching               | LUTs       | 182457     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-25 12:06:24
+rocket64x1WithL2BOPDirectPrefetching               | Regs       | 100526     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-25 12:06:24
+rocket64x1WithL2BOPDirectPrefetching               | Power      | 2.350      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-25 12:11:58
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithL2HighAMPMDirectPrefetching          | LUTs       | 196855     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-26 02:11:26
+rocket64x1WithL2HighAMPMDirectPrefetching          | Regs       | 110874     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-26 02:11:26
+rocket64x1WithL2HighAMPMDirectPrefetching          | Power      | 2.464      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-26 02:21:00
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithL2HighBOPDirectPrefetching           | LUTs       | 195246     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-26 09:56:43
+rocket64x1WithL2HighBOPDirectPrefetching           | Regs       | 109359     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-26 09:56:43
+rocket64x1WithL2HighBOPDirectPrefetching           | Power      | 2.402      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-26 10:02:21
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithL2HighNLDirectPrefetching            | LUTs       | 195431     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-26 01:30:09
+rocket64x1WithL2HighNLDirectPrefetching            | Regs       | 109400     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-26 01:30:09
+rocket64x1WithL2HighNLDirectPrefetching            | Power      | 2.412      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-26 01:36:47
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithL2HighSPPDirectPrefetching           | LUTs       | MISSING    | workspace/rocket64x1WithL2HighSPPDirectPrefetching/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/riscv_wrapper_utilization_placed.rpt | -
+rocket64x1WithL2HighSPPDirectPrefetching           | Regs       | MISSING    | workspace/rocket64x1WithL2HighSPPDirectPrefetching/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/riscv_wrapper_utilization_placed.rpt | -
+rocket64x1WithL2HighSPPDirectPrefetching           | Power      | MISSING    | workspace/rocket64x1WithL2HighSPPDirectPrefetching/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/riscv_wrapper_power_routed.rpt | -
+rocket64x1WithL2HighSPPDirectPrefetching           | Log-LUTs   | 219190     | runme.log                                                                        | 2026-01-26 02:51:41
+rocket64x1WithL2HighSPPDirectPrefetching           | Log-Regs   | 124576     | runme.log                                                                        | 2026-01-26 02:51:41
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithL2HighStridedDirectPrefetching       | LUTs       | MISSING    | workspace/rocket64x1WithL2HighStridedDirectPrefetching/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/riscv_wrapper_utilization_placed.rpt | -
+rocket64x1WithL2HighStridedDirectPrefetching       | Regs       | MISSING    | workspace/rocket64x1WithL2HighStridedDirectPrefetching/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/riscv_wrapper_utilization_placed.rpt | -
+rocket64x1WithL2HighStridedDirectPrefetching       | Power      | MISSING    | workspace/rocket64x1WithL2HighStridedDirectPrefetching/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/riscv_wrapper_power_routed.rpt | -
+rocket64x1WithL2HighStridedDirectPrefetching       | Log-LUTs   | 208455     | runme.log                                                                        | 2026-01-26 10:28:28
+rocket64x1WithL2HighStridedDirectPrefetching       | Log-Regs   | 112466     | runme.log                                                                        | 2026-01-26 10:28:28
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithL2LowAMPMDirectPrefetching           | LUTs       | 178793     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-26 02:08:18
+rocket64x1WithL2LowAMPMDirectPrefetching           | Regs       | 97533      | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-26 02:08:18
+rocket64x1WithL2LowAMPMDirectPrefetching           | Power      | 2.299      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-26 02:13:11
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithL2LowBOPDirectPrefetching            | LUTs       | 177606     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-26 03:16:25
+rocket64x1WithL2LowBOPDirectPrefetching            | Regs       | 96069      | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-26 03:16:25
+rocket64x1WithL2LowBOPDirectPrefetching            | Power      | 2.303      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-26 03:20:56
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithL2LowNLDirectPrefetching             | LUTs       | 177162     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-26 03:46:52
+rocket64x1WithL2LowNLDirectPrefetching             | Regs       | 96088      | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-26 03:46:52
+rocket64x1WithL2LowNLDirectPrefetching             | Power      | 2.295      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-26 03:51:20
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithL2LowSPPDirectPrefetching            | LUTs       | 189046     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-26 02:44:07
+rocket64x1WithL2LowSPPDirectPrefetching            | Regs       | 111496     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-26 02:44:07
+rocket64x1WithL2LowSPPDirectPrefetching            | Power      | 2.355      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-26 02:50:23
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithL2LowStridedDirectPrefetching        | LUTs       | 181307     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-26 04:17:31
+rocket64x1WithL2LowStridedDirectPrefetching        | Regs       | 99306      | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-26 04:17:31
+rocket64x1WithL2LowStridedDirectPrefetching        | Power      | 2.290      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-26 04:22:14
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithL2NLDirectPrefetching                | LUTs       | 182466     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-25 10:48:53
+rocket64x1WithL2NLDirectPrefetching                | Regs       | 100541     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-25 10:48:53
+rocket64x1WithL2NLDirectPrefetching                | Power      | 2.349      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-25 10:54:07
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithL2SPPDirectPrefetching               | LUTs       | 194139     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-25 11:29:21
+rocket64x1WithL2SPPDirectPrefetching               | Regs       | 115967     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-25 11:29:21
+rocket64x1WithL2SPPDirectPrefetching               | Power      | 2.349      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-25 11:37:29
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithL2StridedBOPDirectPrefetching        | LUTs       | 186363     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-25 12:37:26
+rocket64x1WithL2StridedBOPDirectPrefetching        | Regs       | 103776     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-25 12:37:26
+rocket64x1WithL2StridedBOPDirectPrefetching        | Power      | 2.360      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-25 12:42:53
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithL2StridedDirectPrefetching           | LUTs       | 186112     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-25 11:24:14
+rocket64x1WithL2StridedDirectPrefetching           | Regs       | 103778     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-25 11:24:14
+rocket64x1WithL2StridedDirectPrefetching           | Power      | 2.222      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-25 11:30:31
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithLowAMPMDirectPrefetching             | LUTs       | 174565     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-24 17:27:26
+rocket64x1WithLowAMPMDirectPrefetching             | Regs       | 97775      | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-24 17:27:26
+rocket64x1WithLowAMPMDirectPrefetching             | Power      | 2.287      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-24 17:32:10
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithLowNLDirectPrefetching               | LUTs       | 174179     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-24 12:19:23
+rocket64x1WithLowNLDirectPrefetching               | Regs       | 96361      | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-24 12:19:23
+rocket64x1WithLowNLDirectPrefetching               | Power      | 2.307      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-24 12:23:54
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithLowStridedDirectPrefetching          | LUTs       | 178631     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-24 15:39:40
+rocket64x1WithLowStridedDirectPrefetching          | Regs       | 98324      | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-24 15:39:40
+rocket64x1WithLowStridedDirectPrefetching          | Power      | 2.288      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-24 15:44:15
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithNLDirectPrefetching                  | LUTs       | 177440     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-16 21:26:49
+rocket64x1WithNLDirectPrefetching                  | Regs       | 100744     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-16 21:26:49
+rocket64x1WithNLDirectPrefetching                  | Power      | 2.292      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-16 21:32:05
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithNLL2SPPDirectPrefetching             | LUTs       | MISSING    | workspace/rocket64x1WithNLL2SPPDirectPrefetching/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/riscv_wrapper_utilization_placed.rpt | -
+rocket64x1WithNLL2SPPDirectPrefetching             | Regs       | MISSING    | workspace/rocket64x1WithNLL2SPPDirectPrefetching/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/riscv_wrapper_utilization_placed.rpt | -
+rocket64x1WithNLL2SPPDirectPrefetching             | Power      | MISSING    | workspace/rocket64x1WithNLL2SPPDirectPrefetching/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/riscv_wrapper_power_routed.rpt | -
+rocket64x1WithNLL2SPPDirectPrefetching             | Log-LUTs   | 213337     | runme.log                                                                        | 2026-01-25 21:47:32
+rocket64x1WithNLL2SPPDirectPrefetching             | Log-Regs   | 119441     | runme.log                                                                        | 2026-01-25 21:47:32
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithStridedAMPMBOPDirectPrefetching      | LUTs       | 190122     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-19 10:47:45
+rocket64x1WithStridedAMPMBOPDirectPrefetching      | Regs       | 113014     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-19 10:47:45
+rocket64x1WithStridedAMPMBOPDirectPrefetching      | Power      | 2.378      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-19 10:54:53
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithStridedAMPMDirectPrefetching         | LUTs       | 189256     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-19 11:56:50
+rocket64x1WithStridedAMPMDirectPrefetching         | Regs       | 113010     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-19 11:56:50
+rocket64x1WithStridedAMPMDirectPrefetching         | Power      | 2.360      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-19 12:03:54
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithStridedDirectPrefetching             | LUTs       | 182734     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-16 20:53:47
+rocket64x1WithStridedDirectPrefetching             | Regs       | 102742     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-16 20:53:47
+rocket64x1WithStridedDirectPrefetching             | Power      | 2.314      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-16 20:59:23
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1WithStridedL2BOPDirectPrefetching        | LUTs       | MISSING    | workspace/rocket64x1WithStridedL2BOPDirectPrefetching/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/riscv_wrapper_utilization_placed.rpt | -
+rocket64x1WithStridedL2BOPDirectPrefetching        | Regs       | MISSING    | workspace/rocket64x1WithStridedL2BOPDirectPrefetching/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/riscv_wrapper_utilization_placed.rpt | -
+rocket64x1WithStridedL2BOPDirectPrefetching        | Power      | MISSING    | workspace/rocket64x1WithStridedL2BOPDirectPrefetching/vivado-genesys2-riscv/genesys2-riscv.runs/impl_1/riscv_wrapper_power_routed.rpt | -
+rocket64x1WithStridedL2BOPDirectPrefetching        | Log-LUTs   | 213911     | runme.log                                                                        | 2026-01-25 22:18:58
+rocket64x1WithStridedL2BOPDirectPrefetching        | Log-Regs   | 119441     | runme.log                                                                        | 2026-01-25 22:18:58
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+rocket64x1_backup                                  | LUTs       | 169362     | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-23 21:00:06
+rocket64x1_backup                                  | Regs       | 91422      | riscv_wrapper_utilization_placed.rpt                                             | 2026-01-23 21:00:06
+rocket64x1_backup                                  | Power      | 2.549      | riscv_wrapper_power_routed.rpt                                                   | 2026-01-23 21:00:06
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
