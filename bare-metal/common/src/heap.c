@@ -1,65 +1,125 @@
 #include <stddef.h>
-#include <stdint.h>
-
-// These are declared weakly in newlib, but we'll override them entirely
-extern void* _sbrk(ptrdiff_t increment);
-
-void* malloc(size_t size) {
-    void *ptr = _sbrk(size);
-    return (ptr == (void*)-1) ? NULL : ptr;
-}
-
-void free(void *ptr) {
-    // No-op: simple bump allocator can't free
-}
-
-void *calloc(size_t nmemb, size_t size) {
-    size_t total = nmemb * size;
-    void *p = malloc(total);
-    if (p) {
-        unsigned char *b = (unsigned char *)p;
-        for (size_t i = 0; i < total; ++i) b[i] = 0;
-    }
-    return p;
-}
-
-void *realloc(void *ptr, size_t size) {
-    if (!ptr) return malloc(size);
-    // bump allocator cannot actually shrink/expand; allocate new block
-    void *p = malloc(size);
-    if (!p) return NULL;
-    // We can't know original size; best-effort copy of size bytes
-    unsigned char *d = (unsigned char *)p;
-    unsigned char *s = (unsigned char *)ptr;
-    for (size_t i = 0; i < size; ++i) d[i] = s[i];
-    return p;
-}
+#include <stdio.h>
+#include <stdarg.h>
+#include "kprintf.h"
 
 extern char _end; // defined by linker
 static char *heap_end;
-extern char _ram_end; /* defined by linker script as end of RAM region */
+
+extern int printf(const char*, ...);
 
 void* _sbrk(ptrdiff_t incr) {
     if (!heap_end)
         heap_end = &_end;
 
-    /* Bump allocator: do not support negative increments */
-    if (incr < 0) {
-        return (void *)-1;
-    }
-
-    /* Ensure returned pointer is 16-byte aligned for SIMD/FFT buffers */
-    uintptr_t cur = (uintptr_t)heap_end;
-    uintptr_t aligned = (cur + 15) & ~(uintptr_t)15;
-    char *prev_heap_end = (char *)aligned;
-
-    /* Check we don't grow past RAM end provided by linker script */
-    uintptr_t new_end = (uintptr_t)aligned + (uintptr_t)incr;
-    uintptr_t ram_end = (uintptr_t)&_ram_end;
-    if (new_end > ram_end) {
-        return (void *)-1; /* indicate OOM */
-    }
-
-    heap_end = (char *)new_end;
+    char *prev_heap_end = heap_end;
+    heap_end += incr;
     return (void *)prev_heap_end;
+}
+
+typedef struct FreeBlock {
+    size_t size;
+    struct FreeBlock *next;
+} FreeBlock;
+
+static FreeBlock *free_list = NULL;
+
+void *memset(void *s, int c, size_t n) {
+    unsigned char *p = (unsigned char *)s;
+    while (n--) {
+        *p++ = (unsigned char)c;
+    }
+    return s;
+}
+
+void *memcpy(void *dest, const void *src, size_t n) {
+   char *d = (char *)dest;
+   const char *s = (const char *)src;
+   while (n--) {
+       *d++ = *s++;
+   }
+   return dest;
+}
+
+void *malloc(size_t size) {
+    if (size == 0) size = 1;
+    // Align size to 8 bytes and ensure minimum size for FreeBlock linkage
+    size = (size + 7) & ~7;
+    if (size < sizeof(FreeBlock*)) size = sizeof(FreeBlock*); // Ensure space for 'next'
+
+    FreeBlock **prev = &free_list;
+    FreeBlock *curr = free_list;
+
+    while (curr) {
+        if (curr->size >= size) {
+            *prev = curr->next;
+            return (char*)curr + sizeof(size_t);
+        }
+        prev = &curr->next;
+        curr = curr->next;
+    }
+
+    size_t alloc_size = size + sizeof(size_t);
+    void *ptr = _sbrk(alloc_size);
+    if (ptr == (void*)-1) return NULL;
+    *(size_t*)ptr = size;
+    return (char*)ptr + sizeof(size_t);
+}
+
+void free(void *ptr) {
+    if (!ptr) return;
+    FreeBlock *block = (FreeBlock*)((char*)ptr - sizeof(size_t));
+    block->next = free_list;
+    free_list = block;
+}
+
+void *calloc(size_t nmemb, size_t size) {
+    size_t total = nmemb * size;
+    void *ptr = malloc(total);
+    if (ptr) {
+        memset(ptr, 0, total);
+    }
+    return ptr;
+}
+
+void *realloc(void *ptr, size_t size) {
+    if (!ptr) return malloc(size);
+    if (size == 0) {
+        free(ptr);
+        return NULL;
+    }
+    
+    void *new_ptr = malloc(size);
+    if (!new_ptr) return NULL;
+    
+    size_t old_size = *(((size_t*)ptr) - 1);
+    size_t copy_size = (old_size < size) ? old_size : size;
+    memcpy(new_ptr, ptr, copy_size);
+    
+    free(ptr);
+    return new_ptr;
+}
+
+
+void exit(int status) {
+    while (1);
+}
+
+int fprintf(FILE *stream, const char *format, ...) {
+    va_list vl;
+    va_start(vl, format);
+    int ret = vkprintf(format, vl);
+    va_end(vl);
+    return ret;
+}
+
+static unsigned long rand_next = 1;
+
+int rand(void) {
+    rand_next = rand_next * 1103515245 + 12345;
+    return (unsigned int)(rand_next/65536) % 32768;
+}
+
+void srand(unsigned int seed) {
+    rand_next = seed;
 }

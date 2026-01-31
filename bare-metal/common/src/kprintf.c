@@ -28,23 +28,44 @@ void kputs(const char * s) {
     kputc('\n');
 }
 
-void kprintf(const char * fmt, ...) {
-    va_list vl;
+int vkprintf(const char * fmt, va_list vl) {
     int is_format = 0;
     int is_long = 0;
     int is_char = 0;
     char c;
 
-    va_start(vl, fmt);
     while ((c = *fmt++) != '\0') {
         if (is_format) {
             switch (c) {
+            case '0': {
+                // If it starts with 0, it might be a flag or part of width
+                // But we don't track state well enough here. 
+                // For simplified printf, we can eat digits if they are width.
+                // But we need to distinguish '0' flag from width '10'.
+                continue;
+            }
+            case '1': case '2': case '3': case '4':
+            case '5': case '6': case '7': case '8': case '9':
+            case '.':
+            case '-': case '+': case ' ': case '#':
+                // Simple skip of width/precision/flags
+                continue;
             case 'l':
                 is_long = 1;
                 continue;
             case 'h':
                 is_char = 1;
                 continue;
+            case 'p': {
+                unsigned long n = (unsigned long)va_arg(vl, void *);
+                int i = (sizeof(unsigned long) << 3) - 4;
+                for (; i >= 0; i -= 4) {
+                    long d;
+                    d = (n >> i) & 0xF;
+                    kputc(d < 10 ? '0' + d : 'a' + d - 10);
+                }
+                break;
+            }
             case 'x': {
                 unsigned long n;
                 long i;
@@ -103,6 +124,10 @@ void kprintf(const char * fmt, ...) {
                 while (i < sizeof(buf)) kputc(buf[i++]);
                 break;
             }
+            case 'e':
+            case 'E':
+            case 'g':
+            case 'G':
             case 'f': {
                 double f = va_arg(vl, double);
                 if (f < 0) {
@@ -168,5 +193,13 @@ void kprintf(const char * fmt, ...) {
             kputc(c);
         }
     }
+    return 0;
+}
+
+int kprintf(const char * fmt, ...) {
+    va_list vl;
+    va_start(vl, fmt);
+    int ret = vkprintf(fmt, vl);
     va_end(vl);
+    return ret;
 }

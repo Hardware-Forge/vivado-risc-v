@@ -1,2339 +1,0 @@
-Script started on 2025-11-23 17:02:43+01:00 [TERM="xterm-256color" TTY="/dev/pts/10" COLUMNS="157" LINES="41"]
-]0;user@hps: ~/vivado-risc-v/bare-metal[01;32muser@hps[00m:[01;34m~/vivado-risc-v/bare-metal[00m$ ls  cd scripts/p 
-]0;user@hps: ~/vivado-risc-v/bare-metal/scripts[01;32muser@hps[00m:[01;34m~/vivado-risc-v/bare-metal/scripts[00m$ ls
-[0m[01;32mdebugger_download_run_program.sh[0m  debugger_download_run_program.tcl
-]0;user@hps: ~/vivado-risc-v/bare-metal/scripts[01;32muser@hps[00m:[01;34m~/vivado-risc-v/bare-metal/scripts[00m$ nano debugger_download_run_program.tcl
-[?2004h[?1049h[22;0;0t[1;41r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[39;72H(B[0;7m[ Reading... ](B[m[39;71H(B[0;7m[ Read 6 lines ](B[m[H(B[0;7m  GNU nano 4.8                                                  debugger_download_run_program.tcl                                                            [1;156H(B[m[40d(B[0;7m^G(B[m Get Help[18G(B[0;7m^O(B[m Write Out     (B[0;7m^W(B[m Where Is[52G(B[0;7m^K(B[m Cut Text[69G(B[0;7m^J(B[m Justify[86G(B[0;7m^C(B[m Cur Pos[103G(B[0;7mM-U(B[m Undo[40;120H(B[0;7mM-A(B[m Mark Text    (B[0;7mM-](B[m To Bracket[41d(B[0;7m^X(B[m Exit[41;18H(B[0;7m^R(B[m Read File     (B[0;7m^\(B[m Replace[52G(B[0;7m^U(B[m Paste Text    (B[0;7m^T(B[m To Spell[86G(B[0;7m^_(B[m Go To Line    (B[0;7mM-E(B[m Redo[41;120H(B[0;7mM-6(B[m Copy Text    (B[0;7m^Q(B[m Where Was[39d[2d[39;49m(B[mconnect[3dtargets -[32mset[39m(B[m -filter (B[0;1m[34m{[39m(B[mname [32m=[39m(B[m~ (B[0;1m[33m"Hart #0*"[34m}[4d[39m(B[mstop[5ddow -clear boot.elf[6dcon[7d[32mexit[2d[39m(B[m[?12l[?25h[?25l[39d[J[41d[?12l[?25h[41;1H[?1049l[23;0;0t[?1l>[?2004l]0;user@hps: ~/vivado-risc-v/bare-metal/scripts[01;32muser@hps[00m:[01;34m~/vivado-risc-v/bare-metal/scripts[00m$ nano debugger_download_run_program.tclls[Knano debugger_download_run_program.tcl[Kcd ..
-]0;user@hps: ~/vivado-risc-v/bare-metal[01;32muser@hps[00m:[01;34m~/vivado-risc-v/bare-metal[00m$ ls
-README.md  [0m[01;34mcommon[0m  common.mk  [01;34mcoremark[0m  [01;34mdhrystone[0m  [01;34mhello-world[0m  [01;34mscripts[0m  typescript
-]0;user@hps: ~/vivado-risc-v/bare-metal[01;32muser@hps[00m:[01;34m~/vivado-risc-v/bare-metal[00m$ cd hello-world/
-]0;user@hps: ~/vivado-risc-v/bare-metal/hello-world[01;32muser@hps[00m:[01;34m~/vivado-risc-v/bare-metal/hello-world[00m$ ls
-Makefile  [0m[01;32mboot.elf[0m  head.S  main.c
-]0;user@hps: ~/vivado-risc-v/bare-metal/hello-world[01;32muser@hps[00m:[01;34m~/vivado-risc-v/bare-metal/hello-world[00m$ lscd hello-world/ls[Kcd ..nano debugger_download_run_program.tclls[Kcd scripts/[7Pexitmake CONFIG=rocket64x1 BOARD=genesys2 bitstreamls[Kcd vivado-risc-v/exit[Kcd ..rm -rf rocket64x1/ls[Kcd workspace/ls[Kmake CONFIG=rocket64x1 BOARD=genesys2 bitstreamls[Kmv vivado-boards/ install/[3@-r vivado-boards/ install/[18Pls install/[Kmkdir install[3Pcd vivado-nano .Xilinx/Vivado/Vivado_init.tcl cd ..[Kmake CONFIG=rocket64x1 BOARD=genesys2 bitstream[30Pcd vivado-risc-v/make CONFIG=rocket64x1 BOARD=genesys2 bitstreamls -l ~/vivado-risc-v/ethernet/verilog-ethernet/rtl/rgmii_phy_if.v[27Psudo chown -R user:user ~/vivado-risc-v[27@ls -l ~/vivado-risc-v/ethernet/verilog-ethernet/rtl/rgmii_phy_if.va[K[1Pcd ..make CONFIG=rocket64x1 BOARD=genesys2 bitstream[30Pcd vivado-risc-v/[3Psource .bashrc[1Pnano .bashrc ls[Kcd ..[3Plscd vivado-risc-v/ls[Kexitmake CONFIG=rocket64x1 BOARD=genesys2 bitstreamsource /tools/Xilinx/Vivado/2024.1/settings64.sh[1Pmake CONFIG=rocket64x1 BOARD=genesys2 bitstreamls -l[Ksudo make CONFIG=rocket64x1 BOARD=genesys2 bitstream[5Pmake CONFIG=rocket64x1 BOARD=genesys2 bitstreamsource /tools/Xilinx/Vivado/2024.1/settings64.sh[24Pgit checkout prefetcherspull[Kcheckout prefetcherssource /tools/Xilinx/Vivado/2024.1/settings64.sh[8Pfind / -name "settings64.sh" 2>/dev/nullls[K[Kscd vivado-risc-v/ls[Kcd user/ls[Kcd home[2P..homels[Kcd usr/[1Popt[4Plscd /opt[K[2Plscd optusr/ls[Kcd home[2P..homels[Kcd user/ls[Kcd vivado-risc-v/ls[K[Ksfind / -name "settings64.sh" 2>/dev/nullsource /tools/Xilinx/Vivado/2024.1/settings64.sh[24Pgit checkout prefetcherspull[Kcheckout prefetcherssource /tools/Xilinx/Vivado/2024.1/settings64.sh[1Pmake CONFIG=rocket64x1 BOARD=genesys2 bitstream[5@sudo make CONFIG=rocket64x1 BOARD=genesys2 bitstreamls -l[Kmake CONFIG=rocket64x1 BOARD=genesys2 bitstreamsource /tools/Xilinx/Vivado/2024.1/settings64.sh[1Pmake CONFIG=rocket64x1 BOARD=genesys2 bitstreamexit[K[2Plscd vivado-risc-v/ls[Kcd ..[3Plsnano .bashrc source .bashrccd vivado-risc-v/make CONFIG=rocket64x1 BOARD=genesys2 bitstreamcd ..[Kmake CONFIG=rocket64x1 BOARD=genesys2 bitstream[30Pcd vivado-risc-v/[3Psource .bashrccd vivado-risc-v/make CONFIG=rocket64x1 BOARD=genesys2 bitstreamcd ..[Kls -la ~/vivado-risc-v/ethernet/verilog-ethernet/rtl/rgmii_phy_if.v[27Psudo chown -R user:user ~/vivado-risc-v[27@ls -l ~/vivado-risc-v/ethernet/verilog-ethernet/rtl/rgmii_phy_if.v[19Pmake CONFIG=rocket64x1 BOARD=genesys2 bitstream[30Pcd vivado-risc-v/make CONFIG=rocket64x1 BOARD=genesys2 bitstreamcd ..[Knano .Xilinx/Vivado/Vivado_init.tcl cd vivado-[Kmkdir installls[K install/[18@mv -r vivado-boards/ install/[3Pvivado-boards/ install/ls[Kmake CONFIG=rocket64x1 BOARD=genesys2 bitstreamls[Kcd workspace/ls[Krm -rf rocket64x1/cd ..[K[1Pexitcd vivado-risc-v/ls[Kmake CONFIG=rocket64x1 BOARD=genesys2 bitstreamexit[Kcd scripts/ls[Knano debugger_download_run_program.tclcd ..[K[3Plscd hello-world/ls[Kcd ..nano debugger_download_run_program.tclls[Knano debugger_download_run_program.tclcd ..[K[3Plscd hello-world/ls[K[Klscd hello-world/ls[Kcd ..nano debugger_download_run_program.tclls[Kcd scripts/[7Pexitmake CONFIG=rocket64x1 BOARD=genesys2 bitstreamls[Kcd vivado-risc-v/exit[Kcd ..rm -rf rocket64x1/ls[K  ../scripts/debugger_download_run_program.sh 
-rlwrap: warning: your $TERM is 'xterm-256color' but rlwrap couldn't find it in the terminfo database. Expect some problems.
-                                                                                                                                                             attempting to launch hw_server
-                                                                                                                                                             
-****** Xilinx hw_server v2024.1
-  **** Build date : May 22 2024 at 19:19:01
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-
-INFO: hw_server application started
-INFO: Use Ctrl-C to exit hw_server application
-
-INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
-
-                                                                                                                                                             no targets found with "name =~ "Hart #0*"". available targets: none
-    while executing
-"error "no targets found with \"$params(filter)\". available targets:$target_list""
-    (procedure "targets" line 177)
-    invoked from within
-"targets -set -filter {name =~ "Hart #0*"}"
-    (file "../scripts/debugger_download_run_program.tcl" line 2)
-]0;user@hps: ~/vivado-risc-v/bare-metal/hello-world[01;32muser@hps[00m:[01;34m~/vivado-risc-v/bare-metal/hello-world[00m$ xsdb
-rlwrap: warning: your $TERM is 'xterm-256color' but rlwrap couldn't find it in the terminfo database. Expect some problems.
-                                                                                                                                                             
-****** System Debugger (XSDB) v2024.1
-  **** Build date : May 22 2024-19:19:01
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-
-
-                                                                                                                                                             xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% connect       connect
-attempting to launch hw_server
-                                                                                                                                                             
-****** Xilinx hw_server v2024.1
-  **** Build date : May 22 2024 at 19:19:01
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-
-INFO: hw_server application started
-INFO: Use Ctrl-C to exit hw_server application
-
-INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
-
-tcfchan#0
-xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% targets -set -filter {name =~ "Hart #0*"}{name =~ "Hart #0*"}xsdb%                                          xsdb% targets -set -filter {name =~ "Hart #0*"}
-                                                                                                                                                             no targets found with "name =~ "Hart #0*"". available targets: none
-xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% trage    argets       targets
-xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% targets --listxsdb%               xsdb% targets --list
-bad option '--list': -set -regexp -nocase -filter -index -target-properties -timeout -help
-xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% exot  it    exit
-exit
-]0;user@hps: ~/vivado-risc-v/bare-metal/hello-world[01;32muser@hps[00m:[01;34m~/vivado-risc-v/bare-metal/hello-world[00m$ ls /dev
-[0m[40;33;01mautofs[0m           [01;36mfd[0m         [40;33;01mkmsg[0m          [40;33;01mloop18[0m  [30;42mmqueue[0m     [40;33;01mrandom[0m    [40;33;01mtty0[0m   [40;33;01mtty21[0m  [40;33;01mtty34[0m  [40;33;01mtty47[0m  [40;33;01mtty6[0m    [40;33;01mttyS14[0m  [40;33;01mttyS27[0m   [40;33;01mttyprintk[0m  [40;33;01mvcsa[0m   [01;34mvfio[0m
-[01;34mblock[0m            [40;33;01mfull[0m       [40;33;01mkvm[0m           [40;33;01mloop19[0m  [01;34mnet[0m        [40;33;01mrfkill[0m    [40;33;01mtty1[0m   [40;33;01mtty22[0m  [40;33;01mtty35[0m  [40;33;01mtty48[0m  [40;33;01mtty60[0m   [40;33;01mttyS15[0m  [40;33;01mttyS28[0m   [40;33;01mudmabuf[0m    [40;33;01mvcsa1[0m  [40;33;01mvga_arbiter[0m
-[40;33;01mbtrfs-control[0m    [40;33;01mfuse[0m       [01;36mlog[0m           [40;33;01mloop2[0m   [40;33;01mng0n1[0m      [01;36mrtc[0m       [40;33;01mtty10[0m  [40;33;01mtty23[0m  [40;33;01mtty36[0m  [40;33;01mtty49[0m  [40;33;01mtty61[0m   [40;33;01mttyS16[0m  [40;33;01mttyS29[0m   [40;33;01muhid[0m       [40;33;01mvcsa2[0m  [40;33;01mvhci[0m
-[01;34mbus[0m              [40;33;01mgpiochip0[0m  [40;33;01mloop-control[0m  [40;33;01mloop20[0m  [40;33;01mnull[0m       [40;33;01mrtc0[0m      [40;33;01mtty11[0m  [40;33;01mtty24[0m  [40;33;01mtty37[0m  [40;33;01mtty5[0m   [40;33;01mtty62[0m   [40;33;01mttyS17[0m  [40;33;01mttyS3[0m    [40;33;01muinput[0m     [40;33;01mvcsa3[0m  [40;33;01mvhost-net[0m
-[01;34mchar[0m             [40;33;01mhidraw3[0m    [40;33;01mloop0[0m         [40;33;01mloop3[0m   [40;33;01mnvme0[0m      [01;34mserial[0m    [40;33;01mtty12[0m  [40;33;01mtty25[0m  [40;33;01mtty38[0m  [40;33;01mtty50[0m  [40;33;01mtty63[0m   [40;33;01mttyS18[0m  [40;33;01mttyS30[0m   [40;33;01murandom[0m    [40;33;01mvcsa4[0m  [40;33;01mvhost-vsock[0m
-[40;33;01mconsole[0m          [40;33;01mhidraw4[0m    [40;33;01mloop1[0m         [40;33;01mloop4[0m   [40;33;01mnvme0n1[0m    [30;42mshm[0m       [40;33;01mtty13[0m  [40;33;01mtty26[0m  [40;33;01mtty39[0m  [40;33;01mtty51[0m  [40;33;01mtty7[0m    [40;33;01mttyS19[0m  [40;33;01mttyS31[0m   [01;34musb[0m        [40;33;01mvcsa5[0m  [40;33;01mzero[0m
-[01;36mcore[0m             [40;33;01mhpet[0m       [40;33;01mloop10[0m        [40;33;01mloop5[0m   [40;33;01mnvme0n1p1[0m  [40;33;01msnapshot[0m  [40;33;01mtty14[0m  [40;33;01mtty27[0m  [40;33;01mtty4[0m   [40;33;01mtty52[0m  [40;33;01mtty8[0m    [40;33;01mttyS2[0m   [40;33;01mttyS4[0m    [40;33;01muserio[0m     [40;33;01mvcsa6[0m  [40;33;01mzfs[0m
-[01;34mcpu[0m              [01;34mhugepages[0m  [40;33;01mloop11[0m        [40;33;01mloop6[0m   [40;33;01mnvme0n1p2[0m  [01;34msnd[0m       [40;33;01mtty15[0m  [40;33;01mtty28[0m  [40;33;01mtty40[0m  [40;33;01mtty53[0m  [40;33;01mtty9[0m    [40;33;01mttyS20[0m  [40;33;01mttyS5[0m    [40;33;01mvcs[0m        [40;33;01mvcsu[0m
-[40;33;01mcpu_dma_latency[0m  [40;33;01mhwrng[0m      [40;33;01mloop12[0m        [40;33;01mloop7[0m   [40;33;01mnvram[0m      [01;36mstderr[0m    [40;33;01mtty16[0m  [40;33;01mtty29[0m  [40;33;01mtty41[0m  [40;33;01mtty54[0m  [40;33;01mttyS0[0m   [40;33;01mttyS21[0m  [40;33;01mttyS6[0m    [40;33;01mvcs1[0m       [40;33;01mvcsu1[0m
-[40;33;01mcuse[0m             [40;33;01mi2c-0[0m      [40;33;01mloop13[0m        [40;33;01mloop8[0m   [40;33;01mport[0m       [01;36mstdin[0m     [40;33;01mtty17[0m  [40;33;01mtty3[0m   [40;33;01mtty42[0m  [40;33;01mtty55[0m  [40;33;01mttyS1[0m   [40;33;01mttyS22[0m  [40;33;01mttyS7[0m    [40;33;01mvcs2[0m       [40;33;01mvcsu2[0m
-[01;34mdisk[0m             [40;33;01mi2c-1[0m      [40;33;01mloop14[0m        [40;33;01mloop9[0m   [40;33;01mppp[0m        [01;36mstdout[0m    [40;33;01mtty18[0m  [40;33;01mtty30[0m  [40;33;01mtty43[0m  [40;33;01mtty56[0m  [40;33;01mttyS10[0m  [40;33;01mttyS23[0m  [40;33;01mttyS8[0m    [40;33;01mvcs3[0m       [40;33;01mvcsu3[0m
-[01;34mdma_heap[0m         [40;33;01mi2c-2[0m      [40;33;01mloop15[0m        [01;34mmapper[0m  [40;33;01mpsaux[0m      [40;33;01mtpm0[0m      [40;33;01mtty19[0m  [40;33;01mtty31[0m  [40;33;01mtty44[0m  [40;33;01mtty57[0m  [40;33;01mttyS11[0m  [40;33;01mttyS24[0m  [40;33;01mttyS9[0m    [40;33;01mvcs4[0m       [40;33;01mvcsu4[0m
-[40;33;01mecryptfs[0m         [01;36minitctl[0m    [40;33;01mloop16[0m        [40;33;01mmcelog[0m  [40;33;01mptmx[0m       [40;33;01mtpmrm0[0m    [40;33;01mtty2[0m   [40;33;01mtty32[0m  [40;33;01mtty45[0m  [40;33;01mtty58[0m  [40;33;01mttyS12[0m  [40;33;01mttyS25[0m  [40;33;01mttyUSB0[0m  [40;33;01mvcs5[0m       [40;33;01mvcsu5[0m
-[40;33;01mfb0[0m              [01;34minput[0m      [40;33;01mloop17[0m        [40;33;01mmem[0m     [01;34mpts[0m        [40;33;01mtty[0m       [40;33;01mtty20[0m  [40;33;01mtty33[0m  [40;33;01mtty46[0m  [40;33;01mtty59[0m  [40;33;01mttyS13[0m  [40;33;01mttyS26[0m  [40;33;01mttyUSB1[0m  [40;33;01mvcs6[0m       [40;33;01mvcsu6[0m
-]0;user@hps: ~/vivado-risc-v/bare-metal/hello-world[01;32muser@hps[00m:[01;34m~/vivado-risc-v/bare-metal/hello-world[00m$ lsusb
-Bus 008 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-Bus 007 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 006 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-Bus 005 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 002 Device 002: ID 174c:3074 ASMedia Technology Inc. ASM1074 SuperSpeed hub
-Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-Bus 001 Device 006: ID 0e8d:0616 MediaTek Inc. Wireless_Device
-Bus 001 Device 003: ID 0db0:7696 Micro Star International USB Audio
-Bus 001 Device 004: ID 0403:6010 Future Technology Devices International, Ltd FT2232C/D/H Dual UART/FIFO IC
-Bus 001 Device 002: ID 174c:2074 ASMedia Technology Inc. ASM1074 High-Speed hub
-Bus 001 Device 008: ID 05e3:0608 Genesys Logic, Inc. Hub
-Bus 001 Device 007: ID 1462:7d76 Micro Star International MYSTIC LIGHT 
-Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-]0;user@hps: ~/vivado-risc-v/bare-metal/hello-world[01;32muser@hps[00m:[01;34m~/vivado-risc-v/bare-metal/hello-world[00m$ lsusb /dev[3Pxsdb../scripts/debugger_download_run_program.sh xsdb[K
-rlwrap: warning: your $TERM is 'xterm-256color' but rlwrap couldn't find it in the terminfo database. Expect some problems.
-                                                                                                                                                             
-****** System Debugger (XSDB) v2024.1
-  **** Build date : May 22 2024-19:19:01
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-
-
-                                                                                                                                                                                                                                                                                                                          c xsdb%                                                                                                                                                              xsdb% connect       connect
-attempting to launch hw_server
-                                                                                                                                                             
-****** Xilinx hw_server v2024.1
-  **** Build date : May 22 2024 at 19:19:01
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-
-INFO: hw_server application started
-INFO: Use Ctrl-C to exit hw_server application
-
-INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
-
-tcfchan#0
-xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% jtab ta    g targetsxsdb%             xsdb% jtag targets
-xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% con   con
-Invalid target. Use "targets" command to select a target
-xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% conjtag targetsxsdb% connect     exit   targets --list      0xsdb%          xsdb% targets 0
-Code 16 Time 1763914478922 Format {Invalid context}
-xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% exit    exit
-exit
-]0;user@hps: ~/vivado-risc-v/bare-metal/hello-world[01;32muser@hps[00m:[01;34m~/vivado-risc-v/bare-metal/hello-world[00m$ xsdb
-rlwrap: warning: your $TERM is 'xterm-256color' but rlwrap couldn't find it in the terminfo database. Expect some problems.
-                                                                                                                                                             
-****** System Debugger (XSDB) v2024.1
-  **** Build date : May 22 2024-19:19:01
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-
-
-                                                                                                                                                             xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% connct  ect       connect
-attempting to launch hw_server
-                                                                                                                                                             
-****** Xilinx hw_server v2024.1
-  **** Build date : May 22 2024 at 19:19:01
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-
-INFO: hw_server application started
-INFO: Use Ctrl-C to exit hw_server application
-
-INFO: To connect to this hw_server instance use url: TCP:127.0.0.1:3121
-
-tcfchan#0
-xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% targets -set -filter {name =~ "Hart #0*"}{name =~ "Hart #0*"}xsdb%                                          xsdb% targets -set -filter {name =~ "Hart #0*"}
-                                                                                                                                                             no targets found with "name =~ "Hart #0*"". available targets: none
-xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% stop    stop
-Invalid target. Use "targets" command to select a target
-xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% dow -clear boot.elfxsdb%                    xsdb% dow -clear boot.elf
-Invalid target. Use "targets" command to select a target
-xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% con   con
-Invalid target. Use "targets" command to select a target
-xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% targets       targets
-xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% exit    exit
-exit
-]0;user@hps: ~/vivado-risc-v/bare-metal/hello-world[01;32muser@hps[00m:[01;34m~/vivado-risc-v/bare-metal/hello-world[00m$ cd ..
-]0;user@hps: ~/vivado-risc-v/bare-metal[01;32muser@hps[00m:[01;34m~/vivado-risc-v/bare-metal[00m$ cd ..
-]0;user@hps: ~/vivado-risc-v[01;32muser@hps[00m:[01;34m~/vivado-risc-v[00m$ cd ..[1Pxsdb[1@lsusb /dev[3Pxsdb../scripts/debugger_download_run_program.sh ls[Kcd hello-world/ls[Kcd ..nano debugger_download_run_program.tclls[Kcd scripts/[7Pexitmake CONFIG=rocket64x1 BOARD=genesys2 bitstreamls[Kcd vivado-risc-v/exit[Kcd ..rm -rf rocket64x1/cd ..[K[1Pexitcd vivado-risc-v/ls[Kmake CONFIG=rocket64x1 BOARD=genesys2 bitstream
-make: Nothing to be done for 'bitstream'.
-]0;user@hps: ~/vivado-risc-v[01;32muser@hps[00m:[01;34m~/vivado-risc-v[00m$ ls
-LICENSE.md  [0m[01;34mbare-metal[0m  build.sbt  [01;34methernet[0m      [01;32mmk-sd-card[0m   [01;34mopensbi[0m  [01;34mqemu[0m            [01;34msdc[0m     [01;34mu-boot[0m        vivado.tcl
-Makefile    [01;34mboard[0m       [01;34mdocker[0m     [01;34mgenerators[0m    [01;32mmk-sd-image[0m  [01;34mpatches[0m  [01;34mrocket-chip[0m     [01;34msrc[0m     [01;34muart[0m          [01;34mworkspace[0m
-README.md   [01;34mbootrom[0m     [01;34mdocs[0m       [01;34mlinux-stable[0m  [01;32mmk-srams[0m     [01;34mproject[0m  [01;31msbt-launch.jar[0m  [01;34mtarget[0m  [01;34mvhdl-wrapper[0m
-]0;user@hps: ~/vivado-risc-v[01;32muser@hps[00m:[01;34m~/vivado-risc-v[00m$ cd ..
-]0;user@hps: ~[01;32muser@hps[00m:[01;34m~[00m$ cd vivado-risc-v/
-]0;user@hps: ~/vivado-risc-v[01;32muser@hps[00m:[01;34m~/vivado-risc-v[00m$ ls
-LICENSE.md  [0m[01;34mbare-metal[0m  build.sbt  [01;34methernet[0m      [01;32mmk-sd-card[0m   [01;34mopensbi[0m  [01;34mqemu[0m            [01;34msdc[0m     [01;34mu-boot[0m        vivado.tcl
-Makefile    [01;34mboard[0m       [01;34mdocker[0m     [01;34mgenerators[0m    [01;32mmk-sd-image[0m  [01;34mpatches[0m  [01;34mrocket-chip[0m     [01;34msrc[0m     [01;34muart[0m          [01;34mworkspace[0m
-README.md   [01;34mbootrom[0m     [01;34mdocs[0m       [01;34mlinux-stable[0m  [01;32mmk-srams[0m     [01;34mproject[0m  [01;31msbt-launch.jar[0m  [01;34mtarget[0m  [01;34mvhdl-wrapper[0m
-]0;user@hps: ~/vivado-risc-v[01;32muser@hps[00m:[01;34m~/vivado-risc-v[00m$ make CONFIG=rocket64b2 BOARD=nexys-video flash
-rm -rf workspace/rocket64b2/tmp
-mkdir -p workspace/rocket64b2/tmp
-cp rocket-chip/bootrom/bootrom.img workspace/bootrom.img
-/usr/lib/jvm/java-17-openjdk-amd64/bin/java -Xmx12G -Xss8M  -Dsbt.io.virtual=false -Dsbt.server.autostart=false -jar /home/user/vivado-risc-v/sbt-launch.jar "runMain freechips.rocketchip.diplomacy.Main --dir `realpath workspace/rocket64b2/tmp` --top Vivado.RocketSystem --config Vivado.Rocket64b2"
-WARNING: A terminally deprecated method in java.lang.System has been called
-WARNING: System::setSecurityManager has been called by sbt.TrapExit$ (file:/home/user/.sbt/boot/scala-2.12.10/org.scala-sbt/sbt/1.3.13/run_2.12-1.3.13.jar)
-WARNING: Please consider reporting this to the maintainers of sbt.TrapExit$
-WARNING: System::setSecurityManager will be removed in a future release
-[0m[[0m[0minfo[0m] [0m[0mwelcome to sbt 1.3.13 (Ubuntu Java 17.0.15)[0m
-[0m[[0m[0minfo[0m] [0m[0mloading settings for project vivado-risc-v-build from plugins.sbt ...[0m
-[0m[[0m[0minfo[0m] [0m[0mloading project definition from /home/user/vivado-risc-v/project[0m
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / Runtime / exportedProducts 0s
-[2K  | => vivado-risc-v-build / bootResolvers 0s
-[2K  | => vivado-risc-v-build / externalResolvers 0s
-[8A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / updateCacheName 0s
-[2K  | => vivado-risc-v-build / dependencyResolution 0s
-[2K  | => vivado-risc-v-build / Runtime / exportedProducts 0s
-[2K  | => vivado-risc-v-build / bootResolvers 0s
-[2K  | => vivado-risc-v-build / externalResolvers 0s
-[12A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / allDependencies 0s
-[2K  | => Global / skip 0s
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / updateCacheName 0s
-[2K  | => vivado-risc-v-build / dependencyResolution 0s
-[2K  | => vivado-risc-v-build / Runtime / exportedProducts 0s
-[2K  | => vivado-risc-v-build / bootResolvers 0s
-[2K  | => vivado-risc-v-build / externalResolvers 0s
-[14A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / publishTo 0s
-[2K  | => vivado-risc-v-build / allDependencies 0s
-[2K  | => Global / skip 0s
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / updateCacheName 0s
-[2K  | => vivado-risc-v-build / dependencyResolution 0s
-[2K  | => vivado-risc-v-build / Runtime / exportedProducts 0s
-[2K  | => vivado-risc-v-build / bootResolvers 0s
-[2K  | => vivado-risc-v-build / externalResolvers 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / updateCacheName 0s
-[2K  | => vivado-risc-v-build / dependencyResolution 0s
-[2K  | => vivado-risc-v-build / Runtime / exportedProducts 0s
-[2K  | => vivado-risc-v-build / bootResolvers 0s
-[2K  | => vivado-risc-v-build / externalResolvers 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / Runtime / exportedProducts 0s
-[2K  | => vivado-risc-v-build / bootResolvers 0s
-[2K  | => vivado-risc-v-build / externalResolvers 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / skip 0s
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / updateCacheName 0s
-[2K  | => vivado-risc-v-build / dependencyResolution 0s
-[2K  | => vivado-risc-v-build / Runtime / exportedProducts 0s
-[2K  | => vivado-risc-v-build / bootResolvers 0s
-[2K  | => vivado-risc-v-build / externalResolvers 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / updateCacheName 0s
-[2K  | => vivado-risc-v-build / dependencyResolution 0s
-[2K  | => vivado-risc-v-build / Runtime / exportedProducts 0s
-[2K  | => vivado-risc-v-build / bootResolvers 0s
-[2K  | => vivado-risc-v-build / externalResolvers 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / updateCacheName 0s
-[2K  | => vivado-risc-v-build / dependencyResolution 0s
-[2K  | => vivado-risc-v-build / Runtime / exportedProducts 0s
-[2K  | => vivado-risc-v-build / bootResolvers 0s
-[2K  | => vivado-risc-v-build / externalResolvers 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / dependencyResolution 0s
-[2K  | => vivado-risc-v-build / Runtime / exportedProducts 0s
-[2K  | => vivado-risc-v-build / bootResolvers 0s
-[2K  | => vivado-risc-v-build / externalResolvers 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / Runtime / exportedProducts 0s
-[2K  | => vivado-risc-v-build / bootResolvers 0s
-[2K  | => vivado-risc-v-build / externalResolvers 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / updateCacheName 0s
-[2K  | => vivado-risc-v-build / dependencyResolution 0s
-[2K  | => vivado-risc-v-build / Runtime / exportedProducts 0s
-[2K  | => vivado-risc-v-build / bootResolvers 0s
-[2K  | => vivado-risc-v-build / externalResolvers 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / allDependencies 0s
-[2K  | => Global / skip 0s
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / updateCacheName 0s
-[2K  | => vivado-risc-v-build / dependencyResolution 0s
-[2K  | => vivado-risc-v-build / Runtime / exportedProducts 0s
-[2K  | => vivado-risc-v-build / bootResolvers 0s
-[2K  | => vivado-risc-v-build / externalResolvers 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / allDependencies 0s
-[2K  | => Global / skip 0s
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / transitiveUpdate 0s
-[2K  | => vivado-risc-v-build / updateCacheName 0s
-[2K  | => vivado-risc-v-build / dependencyResolution 0s
-[2K  | => vivado-risc-v-build / Runtime / exportedProducts 0s
-[2K  | => vivado-risc-v-build / bootResolvers 0s
-[2K  | => vivado-risc-v-build / externalResolvers 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / Runtime / exportedProducts 0s
-[2K  | => vivado-risc-v-build / dependencyResolution 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / Runtime / exportedProducts 0s
-[2K  | => vivado-risc-v-build / dependencyResolution 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / dependencyPositions 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / previousCache 0s
-[2K  | => vivado-risc-v-build / dependencyPositions 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / previousCache 0s
-[2K  | => vivado-risc-v-build / dependencyPositions 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / Compile / externalHooks 0s
-[2K  | => vivado-risc-v-build / Compile / unmanagedClasspath 0s
-[2K  | => vivado-risc-v-build / dependencyPositions 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / scalaCompilerBridgeResolvers 0s
-[2K  | => vivado-risc-v-build / csrConfiguration 0s
-[2K  | => vivado-risc-v-build / csrResolvers 0s
-[2K  | => vivado-risc-v-build / csrFallbackDependencies 0s
-[2K  | => vivado-risc-v-build / Compile / externalHooks 0s
-[2K  | => vivado-risc-v-build / Compile / externalHooks 0s
-[2K  | => vivado-risc-v-build / dependencyPositions 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / update 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado-risc-v-build / Compile / compileIncremental 0s
-[15A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[15A[0m[[0m[0minfo[0m] [0m[0mloading settings for project vivado from build.sbt ...[0m
-[0m[[0m[0minfo[0m] [0m[0mloading settings for project targetutils from build.sbt ...[0m
-[0m[[0m[0minfo[0m] [0m[0mloading settings for project gemmini from build.sbt ...[0m
-[0m[[0m[0minfo[0m] [0m[0mloading settings for project testchipip from build.sbt ...[0m
-[0m[[0m[0minfo[0m] [0m[0mloading settings for project hardfloat from build.sbt ...[0m
-[0m[[0m[0minfo[0m] [0m[0mset current project to vivado (in build file:/home/user/vivado-risc-v/)[0m
-[2K
-[2K
-[2K
-[2K
-[2K
-[5A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / fileTreeView 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / fileTreeView 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / previousCache 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / checkBuildSources 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[5A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / fileTreeView 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / fileTreeView 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / previousCache 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / checkBuildSources 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[5A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / fileTreeView 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / fileTreeView 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / previousCache 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / checkBuildSources 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[5A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / fileTreeView 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / fileTreeView 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / previousCache 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / checkBuildSources 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[5A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / fileTreeView 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / fileTreeView 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / previousCache 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / checkBuildSources 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado / Compile / exportedProductJars 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado / Compile / exportedProductJars 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => Global / envVars 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado / Compile / run / forkOptions 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado / Compile / run / forkOptions 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado / Compile / unmanagedClasspath 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado / Compile / managedSources 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado / Compile / managedSources 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado / Compile / exportedProducts 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado / Compile / exportedProducts 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => gemmini / Compile / scalacOptions 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => cde / Compile / previousCompile 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => rocketchip / Compile / previousCompile 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => rocketchip / Compile / previousCompile 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => rocketchip / Compile / compileIncremental 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => testchipip / Compile / compileIncremental 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => gemmini / Compile / previousCompile 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado / Compile / previousCompile 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K  | => vivado / Compile / bgRunMain 0s
-[6A[2K
-[2K
-[2K
-[2K
-[2K
-[2K
-[6A[0m[[0m[0minfo[0m] [0m[0mrunning freechips.rocketchip.diplomacy.Main --dir /home/user/vivado-risc-v/workspace/rocket64b2/tmp --top Vivado.RocketSystem --config Vivado.Rocket64b2[0m
-Interrupt map (4 harts 8 interrupts):
-  [1, 8] => gen
-
-<stdin>:99.28-102.5: Warning (simple_bus_reg): /soc/external-interrupts: missing or empty reg/ranges property
-<stdin>:124.28-129.5: Warning (simple_bus_reg): /soc/subsystem_pbus_clock: missing or empty reg/ranges property
-<stdin>:36.29-40.6: Warning (interrupt_provider): /cpus/cpu@0/interrupt-controller: Missing #address-cells in interrupt provider
-<stdin>:66.29-70.6: Warning (interrupt_provider): /cpus/cpu@1/interrupt-controller: Missing #address-cells in interrupt provider
-<stdin>:103.36-112.5: Warning (interrupt_provider): /soc/interrupt-controller@c000000: Missing #address-cells in interrupt provider
-/dts-v1/;
-
-/ {
-	#address-cells = <2>;
-	#size-cells = <2>;
-	compatible = "freechips,rocketchip-vivado-dev";
-	model = "freechips,rocketchip-vivado";
-	L18: cpus {
-		#address-cells = <1>;
-		#size-cells = <0>;
-		timebase-frequency = <1000000>;
-		L4: cpu@0 {
-			clock-frequency = <0>;
-			compatible = "sifive,rocket0", "riscv";
-			d-cache-block-size = <64>;
-			d-cache-sets = <64>;
-			d-cache-size = <16384>;
-			d-tlb-sets = <1>;
-			d-tlb-size = <32>;
-			device_type = "cpu";
-			hardware-exec-breakpoint-count = <8>;
-			i-cache-block-size = <64>;
-			i-cache-sets = <64>;
-			i-cache-size = <16384>;
-			i-tlb-sets = <1>;
-			i-tlb-size = <32>;
-			mmu-type = "riscv,sv39";
-			next-level-cache = <&L13>;
-			reg = <0x0>;
-			riscv,isa = "rv64imafdczicsr_zifencei_zihpm_xrocket";
-			riscv,pmpgranularity = <4>;
-			riscv,pmpregions = <8>;
-			status = "okay";
-			timebase-frequency = <1000000>;
-			tlb-split;
-			L2: interrupt-controller {
-				#interrupt-cells = <1>;
-				compatible = "riscv,cpu-intc";
-				interrupt-controller;
-			};
-		};
-		L7: cpu@1 {
-			clock-frequency = <0>;
-			compatible = "sifive,rocket0", "riscv";
-			d-cache-block-size = <64>;
-			d-cache-sets = <64>;
-			d-cache-size = <16384>;
-			d-tlb-sets = <1>;
-			d-tlb-size = <32>;
-			device_type = "cpu";
-			hardware-exec-breakpoint-count = <8>;
-			i-cache-block-size = <64>;
-			i-cache-sets = <64>;
-			i-cache-size = <16384>;
-			i-tlb-sets = <1>;
-			i-tlb-size = <32>;
-			mmu-type = "riscv,sv39";
-			next-level-cache = <&L13>;
-			reg = <0x1>;
-			riscv,isa = "rv64imafdczicsr_zifencei_zihpm_xrocket";
-			riscv,pmpgranularity = <4>;
-			riscv,pmpregions = <8>;
-			status = "okay";
-			timebase-frequency = <1000000>;
-			tlb-split;
-			L5: interrupt-controller {
-				#interrupt-cells = <1>;
-				compatible = "riscv,cpu-intc";
-				interrupt-controller;
-			};
-		};
-	};
-	L13: memory@80000000 {
-		device_type = "memory";
-		reg = <0x0 0x80000000 0x3 0x80000000>;
-	};
-	L17: soc {
-		#address-cells = <2>;
-		#size-cells = <2>;
-		compatible = "freechips,rocketchip-vivado-soc", "simple-bus";
-		ranges;
-		L9: clint@2000000 {
-			compatible = "riscv,clint0";
-			interrupts-extended = <&L2 3 &L2 7 &L5 3 &L5 7>;
-			reg = <0x0 0x2000000 0x0 0x10000>;
-			reg-names = "control";
-		};
-		L10: debug-controller@0 {
-			compatible = "sifive,debug-013", "riscv,debug-013";
-			debug-attach = "dmi";
-			interrupts-extended = <&L2 65535 &L5 65535>;
-			reg = <0x0 0x0 0x0 0x1000>;
-			reg-names = "control";
-		};
-		L1: error-device@3000 {
-			compatible = "sifive,error0";
-			reg = <0x0 0x3000 0x0 0x1000>;
-		};
-		L12: external-interrupts {
-			interrupt-parent = <&L8>;
-			interrupts = <1 2 3 4 5 6 7 8>;
-		};
-		L8: interrupt-controller@c000000 {
-			#interrupt-cells = <1>;
-			compatible = "riscv,plic0";
-			interrupt-controller;
-			interrupts-extended = <&L2 11 &L2 9 &L5 11 &L5 9>;
-			reg = <0x0 0xc000000 0x0 0x4000000>;
-			reg-names = "control";
-			riscv,max-priority = <7>;
-			riscv,ndev = <8>;
-		};
-		L14: mmio-port-axi4@60000000 {
-			#address-cells = <1>;
-			#size-cells = <1>;
-			compatible = "simple-bus";
-			ranges = <0x60000000 0x0 0x60000000 0x20000000>;
-		};
-		L15: rom@10000 {
-			compatible = "sifive,rom0";
-			reg = <0x0 0x10000 0x0 0x10000>;
-			reg-names = "mem";
-		};
-		L0: subsystem_pbus_clock {
-			#clock-cells = <0>;
-			clock-frequency = <100000000>;
-			clock-output-names = "subsystem_pbus_clock";
-			compatible = "fixed-clock";
-		};
-	};
-};
-
-Generated Address Map
-	        0 -      1000 ARWX  debug-controller@0
-	     3000 -      4000 ARWX  error-device@3000
-	    10000 -     20000  R X  rom@10000
-	  2000000 -   2010000 ARW   clint@2000000
-	  c000000 -  10000000 ARW   interrupt-controller@c000000
-	 60000000 -  80000000  RWX  mmio-port-axi4@60000000
-	 80000000 - 400000000  RWXC memory@80000000
-
-[[33mwarn[0m] rocket-chip/src/main/scala/rocket/ICache.scala:500:25: Dynamic index with width 7 is too small for extractee of width 256
-[[33mwarn[0m] rocket-chip/src/main/scala/rocket/CSR.scala:959:100: Dynamic index with width 8 is too large for extractee of width 64
-[[33mwarn[0m]   val delegate = usingSupervisor.B && reg_mstatus.prv <= PRV.S.U && Mux(cause(xLen-1), read_mideleg(cause_lsbs), read_medeleg(cause_lsbs))
-[[33mwarn[0m]                                                                                                    ^
-[[33mwarn[0m] rocket-chip/src/main/scala/rocket/CSR.scala:959:126: Dynamic index with width 8 is too large for extractee of width 64
-[[33mwarn[0m]   val delegate = usingSupervisor.B && reg_mstatus.prv <= PRV.S.U && Mux(cause(xLen-1), read_mideleg(cause_lsbs), read_medeleg(cause_lsbs))
-[[33mwarn[0m]                                                                                                                              ^
-[[33mwarn[0m] rocket-chip/src/main/scala/rocket/CSR.scala:960:80: Dynamic index with width 8 is too large for extractee of width 64
-[[33mwarn[0m]   val delegateVS = reg_mstatus.v && delegate && Mux(cause(xLen-1), read_hideleg(cause_lsbs), read_hedeleg(cause_lsbs))
-[[33mwarn[0m]                                                                                ^
-[[33mwarn[0m] rocket-chip/src/main/scala/rocket/CSR.scala:960:106: Dynamic index with width 8 is too large for extractee of width 64
-[[33mwarn[0m]   val delegateVS = reg_mstatus.v && delegate && Mux(cause(xLen-1), read_hideleg(cause_lsbs), read_hedeleg(cause_lsbs))
-[[33mwarn[0m]                                                                                                          ^
-[[33mwarn[0m] rocket-chip/src/main/scala/devices/debug/Debug.scala:1121:60: Dynamic index with width 10 is too large for extractee of width 2
-[[33mwarn[0m]         hgHartFiring(hg) := hartHaltedWrEn & ~haltedBitRegs(hartHaltedId) & (hgParticipateHart(hartSelFuncs.hartIdToHartSel(hartHaltedId)) === hg.U)
-[[33mwarn[0m]                                                            ^
-[[33mwarn[0m] There were [33m6 warning(s)[0m during hardware elaboration.
-^C
-[0m[[0m[33mwarn[0m] [0m[0mCanceling execution...[0m
-[0m[[0m[31merror[0m] [0m[0mTotal time: 5 s, completed Nov 23, 2025, 5:24:22 PM[0m
-make: *** [Makefile:253: workspace/rocket64b2/system.dts] Interrupt
-
-]0;user@hps: ~/vivado-risc-v[01;32muser@hps[00m:[01;34m~/vivado-risc-v[00m$ make CONFIG=rocket64b2 BOARD=nexys-video flash[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@g[1@e[1@n[1@e[1@y[1@s[1P[1P[1@s[1@y[1@s[1@-[1@2s-[1P[1P2[1P[1@x[1@2[1P[1@1
-env HW_SERVER_URL=tcp:localhost:3121 \
- xsdb -quiet board/jtag-freq.tcl
-rlwrap: warning: your $TERM is 'xterm-256color' but rlwrap couldn't find it in the terminfo database. Expect some problems.
-                                                                                                                                                             Connection refused
-    while executing
-"error $message"
-    (procedure "connect" line 143)
-    invoked from within
-"connect -url $::env(HW_SERVER_URL)"
-    (file "board/jtag-freq.tcl" line 1)
-make: *** [Makefile:381: flash] Error 1
-]0;user@hps: ~/vivado-risc-v[01;32muser@hps[00m:[01;34m~/vivado-risc-v[00m$ make CONFIG=rocket64x1 BOARD=genesys2 flash
-env HW_SERVER_URL=tcp:localhost:3121 \
- xsdb -quiet board/jtag-freq.tcl
-rlwrap: warning: your $TERM is 'xterm-256color' but rlwrap couldn't find it in the terminfo database. Expect some problems.
-                                                                                                                                                             Connection refused
-    while executing
-"error $message"
-    (procedure "connect" line 143)
-    invoked from within
-"connect -url $::env(HW_SERVER_URL)"
-    (file "board/jtag-freq.tcl" line 1)
-make: *** [Makefile:381: flash] Error 1
-]0;user@hps: ~/vivado-risc-v[01;32muser@hps[00m:[01;34m~/vivado-risc-v[00m$ make CONFIG=rocket64x1 BOARD=genesys2 flash[Kmake CONFIG=rocket64x1 BOARD=genesys2 flash[Kmake CONFIG=rocket64x1 BOARD=genesys2 flash[Kmake CONFIG=rocket64x1 BOARD=genesys2 flash
-env HW_SERVER_URL=tcp:localhost:3121 \
- xsdb -quiet board/jtag-freq.tcl
-rlwrap: warning: your $TERM is 'xterm-256color' but rlwrap couldn't find it in the terminfo database. Expect some problems.
-                                                                                                                                                             target list is empty
-    while executing
-"error "target list is empty""
-    (procedure "::xsdb::jtag::targets" line 154)
-    invoked from within
-"jtag targets -set -filter {level == 0 && is_open}"
-    (file "board/jtag-freq.tcl" line 5)
-make: *** [Makefile:381: flash] Error 1
-]0;user@hps: ~/vivado-risc-v[01;32muser@hps[00m:[01;34m~/vivado-risc-v[00m$ make CONFIG=rocket64x1 BOARD=genesys2 flash[3@b2 BOARD=nexys-video flashls[Kcd vivado-risc-v/..[K[3Plsmake CONFIG=rocket64x1 BOARD=genesys2 bitstreamcd ..[K[1Pxsdb[1@lsusb /dev[2Pusb[1Pxsdb b
-rlwrap: warning: your $TERM is 'xterm-256color' but rlwrap couldn't find it in the terminfo database. Expect some problems.
-                                                                                                                                                             
-****** System Debugger (XSDB) v2024.1
-  **** Build date : May 22 2024-19:19:01
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-
-
-                                                                                                                                                             xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% connect       connect
-tcfchan#0
-xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% connect tcfchan#0xsdb%                  xsdb% connect tcfchan#0
-unexpected arguments: tcfchan#0
-xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% targets       targets
-xsdb%                                                                                                                                                              xsdb%                                                                                                                                                              xsdb% exit    exit
-exit
-]0;user@hps: ~/vivado-risc-v[01;32muser@hps[00m:[01;34m~/vivado-risc-v[00m$ exit
-exit
-
-Script done on 2025-11-23 17:49:31+01:00 [COMMAND_EXIT_CODE="0"]
